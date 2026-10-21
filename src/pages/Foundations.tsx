@@ -11,7 +11,7 @@ function Swatch({ step, hex, token, onCopy, copied }: { step: string; hex: strin
   return (
     <button onClick={onCopy} className="group text-left" aria-label={`Copy ${token}-${step} ${step}`}>
       <div
-        className="relative h-16 w-full overflow-hidden rounded-lg border border-black/5 ring-1 ring-inset ring-black/[0.03] transition duration-200 group-hover:-translate-y-0.5 group-hover:shadow-card dark:border-white/5"
+        className="relative h-16 w-full overflow-hidden rounded-md border border-black/5 ring-1 ring-inset ring-black/[0.03] transition duration-200 group-hover:-translate-y-0.5 group-hover:shadow-card dark:border-white/5"
         style={{ backgroundColor: hex }}
       >
         <span className="absolute inset-0 grid place-items-center bg-black/25 opacity-0 transition group-hover:opacity-100">
@@ -133,7 +133,7 @@ export function Foundations() {
                   className="group flex w-full items-center gap-3 text-left"
                 >
                   <span
-                    className="h-10 flex-1 rounded-lg border border-black/5 shadow-xs transition group-hover:shadow-card dark:border-white/10"
+                    className="h-10 flex-1 rounded-md border border-black/5 shadow-xs transition group-hover:shadow-card dark:border-white/10"
                     style={{ background: gradient.value }}
                   />
                   <span className="w-[112px] shrink-0 font-mono text-[9.5px] text-muted">{gradient.name}</span>
@@ -156,7 +156,7 @@ export function Foundations() {
         </div>
       </Section>
 
-      <Section id="type" index="02" title="Typography" description="Inter · 400–800 · tabular figures for data">
+      <Section id="type" index="02" title="Typography" description="Geist · 400–800 · tabular figures for data">
         <div className="grid gap-6 lg:grid-cols-[1.55fr_1fr]">
           <div className="divide-y divide-line-soft">
             {typeScale.map(token => (
@@ -191,9 +191,9 @@ export function Foundations() {
                 <span className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#7DCBFC]">Typeface</span>
                 <Type className="h-4 w-4 text-white/40" />
               </div>
-              <div className="mt-3 text-[38px] font-extrabold leading-none tracking-[-0.04em]">Inter</div>
+              <div className="mt-3 text-[38px] font-extrabold leading-none tracking-[-0.04em]">Geist</div>
               <p className="mt-2 text-[11px] leading-5 text-white/50">
-                Variable, screen-first, superb numerals. JetBrains Mono covers code, keys and token values.
+                Variable, screen-first, superbly tight at display sizes. Geist Mono covers code, keys and token values.
               </p>
               <div className="mt-4 grid grid-cols-3 gap-2 border-t border-white/10 pt-3 font-mono text-[9px] text-white/60">
                 <span>400 Regular</span>
@@ -231,7 +231,7 @@ export function Foundations() {
               ))}
             </div>
           </div>
-          <div className="mt-3 flex items-center gap-2 rounded-lg bg-surface-2 px-3 py-2 text-[10.5px] text-muted">
+          <div className="mt-3 flex items-center gap-2 rounded-md bg-surface-2 px-3 py-2 text-[10.5px] text-muted">
             <MoveHorizontal className="h-3.5 w-3.5 text-brand" /> Layout gaps use 6 / 8 / 12 / 16 / 24 — never arbitrary values.
           </div>
         </Section>
@@ -249,7 +249,7 @@ export function Foundations() {
               </div>
             ))}
           </div>
-          <div className="mt-3 space-y-1.5 rounded-lg bg-surface-2 p-3">
+          <div className="mt-3 space-y-1.5 rounded-md bg-surface-2 p-3">
             {radii.slice(0, 5).map(r => (
               <div key={r.name} className="flex items-center justify-between text-[10.5px]">
                 <span className="font-mono text-ink-soft">{r.name}</span>
@@ -277,7 +277,7 @@ export function Foundations() {
             </div>
           ))}
         </div>
-        <p className="mt-4 rounded-lg bg-surface-2 px-3 py-2 text-[10.5px] text-muted">
+        <p className="mt-4 rounded-md bg-surface-2 px-3 py-2 text-[10.5px] text-muted">
           Rule: a surface gets one shadow. Cards use <span className="font-mono text-ink-soft">shadow-card</span>;
           floating layers use <span className="font-mono text-ink-soft">shadow-float</span> and never stack.
         </p>
@@ -318,7 +318,7 @@ export function Foundations() {
               ].map(item => (
                 <div
                   key={item.label}
-                  className={`flex cursor-pointer items-center justify-between rounded-lg border border-line bg-surface px-3 py-2.5 transition duration-200 ${item.cls}`}
+                  className={`flex cursor-pointer items-center justify-between rounded-md border border-line bg-surface px-3 py-2.5 transition duration-200 ${item.cls}`}
                 >
                   <span className="text-[11.5px] font-medium text-ink-soft">{item.label}</span>
                   <ArrowUpRight className="h-3.5 w-3.5 text-faint" />

@@ -7,7 +7,7 @@ import { Avatar } from '../ui/Avatar';
 
 function BrandMark() {
   return (
-    <span className="relative grid h-8 w-8 place-items-center overflow-hidden rounded-[10px] bg-[linear-gradient(140deg,#0E91F0,#F72685_62%,#FF7A0D)] shadow-[0_6px_16px_-6px_rgba(247,38,133,.7)]">
+    <span className="relative grid h-8 w-8 place-items-center overflow-hidden rounded-md bg-[linear-gradient(140deg,#0E91F0,#F72685_62%,#FF7A0D)] shadow-[0_6px_16px_-6px_rgba(247,38,133,.7)]">
       <svg viewBox="0 0 24 24" className="h-4 w-4 text-white" aria-hidden>
         <path
           d="M12 3c.9 4.4 3.6 7.1 8 8-4.4.9-7.1 3.6-8 8-.9-4.4-3.6-7.1-8-8 4.4-.9 7.1-3.6 8-8Z"
@@ -42,7 +42,7 @@ function SidebarContent({
       <div className="px-3">
         <button
           onClick={() => onToggleTheme()}
-          className="group flex w-full items-center gap-2 rounded-lg border border-line bg-surface-2 px-2.5 py-2 text-left transition hover:border-brand/35 hover:bg-surface"
+          className="group flex w-full items-center gap-2 rounded-md border border-line bg-surface-2 px-2.5 py-2 text-left transition hover:border-brand/35 hover:bg-surface"
         >
           <span className="grid h-6 w-6 place-items-center rounded-md bg-surface text-muted shadow-xs transition group-hover:text-brand">
             {theme === 'light' ? <Sun className="h-3.5 w-3.5" /> : <Moon className="h-3.5 w-3.5" />}
@@ -66,7 +66,7 @@ function SidebarContent({
                     onClick={() => onNavigate(item.key)}
                     aria-current={active ? 'page' : undefined}
                     className={cn(
-                      'group flex w-full items-center gap-2.5 rounded-lg px-2 py-[7px] text-left transition',
+                      'group flex w-full items-center gap-2.5 rounded-md px-2 py-[7px] text-left transition',
                       active
                         ? 'bg-surface text-ink shadow-xs ring-1 ring-line'
                         : 'text-muted hover:bg-surface-2 hover:text-ink',
@@ -135,7 +135,7 @@ export function Shell({
     <div className="min-h-screen bg-canvas text-ink">
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-[70] focus:rounded-lg focus:bg-surface focus:px-3 focus:py-2 focus:text-[12px] focus:font-semibold focus:text-ink focus:shadow-pop"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-[70] focus:rounded-md focus:bg-surface focus:px-3 focus:py-2 focus:text-[12px] focus:font-semibold focus:text-ink focus:shadow-pop"
       >
         Skip to content
       </a>
@@ -154,7 +154,7 @@ export function Shell({
             <button
               onClick={() => setMobileOpen(false)}
               aria-label="Close navigation"
-              className="absolute right-3 top-4 z-10 grid h-8 w-8 place-items-center rounded-lg text-muted hover:bg-surface-2"
+              className="absolute right-3 top-4 z-10 grid h-8 w-8 place-items-center rounded-md text-muted hover:bg-surface-2"
             >
               <X className="h-4 w-4" />
             </button>
@@ -177,7 +177,7 @@ export function Shell({
             <button
               onClick={() => setMobileOpen(true)}
               aria-label="Open navigation"
-              className="grid h-8 w-8 place-items-center rounded-lg border border-line bg-surface text-muted lg:hidden"
+              className="grid h-8 w-8 place-items-center rounded-md border border-line bg-surface text-muted lg:hidden"
             >
               <Menu className="h-4 w-4" />
             </button>
@@ -194,7 +194,7 @@ export function Shell({
             <div className="ml-auto flex items-center gap-2">
               <button
                 onClick={onOpenSearch}
-                className="group hidden h-8 items-center gap-2 rounded-lg border border-line bg-surface px-2.5 text-[11.5px] text-faint shadow-xs transition hover:border-brand/35 hover:text-muted sm:flex"
+                className="group hidden h-8 items-center gap-2 rounded-md border border-line bg-surface px-2.5 text-[11.5px] text-faint shadow-xs transition hover:border-brand/35 hover:text-muted sm:flex"
               >
                 <Search className="h-3.5 w-3.5" />
                 <span className="w-24 text-left">Search system…</span>
@@ -205,19 +205,19 @@ export function Shell({
               <button
                 onClick={onOpenSearch}
                 aria-label="Search"
-                className="grid h-8 w-8 place-items-center rounded-lg border border-line bg-surface text-muted sm:hidden"
+                className="grid h-8 w-8 place-items-center rounded-md border border-line bg-surface text-muted sm:hidden"
               >
                 <Search className="h-3.5 w-3.5" />
               </button>
               <button
                 onClick={onToggleTheme}
                 aria-label="Toggle theme"
-                className="grid h-8 w-8 place-items-center rounded-lg border border-line bg-surface text-muted shadow-xs transition hover:border-brand/35 hover:text-ink"
+                className="grid h-8 w-8 place-items-center rounded-md border border-line bg-surface text-muted shadow-xs transition hover:border-brand/35 hover:text-ink"
               >
                 {theme === 'light' ? <Moon className="h-3.5 w-3.5" /> : <Sun className="h-3.5 w-3.5" />}
               </button>
               <span className="mx-0.5 hidden h-5 w-px bg-line sm:block" />
-              <button className="hidden items-center gap-2 rounded-lg pl-1 pr-2 py-1 transition hover:bg-surface sm:flex">
+              <button className="hidden items-center gap-2 rounded-md pl-1 pr-2 py-1 transition hover:bg-surface sm:flex">
                 <Avatar initials="RK" size="sm" tone="pink" />
                 <span className="text-[11.5px] font-semibold text-ink">Rania</span>
               </button>

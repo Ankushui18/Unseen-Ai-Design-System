@@ -91,7 +91,7 @@ export function SettingsPage() {
                 key={item.key}
                 onClick={() => setTab(item.key)}
                 className={cn(
-                  'flex shrink-0 items-center gap-2.5 rounded-lg px-3 py-2 text-left text-[12px] font-medium transition',
+                  'flex shrink-0 items-center gap-2.5 rounded-md px-3 py-2 text-left text-[12px] font-medium transition',
                   tab === item.key
                     ? 'bg-surface text-ink shadow-xs ring-1 ring-line'
                     : 'text-muted hover:bg-surface-2 hover:text-ink',
@@ -103,7 +103,7 @@ export function SettingsPage() {
               </button>
             );
           })}
-          <div className="mt-3 hidden rounded-lg border border-line bg-surface-2 p-3 lg:block">
+          <div className="mt-3 hidden rounded-md border border-line bg-surface-2 p-3 lg:block">
             <div className="flex items-center gap-1.5 text-[10px] font-semibold text-ink-soft">
               <ShieldCheck className="h-3 w-3 text-success" /> Secure by default
             </div>
@@ -219,14 +219,14 @@ export function SettingsPage() {
               </Panel>
               <Panel title="Danger zone" description="These actions affect the whole workspace.">
                 <div className="space-y-3">
-                  <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-danger/25 bg-danger-soft px-3.5 py-3">
+                  <div className="flex flex-wrap items-center justify-between gap-3 rounded-md border border-danger/25 bg-danger-soft px-3.5 py-3">
                     <div>
                       <div className="text-[11.5px] font-semibold text-danger">Delete workspace</div>
                       <div className="text-[10px] text-danger/70">All models, keys and logs are removed after 30 days.</div>
                     </div>
                     <Button size="sm" variant="danger">Delete workspace</Button>
                   </div>
-                  <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-line px-3.5 py-3">
+                  <div className="flex flex-wrap items-center justify-between gap-3 rounded-md border border-line px-3.5 py-3">
                     <div>
                       <div className="text-[11.5px] font-semibold text-ink">Transfer ownership</div>
                       <div className="text-[10px] text-muted">Hand the workspace to another owner.</div>
@@ -314,7 +314,7 @@ export function SettingsPage() {
                         <Progress value={73} size="sm" />
                       </div>
                     </div>
-                    <div className="mt-3 rounded-lg bg-warning-soft px-2.5 py-1.5 text-[10px] text-warning">
+                    <div className="mt-3 rounded-md bg-warning-soft px-2.5 py-1.5 text-[10px] text-warning">
                       Rate limit resets in 6 days.
                     </div>
                   </div>
@@ -430,7 +430,7 @@ export function SettingsPage() {
               It will be hidden permanently after you close this dialog.
             </Alert>
             <CopyField label="Secret key" value="sk-live-2b7f91c04de84a12b0f6" />
-            <div className="rounded-lg border border-line bg-surface-2 p-3 text-[11px] text-muted">
+            <div className="rounded-md border border-line bg-surface-2 p-3 text-[11px] text-muted">
               <div className="flex items-center gap-1.5 font-semibold text-ink-soft"><ShieldCheck className="h-3.5 w-3.5 text-success" /> Recommended</div>
               <p className="mt-1">Add it as <span className="font-mono text-ink-soft">UNSEEN_KEY</span> in your hosting provider’s secret manager.</p>
             </div>
@@ -456,7 +456,7 @@ export function SettingsPage() {
                 ]}
               />
             </Field>
-            <div className="flex items-start gap-2 rounded-lg bg-warning-soft p-3 text-[10.5px] leading-5 text-warning">
+            <div className="flex items-start gap-2 rounded-md bg-warning-soft p-3 text-[10.5px] leading-5 text-warning">
               <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0" />
               Keys with full access can create models and delete data. Prefer scoped keys for CI.
             </div>
@@ -479,7 +479,7 @@ function Panel({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-[18px] border border-line bg-surface shadow-card">
+    <section className="rounded-xl border border-line bg-surface shadow-card">
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line px-5 py-3.5">
         <div>
           <h2 className="text-[13px] font-semibold text-ink">{title}</h2>

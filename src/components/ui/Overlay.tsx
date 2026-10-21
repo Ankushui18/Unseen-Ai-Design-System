@@ -27,7 +27,7 @@ export function Tooltip({
       <span
         role="tooltip"
         className={cn(
-          'pointer-events-none absolute z-40 whitespace-nowrap rounded-lg bg-inverse px-2.5 py-1.5 text-[11px] font-semibold text-on-inverse opacity-0 shadow-pop transition duration-150 group-hover:opacity-100 group-focus-within:opacity-100',
+          'pointer-events-none absolute z-40 whitespace-nowrap rounded-md bg-inverse px-2.5 py-1.5 text-[11px] font-semibold text-on-inverse opacity-0 shadow-pop transition duration-150 group-hover:opacity-100 group-focus-within:opacity-100',
           pos,
         )}
       >
@@ -82,7 +82,7 @@ export function Modal({
         aria-modal="true"
         aria-label={title}
         className={cn(
-          'relative w-full ds-rise overflow-hidden rounded-[22px] border border-line bg-surface shadow-float',
+          'relative w-full ds-rise overflow-hidden rounded-xl border border-line bg-surface shadow-float',
           width,
         )}
       >
@@ -94,7 +94,7 @@ export function Modal({
           <button
             onClick={onClose}
             aria-label="Close"
-            className="-mr-1 grid h-8 w-8 place-items-center rounded-lg text-faint transition hover:bg-surface-3 hover:text-ink"
+            className="-mr-1 grid h-8 w-8 place-items-center rounded-md text-faint transition hover:bg-surface-3 hover:text-ink"
           >
             <X className="h-4 w-4" />
           </button>
@@ -152,7 +152,7 @@ export function Drawer({
           <button
             onClick={onClose}
             aria-label="Close"
-            className="grid h-8 w-8 place-items-center rounded-lg text-faint transition hover:bg-surface-3 hover:text-ink"
+            className="grid h-8 w-8 place-items-center rounded-md text-faint transition hover:bg-surface-3 hover:text-ink"
           >
             <X className="h-4 w-4" />
           </button>
@@ -179,7 +179,7 @@ export function ConfirmDialogCard({
   tone?: 'danger' | 'brand';
 }) {
   return (
-    <div className="rounded-[18px] border border-line bg-surface p-5 shadow-pop">
+    <div className="rounded-xl border border-line bg-surface p-5 shadow-pop">
       {icon && (
         <div
           className={cn(

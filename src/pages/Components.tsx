@@ -154,13 +154,13 @@ export function Components() {
             </DemoRow>
 
             <DemoRow label="Button group" note="split + segmented">
-              <span className="inline-flex overflow-hidden rounded-[10px] shadow-xs">
-                <Button className="rounded-none rounded-l-[10px]">Deploy</Button>
+              <span className="inline-flex overflow-hidden rounded-md shadow-xs">
+                <Button className="rounded-none rounded-l-md">Deploy</Button>
                 <button className="border-l border-white/20 bg-[linear-gradient(135deg,#38AEFA,#0272C6)] px-2.5 text-white transition hover:brightness-105">
                   <ChevronDown className="h-4 w-4" />
                 </button>
               </span>
-              <span className="inline-flex items-center gap-1 rounded-[10px] border border-line bg-surface p-1">
+              <span className="inline-flex items-center gap-1 rounded-md border border-line bg-surface p-1">
                 <Button size="sm" variant="ghost" className="px-2.5"><Grid2X2 className="h-3.5 w-3.5" /></Button>
                 <Button size="sm" variant="ghost" className="bg-surface-3 px-2.5 text-ink"><BarChart3 className="h-3.5 w-3.5" /></Button>
                 <Button size="sm" variant="ghost" className="px-2.5"><Settings className="h-3.5 w-3.5" /></Button>
@@ -512,7 +512,7 @@ export function Components() {
                       <div
                         key={item.label}
                         className={cn(
-                          'flex items-center gap-2.5 rounded-lg px-2 py-1.5 text-[11px] font-medium transition',
+                          'flex items-center gap-2.5 rounded-md px-2 py-1.5 text-[11px] font-medium transition',
                           item.active ? 'bg-brand-soft text-brand-strong dark:text-brand' : 'text-muted hover:bg-surface-3 hover:text-ink',
                         )}
                       >
@@ -713,7 +713,7 @@ export function Components() {
                 <div className="mb-3 text-[10px] font-bold uppercase tracking-[0.14em] text-faint">Popover</div>
                 <div className="rounded-2xl border border-line bg-surface p-4 shadow-pop">
                   <div className="flex items-center gap-2.5">
-                    <span className="grid h-8 w-8 place-items-center rounded-lg bg-brand-soft text-brand"><Zap className="h-4 w-4" /></span>
+                    <span className="grid h-8 w-8 place-items-center rounded-md bg-brand-soft text-brand"><Zap className="h-4 w-4" /></span>
                     <div>
                       <div className="text-[12px] font-semibold text-ink">Token pricing updated</div>
                       <div className="text-[10.5px] text-muted">Effective Nov 1 · includes cached reads</div>
@@ -737,7 +737,7 @@ export function Components() {
                   ].map(item => {
                     const Icon = item.icon;
                     return (
-                      <button key={item.label} className="flex w-full items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-left text-[12px] text-ink-soft transition hover:bg-surface-2">
+                      <button key={item.label} className="flex w-full items-center gap-2.5 rounded-md px-2.5 py-1.5 text-left text-[12px] text-ink-soft transition hover:bg-surface-2">
                         <Icon className="h-3.5 w-3.5 text-faint" />
                         <span className="flex-1">{item.label}</span>
                         <span className="font-mono text-[9.5px] text-faint">{item.shortcut}</span>
@@ -745,7 +745,7 @@ export function Components() {
                     );
                   })}
                   <div className="my-1 h-px bg-line" />
-                  <button className="flex w-full items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-left text-[12px] text-danger transition hover:bg-danger-soft">
+                  <button className="flex w-full items-center gap-2.5 rounded-md px-2.5 py-1.5 text-left text-[12px] text-danger transition hover:bg-danger-soft">
                     <Trash2 className="h-3.5 w-3.5" />
                     <span className="flex-1">Delete</span>
                     <span className="font-mono text-[9.5px] text-danger/60">⌫</span>

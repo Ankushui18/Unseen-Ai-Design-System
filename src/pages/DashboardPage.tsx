@@ -76,7 +76,7 @@ export function DashboardPage() {
         }
       />
 
-      <div className="overflow-hidden rounded-[22px] border border-line bg-canvas shadow-card">
+      <div className="overflow-hidden rounded-xl border border-line bg-canvas shadow-card">
         {/* app chrome */}
         <div className="flex items-center gap-3 border-b border-line bg-surface px-4 py-2.5">
           <div className="flex items-center gap-1.5">
@@ -103,7 +103,7 @@ export function DashboardPage() {
         <div className="grid lg:grid-cols-[188px_1fr]">
           {/* in-app nav */}
           <aside className="hidden border-r border-line bg-surface/60 p-3 lg:block">
-            <div className="flex items-center gap-2 rounded-lg bg-brand-soft px-2.5 py-2 text-brand-strong dark:text-brand">
+            <div className="flex items-center gap-2 rounded-md bg-brand-soft px-2.5 py-2 text-brand-strong dark:text-brand">
               <Gauge className="h-3.5 w-3.5" />
               <span className="text-[11.5px] font-semibold">Overview</span>
             </div>
@@ -116,7 +116,7 @@ export function DashboardPage() {
             ].map(item => {
               const Icon = item.icon;
               return (
-                <div key={item.label} className="mt-0.5 flex items-center gap-2 rounded-lg px-2.5 py-2 text-muted transition hover:bg-surface-2 hover:text-ink">
+                <div key={item.label} className="mt-0.5 flex items-center gap-2 rounded-md px-2.5 py-2 text-muted transition hover:bg-surface-2 hover:text-ink">
                   <Icon className="h-3.5 w-3.5" />
                   <span className="text-[11.5px] font-medium">{item.label}</span>
                 </div>
@@ -151,7 +151,7 @@ export function DashboardPage() {
                   <Search className="absolute left-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-faint" />
                   <input
                     placeholder="Search models…"
-                    className="h-8 w-40 rounded-lg border border-line bg-surface pl-8 pr-2 text-[11.5px] text-ink outline-none transition placeholder:text-faint focus:border-brand focus:ring-2 focus:ring-brand/15"
+                    className="h-8 w-40 rounded-md border border-line bg-surface pl-8 pr-2 text-[11.5px] text-ink outline-none transition placeholder:text-faint focus:border-brand focus:ring-2 focus:ring-brand/15"
                   />
                 </div>
                 <Segmented
@@ -261,7 +261,7 @@ export function DashboardPage() {
 
                 <div className="rounded-xl border border-line bg-[linear-gradient(150deg,var(--ds-surface),var(--ds-brand-soft))] p-4">
                   <div className="flex items-center gap-2">
-                    <span className="grid h-6 w-6 place-items-center rounded-lg bg-[linear-gradient(140deg,#0E91F0,#F72685)] text-white">
+                    <span className="grid h-6 w-6 place-items-center rounded-md bg-[linear-gradient(140deg,#0E91F0,#F72685)] text-white">
                       <Sparkles className="h-3 w-3" />
                     </span>
                     <span className="text-[11.5px] font-semibold text-ink">Copilot insight</span>
@@ -415,7 +415,7 @@ export function DashboardPage() {
           <Field label="Description" hint="Visible to your whole workspace.">
             <Textarea placeholder="What should this model do?" />
           </Field>
-          <div className="flex items-center justify-between rounded-lg border border-line bg-surface-2 px-3 py-2 text-[11px]">
+          <div className="flex items-center justify-between rounded-md border border-line bg-surface-2 px-3 py-2 text-[11px]">
             <span className="text-muted">Estimated cost at 1M requests / month</span>
             <span className="font-mono font-semibold text-ink">$1,420</span>
           </div>

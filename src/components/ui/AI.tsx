@@ -276,7 +276,7 @@ export function SourceChip({ index, label, host }: { index: number; label: strin
   return (
     <a
       href="#ai-patterns"
-      className="group flex min-w-0 items-center gap-2 rounded-lg border border-line bg-surface-2 px-2.5 py-1.5 transition hover:border-brand/40 hover:bg-brand-soft"
+      className="group flex min-w-0 items-center gap-2 rounded-md border border-line bg-surface-2 px-2.5 py-1.5 transition hover:border-brand/40 hover:bg-brand-soft"
     >
       <span className="grid h-4 w-4 shrink-0 place-items-center rounded bg-surface text-[9px] font-bold text-muted group-hover:text-brand">
         {index}
@@ -392,7 +392,7 @@ export function ModelCard({
         <div className="flex items-center gap-2">
           <span
             className={cn(
-              'grid h-8 w-8 place-items-center rounded-lg text-[11px] font-black',
+              'grid h-8 w-8 place-items-center rounded-md text-[11px] font-black',
               selected ? 'bg-brand text-white' : 'bg-surface-3 text-muted',
             )}
           >

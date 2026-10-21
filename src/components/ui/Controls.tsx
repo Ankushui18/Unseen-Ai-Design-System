@@ -33,7 +33,7 @@ export function Checkbox({
         />
         <span
           className={cn(
-            'grid h-[18px] w-[18px] place-items-center rounded-[5px] border transition duration-150',
+            'grid h-[18px] w-[18px] place-items-center rounded-sm border transition duration-150',
             active
               ? tone === 'pink'
                 ? 'border-pink bg-pink text-white'
@@ -179,7 +179,7 @@ export function Segmented<T extends string>({
     <div
       role="tablist"
       className={cn(
-        'inline-flex items-center gap-1 rounded-[10px] border border-line bg-surface-3 p-1',
+        'inline-flex items-center gap-1 rounded-md border border-line bg-surface-3 p-1',
         className,
       )}
     >
@@ -190,7 +190,7 @@ export function Segmented<T extends string>({
           aria-selected={value === option.value}
           onClick={() => onChange(option.value)}
           className={cn(
-            'rounded-[7px] font-semibold transition',
+            'rounded-md font-semibold transition',
             size === 'sm' ? 'px-2.5 py-1 text-[11px]' : 'px-3 py-1.5 text-xs',
             value === option.value
               ? 'bg-surface text-ink shadow-xs'

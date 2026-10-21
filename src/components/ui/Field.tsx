@@ -3,7 +3,7 @@ import { Check, Copy, Eye, EyeOff, Search } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const base =
-  'w-full rounded-[10px] border bg-surface text-[13px] text-ink placeholder:text-faint transition duration-150 ' +
+  'w-full rounded-md border bg-surface text-[13px] text-ink placeholder:text-faint transition duration-150 ' +
   'border-line-strong hover:border-line-strong/80 focus:border-brand focus:outline-none focus:ring-[3px] focus:ring-brand/15 ' +
   'disabled:cursor-not-allowed disabled:bg-surface-3 disabled:text-faint';
 
@@ -158,7 +158,7 @@ export function CopyField({ value, label, masked = false }: { value: string; lab
   return (
     <div className="space-y-1.5">
       {label && <div className="text-[11px] font-semibold uppercase tracking-[0.12em] text-faint">{label}</div>}
-      <div className="flex items-center gap-2 rounded-[10px] border border-line bg-surface-2 px-3 py-2">
+      <div className="flex items-center gap-2 rounded-md border border-line bg-surface-2 px-3 py-2">
         <code className="min-w-0 flex-1 truncate font-mono text-[12px] text-ink-soft">
           {revealed ? value : value.replace(/[^\s-]/g, '•')}
         </code>

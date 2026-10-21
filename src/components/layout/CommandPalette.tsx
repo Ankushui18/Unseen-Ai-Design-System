@@ -88,7 +88,7 @@ export function CommandPalette({
         role="dialog"
         aria-modal="true"
         aria-label="Command palette"
-        className="relative w-full max-w-xl overflow-hidden rounded-[18px] border border-line bg-surface shadow-float ds-rise"
+        className="relative w-full max-w-xl overflow-hidden rounded-xl border border-line bg-surface shadow-float ds-rise"
       >
         <div className="flex items-center gap-3 border-b border-line px-4 py-3">
           <Search className="h-4 w-4 text-brand" />
@@ -125,7 +125,7 @@ export function CommandPalette({
               >
                 <span
                   className={cn(
-                    'grid h-8 w-8 place-items-center rounded-lg border',
+                    'grid h-8 w-8 place-items-center rounded-md border',
                     active === i
                       ? 'border-brand/25 bg-surface text-brand'
                       : 'border-line bg-surface-2 text-muted',

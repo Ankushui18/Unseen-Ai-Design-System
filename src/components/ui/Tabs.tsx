@@ -60,7 +60,7 @@ export function Tabs<T extends string>({
 
   if (variant === 'segment') {
     return (
-      <div role="tablist" className={cn('inline-flex items-center gap-1 rounded-[10px] border border-line bg-surface-3 p-1', className)}>
+      <div role="tablist" className={cn('inline-flex items-center gap-1 rounded-md border border-line bg-surface-3 p-1', className)}>
         {items.map(item => {
           const active = item.value === value;
           return (
@@ -70,7 +70,7 @@ export function Tabs<T extends string>({
               aria-selected={active}
               onClick={() => onChange(item.value)}
               className={cn(
-                'inline-flex items-center gap-1.5 rounded-[7px] px-3 py-1.5 text-xs font-semibold transition',
+                'inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-semibold transition',
                 active ? 'bg-surface text-ink shadow-xs' : 'text-muted hover:text-ink',
               )}
             >

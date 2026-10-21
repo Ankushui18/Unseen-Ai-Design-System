@@ -122,7 +122,7 @@ export function Guidelines() {
         <Section id="a11y" index="02" title="Accessibility" description="Checked against WCAG 2.2 AA">
           <ul className="space-y-2">
             {a11y.map(item => (
-              <li key={item.label} className="flex items-center gap-3 rounded-lg border border-line bg-surface-2/60 px-3 py-2.5">
+              <li key={item.label} className="flex items-center gap-3 rounded-md border border-line bg-surface-2/60 px-3 py-2.5">
                 <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-success-soft text-success">
                   <Check className="h-3 w-3" strokeWidth={3} />
                 </span>
@@ -134,7 +134,7 @@ export function Guidelines() {
               </li>
             ))}
           </ul>
-          <div className="mt-4 flex items-start gap-2 rounded-lg bg-brand-soft px-3 py-2.5 text-[10.5px] leading-5 text-brand-strong dark:text-brand">
+          <div className="mt-4 flex items-start gap-2 rounded-md bg-brand-soft px-3 py-2.5 text-[10.5px] leading-5 text-brand-strong dark:text-brand">
             <Accessibility className="mt-0.5 h-3.5 w-3.5 shrink-0" />
             Every interactive demo in this system is reachable by keyboard. Try tabbing through the buttons, tabs and
             dialog triggers.
@@ -167,7 +167,7 @@ export function Guidelines() {
             Pattern: <span className="font-mono text-ink-soft">--ds-[role]-[modifier]</span>. Never encode a raw value in
             a semantic token name.
           </p>
-          <div className="mt-3 flex items-center gap-2 rounded-lg border border-line bg-surface-2 px-3 py-2">
+          <div className="mt-3 flex items-center gap-2 rounded-md border border-line bg-surface-2 px-3 py-2">
             <Kbd>⌘</Kbd><Kbd>J</Kbd>
             <span className="text-[10.5px] text-muted">toggles every token mapping in place — proof the UI is token-driven.</span>
           </div>
@@ -247,7 +247,7 @@ import { Badge } from '@/components/ui/Badge';
               </li>
             ))}
           </ol>
-          <div className="mt-4 flex items-center gap-2 rounded-lg border border-line bg-surface-2 px-3 py-2.5">
+          <div className="mt-4 flex items-center gap-2 rounded-md border border-line bg-surface-2 px-3 py-2.5">
             <Figma className="h-4 w-4 text-brand" />
             <span className="text-[10.5px] text-muted">Library: <span className="font-mono text-ink-soft">unseen-ds / v2.0</span></span>
             <Button size="xs" variant="ghost" className="ml-auto" iconRight={<ArrowUpRight className="h-3 w-3" />}>Open</Button>
@@ -287,7 +287,7 @@ import { Badge } from '@/components/ui/Badge';
           ].map(item => (
             <label
               key={item}
-              className="flex cursor-pointer items-start gap-2.5 rounded-lg border border-line bg-surface-2/60 px-3 py-2.5 transition hover:border-brand/35"
+              className="flex cursor-pointer items-start gap-2.5 rounded-md border border-line bg-surface-2/60 px-3 py-2.5 transition hover:border-brand/35"
             >
               <input
                 type="checkbox"

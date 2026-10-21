@@ -7,9 +7,9 @@ export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg';
 
 const sizes: Record<ButtonSize, string> = {
   xs: 'h-7 gap-1.5 rounded-md px-2.5 text-[11px]',
-  sm: 'h-8 gap-1.5 rounded-lg px-3 text-xs',
-  md: 'h-10 gap-2 rounded-[10px] px-4 text-[13px]',
-  lg: 'h-11 gap-2 rounded-xl px-5 text-sm',
+  sm: 'h-8 gap-1.5 rounded-md px-3 text-xs',
+  md: 'h-10 gap-2 rounded-md px-4 text-[13px]',
+  lg: 'h-11 gap-2 rounded-md px-5 text-sm',
 };
 
 const variants: Record<ButtonVariant, string> = {
@@ -81,9 +81,9 @@ export function IconButton({
 }) {
   const square: Record<ButtonSize, string> = {
     xs: 'h-7 w-7 rounded-md',
-    sm: 'h-8 w-8 rounded-lg',
-    md: 'h-9 w-9 rounded-[10px]',
-    lg: 'h-11 w-11 rounded-xl',
+    sm: 'h-8 w-8 rounded-md',
+    md: 'h-9 w-9 rounded-md',
+    lg: 'h-11 w-11 rounded-md',
   };
   return (
     <button

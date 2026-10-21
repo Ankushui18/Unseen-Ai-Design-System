@@ -126,7 +126,7 @@ export function CopilotPage() {
         }
       />
 
-      <div className="overflow-hidden rounded-[22px] border border-line bg-surface shadow-card">
+      <div className="overflow-hidden rounded-xl border border-line bg-surface shadow-card">
         <div className="flex flex-wrap items-center gap-3 border-b border-line px-4 py-3">
           <span className="grid h-8 w-8 place-items-center rounded-xl bg-[linear-gradient(140deg,#0E91F0,#F72685)] text-white shadow-brand">
             <Sparkles className="h-4 w-4" />
@@ -266,7 +266,7 @@ export function CopilotPage() {
                   key={item.name}
                   onClick={() => setModel(item.name)}
                   className={cn(
-                    'flex w-full items-center gap-2.5 rounded-lg border px-2.5 py-2 text-left transition',
+                    'flex w-full items-center gap-2.5 rounded-md border px-2.5 py-2 text-left transition',
                     model === item.name
                       ? 'border-brand/40 bg-brand-soft shadow-[0_0_0_2px_var(--ds-brand-ring)]'
                       : 'border-line bg-surface hover:border-brand/30',

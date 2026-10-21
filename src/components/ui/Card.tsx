@@ -5,7 +5,7 @@ export function Card({ className, children, ...props }: HTMLAttributes<HTMLDivEl
   return (
     <div
       className={cn(
-        'relative rounded-[18px] border border-line bg-surface shadow-card',
+        'relative rounded-xl border border-line bg-surface shadow-card',
         'transition-[box-shadow,border-color,transform] duration-200',
         className,
       )}

@@ -107,7 +107,7 @@ export function Overview({ onNavigate }: { onNavigate: (page: PageKey) => void }
       />
 
       {/* hero */}
-      <section className="relative overflow-hidden rounded-[26px] border border-line bg-surface shadow-card">
+      <section className="relative overflow-hidden rounded-2xl border border-line bg-surface shadow-card">
         <div className="absolute inset-0 ds-mesh opacity-[0.22]" />
         <div className="absolute inset-0 ds-grid-lines opacity-60" />
         <div className="relative grid gap-8 p-6 sm:p-8 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:p-10">
@@ -144,7 +144,7 @@ export function Overview({ onNavigate }: { onNavigate: (page: PageKey) => void }
 
           {/* mini app preview */}
           <div className="relative">
-            <div className="pointer-events-none absolute -inset-3 rounded-[26px] bg-[linear-gradient(120deg,rgba(14,145,240,.18),rgba(247,38,133,.14),rgba(255,122,13,.16))] blur-xl" />
+            <div className="pointer-events-none absolute -inset-3 rounded-2xl bg-[linear-gradient(120deg,rgba(14,145,240,.18),rgba(247,38,133,.14),rgba(255,122,13,.16))] blur-xl" />
             <div className="relative overflow-hidden rounded-[20px] border border-line bg-surface shadow-pop">
               <div className="flex items-center justify-between border-b border-line bg-surface-2 px-3 py-2">
                 <div className="flex items-center gap-1.5">
@@ -175,20 +175,20 @@ export function Overview({ onNavigate }: { onNavigate: (page: PageKey) => void }
                       { l: 'Tokens', v: '48.2M' },
                       { l: 'Spend', v: '$1.8k' },
                     ].map(s => (
-                      <div key={s.l} className="rounded-lg border border-line bg-surface p-2">
+                      <div key={s.l} className="rounded-md border border-line bg-surface p-2">
                         <div className="text-[8px] text-faint">{s.l}</div>
                         <div className="text-[12px] font-extrabold tracking-tight text-ink">{s.v}</div>
                       </div>
                     ))}
                   </div>
-                  <div className="rounded-lg border border-line bg-surface p-2">
+                  <div className="rounded-md border border-line bg-surface p-2">
                     <div className="flex items-center justify-between">
                       <span className="text-[8.5px] font-semibold text-ink-soft">Token usage</span>
                       <span className="font-mono text-[8px] text-success">↗ 12.4%</span>
                     </div>
                     <AreaChart data={[18, 26, 22, 34, 30, 44, 39, 56, 48, 62, 58, 72]} height={58} showGrid={false} />
                   </div>
-                  <div className="flex items-center gap-2 rounded-lg border border-line bg-surface-2 px-2 py-1.5">
+                  <div className="flex items-center gap-2 rounded-md border border-line bg-surface-2 px-2 py-1.5">
                     <span className="grid h-4 w-4 place-items-center rounded-full bg-[linear-gradient(140deg,#0E91F0,#F72685)]">
                       <Sparkles className="h-2.5 w-2.5 text-white" />
                     </span>

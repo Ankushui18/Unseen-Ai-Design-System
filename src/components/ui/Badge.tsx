@@ -107,7 +107,7 @@ export function GradientBadge({ children, className }: { children: ReactNode; cl
 
 export function Kbd({ children }: { children: ReactNode }) {
   return (
-    <kbd className="inline-flex h-5 min-w-5 items-center justify-center rounded-[5px] border border-line bg-surface px-1.5 font-mono text-[10px] font-semibold text-muted shadow-xs">
+    <kbd className="inline-flex h-5 min-w-5 items-center justify-center rounded-sm border border-line bg-surface px-1.5 font-mono text-[10px] font-semibold text-muted shadow-xs">
       {children}
     </kbd>
   );

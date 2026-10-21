@@ -66,6 +66,12 @@ src/
 
 Product code should never use raw hex or arbitrary spacing. Change `--ds-brand` in one place and all 42 components follow, in both themes.
 
+### Type & shape
+
+- **Geist** (variable, self-hosted in `src/assets/fonts`, SIL OFL 1.1) for UI, **Geist Mono** for code, keys and token values. No network request at runtime.
+- Type scale: 60 / 40 / 28 / 20 / 16, body 16 / 14 / 13, caption 11, overline 10.
+- Radius ladder: **4 / 8 / 12 / 16 / 24 / full** — `sm` chips, `md` buttons + inputs, `lg` rows, `xl` cards, `2xl` modals and shells.
+
 ### Rules of the system
 
 - **One primary action per view.** Everything else is secondary, outline or ghost.

@@ -165,7 +165,7 @@ export function ProgressRing({
 }
 
 export function Skeleton({ className }: { className?: string }) {
-  return <div className={cn('ds-shimmer rounded-lg', className)} />;
+  return <div className={cn('ds-shimmer rounded-md', className)} />;
 }
 
 export function EmptyState({

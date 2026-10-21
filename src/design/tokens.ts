@@ -132,13 +132,13 @@ export const spacing = [
 ];
 
 export const radii = [
-  { name: 'xs', value: 6, use: 'Chips, inputs (dense)' },
-  { name: 'sm', value: 8, use: 'Buttons, inputs' },
-  { name: 'md', value: 10, use: 'Menu items, tabs' },
-  { name: 'lg', value: 14, use: 'Cards' },
-  { name: 'xl', value: 20, use: 'Panels, modals' },
-  { name: '2xl', value: 28, use: 'Shells, hero blocks' },
-  { name: 'full', value: 9999, use: 'Pills, avatars' },
+  { name: 'none', value: 0, use: 'Square edges, embedded media' },
+  { name: 'sm', value: 4, use: 'Chips, checkboxes, dense inputs' },
+  { name: 'md', value: 8, use: 'Buttons, inputs, menu items' },
+  { name: 'lg', value: 12, use: 'Inner panels, list rows' },
+  { name: 'xl', value: 16, use: 'Cards, popovers' },
+  { name: '2xl', value: 24, use: 'Modals, drawers, shells' },
+  { name: 'full', value: 9999, use: 'Pills, avatars, toggles' },
 ];
 
 export const shadows = [

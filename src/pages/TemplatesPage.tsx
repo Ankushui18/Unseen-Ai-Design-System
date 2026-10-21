@@ -52,7 +52,7 @@ export function TemplatesPage() {
               <div className="absolute inset-0 ds-mesh opacity-60" />
               <div className="relative">
                 <div className="flex items-center gap-2.5">
-                  <span className="grid h-8 w-8 place-items-center rounded-[10px] bg-[linear-gradient(140deg,#0E91F0,#F72685_62%,#FF7A0D)]">
+                  <span className="grid h-8 w-8 place-items-center rounded-md bg-[linear-gradient(140deg,#0E91F0,#F72685_62%,#FF7A0D)]">
                     <Sparkles className="h-4 w-4" />
                   </span>
                   <span className="text-[13px] font-bold tracking-tight">Unseen</span>
@@ -242,7 +242,7 @@ export function TemplatesPage() {
                   </span>
                 ))}
               </div>
-              <div className="flex items-center justify-between rounded-lg border border-line bg-surface-2 px-3 py-2.5">
+              <div className="flex items-center justify-between rounded-md border border-line bg-surface-2 px-3 py-2.5">
                 <div className="flex items-center gap-2">
                   <KeyRound className="h-3.5 w-3.5 text-brand" />
                   <span className="text-[10.5px] text-muted">Invite link</span>
@@ -264,7 +264,7 @@ export function TemplatesPage() {
               </p>
               <div className="mt-4 grid gap-2 sm:grid-cols-3">
                 {['Support copilot', 'Research agent', 'Revenue digest'].map(name => (
-                  <button key={name} className="rounded-lg border border-line bg-surface px-2 py-2 text-[10px] font-semibold text-ink-soft transition hover:border-brand/40 hover:text-brand">
+                  <button key={name} className="rounded-md border border-line bg-surface px-2 py-2 text-[10px] font-semibold text-ink-soft transition hover:border-brand/40 hover:text-brand">
                     {name}
                   </button>
                 ))}

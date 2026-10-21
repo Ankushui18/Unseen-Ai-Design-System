@@ -121,7 +121,7 @@ export function AIPatterns() {
           <div className="overflow-hidden rounded-2xl border border-line bg-surface-2">
             <div className="flex items-center justify-between border-b border-line bg-surface px-4 py-2.5">
               <div className="flex items-center gap-2">
-                <span className="grid h-6 w-6 place-items-center rounded-lg bg-[linear-gradient(140deg,#0E91F0,#F72685)] text-white">
+                <span className="grid h-6 w-6 place-items-center rounded-md bg-[linear-gradient(140deg,#0E91F0,#F72685)] text-white">
                   <Sparkles className="h-3 w-3" />
                 </span>
                 <span className="text-[12px] font-semibold text-ink">Latency investigation</span>
@@ -221,13 +221,13 @@ export function AIPatterns() {
             </SurfacePanel>
             <SurfacePanel label="Composer states">
               <div className="space-y-2">
-                <div className="flex items-center justify-between rounded-lg border border-line bg-surface px-3 py-2 text-[11px] text-faint">
+                <div className="flex items-center justify-between rounded-md border border-line bg-surface px-3 py-2 text-[11px] text-faint">
                   Idle · placeholder visible <Kbd>⏎</Kbd>
                 </div>
-                <div className="flex items-center justify-between rounded-lg border border-brand bg-surface px-3 py-2 text-[11px] text-ink-soft ring-[3px] ring-brand/15">
+                <div className="flex items-center justify-between rounded-md border border-brand bg-surface px-3 py-2 text-[11px] text-ink-soft ring-[3px] ring-brand/15">
                   Focus · ring + border
                 </div>
-                <div className="flex items-center justify-between rounded-lg border border-line bg-surface px-3 py-2 text-[11px] text-muted">
+                <div className="flex items-center justify-between rounded-md border border-line bg-surface px-3 py-2 text-[11px] text-muted">
                   Streaming <span className="inline-flex items-center gap-1.5"><TypingDots /> Stop</span>
                 </div>
               </div>
@@ -239,7 +239,7 @@ export function AIPatterns() {
       <Section id="prompts" index="02" title="Prompt builder" description="Variables, system prompt and live preview">
         <div className="grid gap-5 lg:grid-cols-[1.15fr_1fr]">
           <SurfacePanel label="Template">
-            <div className="rounded-lg border border-line bg-surface p-3 font-mono text-[11px] leading-6 text-ink-soft">
+            <div className="rounded-md border border-line bg-surface p-3 font-mono text-[11px] leading-6 text-ink-soft">
               {promptTemplate.split('\n').map((line, i) => (
                 <div key={i} className="whitespace-pre-wrap">
                   {line.split(/(\{\{[^}]+\}\})/g).map((part, j) =>
@@ -263,7 +263,7 @@ export function AIPatterns() {
                   { name: 'tone', value: 'precise' },
                   { name: 'max_words', value: '120' },
                 ].map(item => (
-                  <div key={item.name} className="flex items-center gap-2 rounded-lg border border-line bg-surface px-2.5 py-1.5">
+                  <div key={item.name} className="flex items-center gap-2 rounded-md border border-line bg-surface px-2.5 py-1.5">
                     <PromptVariable name={item.name} />
                     <span className="min-w-0 flex-1 truncate text-[11px] text-muted">{item.value}</span>
                     <ChevronDown className="h-3 w-3 text-faint" />
@@ -355,7 +355,7 @@ export function AIPatterns() {
                 <div className="mb-2 flex items-center gap-2 text-[10.5px] font-bold uppercase tracking-[0.12em] text-faint">
                   <Wrench className="h-3 w-3 text-violet" /> Tool call
                 </div>
-                <div className="rounded-lg bg-surface-2 p-2 font-mono text-[10px] leading-5 text-ink-soft">
+                <div className="rounded-md bg-surface-2 p-2 font-mono text-[10px] leading-5 text-ink-soft">
                   metrics.query({'{'}
                   <br />
                   &nbsp;&nbsp;range: '24h',
@@ -625,7 +625,7 @@ await client.models.update('gpt-4o-prod', {
                 ].map(file => {
                   const Icon = file.icon;
                   return (
-                    <div key={file.name} className="flex items-center gap-2 rounded-lg bg-surface px-2 py-1.5">
+                    <div key={file.name} className="flex items-center gap-2 rounded-md bg-surface px-2 py-1.5">
                       <Icon className="h-3 w-3 text-muted" />
                       <span className="min-w-0 flex-1 truncate text-[10.5px] text-ink-soft">{file.name}</span>
                       <span className="font-mono text-[9px] text-faint">{file.meta}</span>
