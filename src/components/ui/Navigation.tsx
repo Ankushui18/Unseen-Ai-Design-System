@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { Check, ChevronDown, ChevronRight, Circle, Home } from 'lucide-react';
+import { Check, ChevronRight, Circle, Home } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 /* ------------------------------- breadcrumbs ------------------------------ */

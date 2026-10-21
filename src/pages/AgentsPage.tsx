@@ -3,7 +3,6 @@ import { ArrowRight, Bot, Check, CircleStop, Clock, GitBranch, Play, Plus, Refre
 import { PageHeader, Section, SurfacePanel } from '../components/layout/Page';
 import { Button, IconButton } from '../components/ui/Button';
 import { Badge, GradientBadge, StatusDot } from '../components/ui/Badge';
-import { Segmented } from '../components/ui/Controls';
 import { TokenMeter } from '../components/ui/AI';
 import { GuardrailBanner, RunTrace, ToolCallCard, TokenCounter } from '../components/ui/AIExtra';
 import { KeyValue, StatCard, Timeline } from '../components/ui/DataDisplay';

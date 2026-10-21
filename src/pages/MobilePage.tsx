@@ -21,9 +21,7 @@ import { Avatar } from '../components/ui/Avatar';
 import { MobileTabs } from '../components/ui/Navigation';
 import { ChatMessage, Sparkline, TypingDots } from '../components/ui/AI';
 import { Progress } from '../components/ui/Feedback';
-import { TokenCounter } from '../components/ui/AIExtra';
 import { Donut } from '../components/ui/Charts';
-import { cn } from '@/lib/utils';
 
 function PhoneFrame({ children, label }: { children: React.ReactNode; label: string }) {
   return (

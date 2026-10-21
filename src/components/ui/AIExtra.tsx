@@ -177,7 +177,7 @@ export function ModelCompareTable({
         <thead>
           <tr className="border-b border-line">
             <th className="px-2 py-2 text-[9px] font-bold uppercase tracking-[0.1em] text-faint">Criteria</th>
-            {models.map((model, i) => (
+            {models.map(model => (
               <th key={model.name} className="px-2 py-2">
                 <div className={cn('rounded-md px-2 py-1', model.best && 'bg-brand-soft')}>
                   <div className="text-[10.5px] font-semibold text-ink">{model.name}</div>

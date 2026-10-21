@@ -418,7 +418,6 @@ export function DiffView({
 /* -------------------------------- json view ------------------------------- */
 export function JsonView({ data, className }: { data: unknown; className?: string }) {
   const render = (value: unknown, depth = 0): ReactNode => {
-    const pad = { paddingLeft: depth * 12 };
     if (value === null) return <span className="text-[#7C6CF6]">null</span>;
     if (typeof value === 'string') return <span className="text-[#4ADE9F]">"{value}"</span>;
     if (typeof value === 'number') return <span className="text-[#FFC06D]">{value}</span>;

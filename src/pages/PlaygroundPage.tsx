@@ -3,8 +3,8 @@ import { ArrowUp, Check, CircleStop, Copy, Play, Plus, Save, Sparkles, Wrench, X
 import { PageHeader, Section, SurfacePanel } from '../components/layout/Page';
 import { Button, IconButton } from '../components/ui/Button';
 import { Badge, GradientBadge, Kbd, StatusDot } from '../components/ui/Badge';
-import { Field, Input, Select, Textarea } from '../components/ui/Field';
 import { Checkbox, Segmented, Slider, Switch } from '../components/ui/Controls';
+import { Field, Input, Select } from '../components/ui/Field';
 import { CodeBlock, PromptVariable, TypingDots } from '../components/ui/AI';
 import { ConfidenceMeter, PromptCard, RunTrace, ToolCallCard, TokenCounter } from '../components/ui/AIExtra';
 import { KeyValue } from '../components/ui/DataDisplay';
