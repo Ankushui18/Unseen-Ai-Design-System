@@ -34,7 +34,53 @@ import { Avatar, AvatarStack } from '../components/ui/Avatar';
 import { Tabs } from '../components/ui/Tabs';
 import { Alert, EmptyState, Progress, ProgressRing, Skeleton, Toast } from '../components/ui/Feedback';
 import { ConfirmDialogCard, Drawer, Modal, Tooltip } from '../components/ui/Overlay';
-import { ModelCard, Sparkline } from '../components/ui/AI';
+import { ChatMessage, ModelCard, Sparkline } from '../components/ui/AI';
+import {
+  DataBar,
+  DiffView,
+  JsonView,
+  KeyValue,
+  LogViewer,
+  Pagination,
+  StatCard,
+  Table,
+  TableHead,
+  TableToolbar,
+  Td,
+  Th,
+  Timeline,
+  TreeView,
+  Tr,
+} from '../components/ui/DataDisplay';
+import { ChartCard, Donut, Funnel, Gauge, Heatmap, Legend, MiniBars, Scatter, StackedBar } from '../components/ui/Charts';
+import { AnchorNav, Breadcrumbs, DropdownMenu, NavList, SegmentedTabs, Stepper } from '../components/ui/Navigation';
+import {
+  Accordion,
+  Banner,
+  Calendar,
+  ColorSwatchRow,
+  Combobox,
+  FileDrop,
+  InlineEdit,
+  NumberStepper,
+  OptionCards,
+  Popover,
+  Rating,
+  TagInput,
+} from '../components/ui/Advanced';
+import {
+  CitationList,
+  ConfidenceMeter,
+  EvalRubric,
+  GuardrailBanner,
+  ImageGenCard,
+  ModelCompareTable,
+  PromptCard,
+  RunTrace,
+  TokenCounter,
+  ToolCallCard,
+  VoiceWave,
+} from '../components/ui/AIExtra';
 import { cn } from '@/lib/utils';
 
 type Filter = 'All' | 'Actions' | 'Forms' | 'Display' | 'Navigation' | 'Feedback' | 'Overlays';
@@ -60,18 +106,23 @@ export function Components() {
   const [temperature, setTemperature] = useState(35);
   const [alertOpen, setAlertOpen] = useState(true);
   const [page, setPage] = useState(1);
+  const [docsTab, setDocsTab] = useState<'overview' | 'api' | 'usage'>('overview');
+  const [navValue, setNavValue] = useState('models');
+  const [step, setStep] = useState(1);
+  const [deployMode, setDeployMode] = useState<'canary' | 'blue' | 'shadow'>('canary');
+  const [chartTab, setChartTab] = useState<'quality' | 'cost'>('quality');
 
   const show = (category: Filter) => filter === 'All' || filter === category;
 
   return (
     <div className="space-y-6">
       <PageHeader
-        eyebrow="Components · 42 primitives"
+        eyebrow="Components · 111 primitives"
         title="The component library."
         description="Every primitive is theme-aware, keyboard reachable and composed from the same tokens. Use the filter to browse by job."
         meta={
           <>
-            <Badge tone="brand" variant="soft">10 sections</Badge>
+            <Badge tone="brand" variant="soft">15 sections</Badge>
             <Badge tone="neutral" variant="outline">Light + dark</Badge>
             <Badge tone="neutral" variant="outline">Focus states included</Badge>
           </>
@@ -105,7 +156,7 @@ export function Components() {
           </button>
         ))}
         <span className="ml-auto hidden pr-1 font-mono text-[10px] text-faint md:block">
-          {filter === 'All' ? '10 sections' : `filtered · ${filter.toLowerCase()}`}
+          {filter === 'All' ? '15 sections' : `filtered · ${filter.toLowerCase()}`}
         </span>
       </div>
 
@@ -753,6 +804,540 @@ export function Components() {
                 </div>
               </div>
             </div>
+          </div>
+        </Section>
+      )}
+
+      {show('Display') && (
+        <Section id="charts" index="11" title="Charts & visualization" description="Hand-rolled SVG, so every mark inherits the theme">
+          <div className="grid gap-4 lg:grid-cols-3">
+            <ChartCard
+              title="Throughput"
+              description="7 days · all models"
+              action={
+                <SegmentedTabs
+                  value={chartTab}
+                  onChange={setChartTab}
+                  options={[
+                    { value: 'quality', label: 'Quality' },
+                    { value: 'cost', label: 'Cost' },
+                  ]}
+                />
+              }
+              legend={
+                <Legend
+                  items={[
+                    { label: 'Production', tone: 'brand', value: '1.2M' },
+                    { label: 'Staging', tone: 'pink', value: '318K' },
+                  ]}
+                />
+              }
+            >
+              <MiniBars values={chartTab === 'quality' ? [12, 18, 15, 24, 21, 30, 27, 34, 31, 39, 36, 44] : [8, 10, 9, 14, 12, 17, 16, 21, 19, 24, 22, 27]} height={72} />
+              <div className="mt-2 flex justify-between font-mono text-[8.5px] text-faint">
+                <span>Mon</span>
+                <span>Wed</span>
+                <span>Fri</span>
+                <span>Sun</span>
+              </div>
+            </ChartCard>
+
+            <ChartCard title="Spend by model" description="Current billing cycle">
+              <div className="flex items-center gap-5">
+                <Donut
+                  size={116}
+                  thickness={14}
+                  centerValue="$1.8K"
+                  centerLabel="spend"
+                  segments={[
+                    { label: 'GPT-4o', value: 62, tone: 'brand' },
+                    { label: 'Claude', value: 21, tone: 'pink' },
+                    { label: 'Gemini', value: 11, tone: 'amber' },
+                    { label: 'Other', value: 6, tone: 'muted' },
+                  ]}
+                />
+                <Legend
+                  className="flex-1"
+                  items={[
+                    { label: 'GPT-4o', tone: 'brand', value: '62%' },
+                    { label: 'Claude 3.5', tone: 'pink', value: '21%' },
+                    { label: 'Gemini', tone: 'amber', value: '11%' },
+                    { label: 'Other', tone: 'muted', value: '6%' },
+                  ]}
+                />
+              </div>
+            </ChartCard>
+
+            <ChartCard title="Retention" description="30-day cohort">
+              <div className="flex items-center justify-around">
+                <Gauge value={82} label="retention" sublabel="+4.2 pt" size={116} />
+                <div className="space-y-2">
+                  <div>
+                    <div className="text-[9px] uppercase tracking-[0.1em] text-faint">Week 1</div>
+                    <div className="font-mono text-[12px] font-bold text-ink">94%</div>
+                  </div>
+                  <div>
+                    <div className="text-[9px] uppercase tracking-[0.1em] text-faint">Week 4</div>
+                    <div className="font-mono text-[12px] font-bold text-ink">71%</div>
+                  </div>
+                </div>
+              </div>
+            </ChartCard>
+
+            <ChartCard title="Activation funnel" description="Signup → first production call">
+              <Funnel
+                steps={[
+                  { label: 'Visited', value: 24800 },
+                  { label: 'Signed up', value: 6120, tone: 'brand' },
+                  { label: 'Created key', value: 3480, tone: 'pink' },
+                  { label: 'First call', value: 2140, tone: 'amber' },
+                  { label: 'Deployed', value: 890, tone: 'success' },
+                ]}
+              />
+            </ChartCard>
+
+            <ChartCard title="Error heatmap" description="Hour × day · 5xx rate">
+              <Heatmap
+                labels
+                rows={['Mon', 'Tue', 'Wed', 'Thu', 'Fri']}
+                columns={['00', '04', '08', '12', '16', '20']}
+                values={[
+                  [1, 2, 6, 14, 9, 3],
+                  [0, 1, 4, 11, 7, 2],
+                  [2, 3, 8, 22, 12, 4],
+                  [1, 2, 5, 9, 6, 2],
+                  [3, 4, 12, 28, 16, 6],
+                ]}
+              />
+              <p className="mt-2 text-[9.5px] text-faint">Thu 12:00 spikes with the EU batch window.</p>
+            </ChartCard>
+
+            <ChartCard title="Cost vs latency" description="One point per model">
+              <Scatter
+                height={150}
+                axisLabels={['latency →', 'cost →']}
+                points={[
+                  { x: 22, y: 70, tone: 'success', label: 'Gemini Flash' },
+                  { x: 38, y: 58, tone: 'brand', label: 'GPT-4o mini' },
+                  { x: 54, y: 44, tone: 'pink', label: 'Claude 3.5' },
+                  { x: 71, y: 32, tone: 'amber', label: 'GPT-4o' },
+                  { x: 84, y: 22, tone: 'violet', label: 'o1' },
+                ]}
+              />
+              <div className="mt-2">
+                <StackedBar
+                  segments={[
+                    { label: 'input', value: 58, tone: 'brand' },
+                    { label: 'output', value: 27, tone: 'pink' },
+                    { label: 'cached', value: 15, tone: 'muted' },
+                  ]}
+                />
+              </div>
+            </ChartCard>
+          </div>
+        </Section>
+      )}
+
+      {show('Display') && (
+        <Section id="data" index="12" title="Data display" description="Tables, timelines, diffs and raw payloads">
+          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+            <StatCard label="Requests" value="1.28M" delta="+12.4%" data={[8, 12, 10, 16, 15, 21, 24]} icon={<TrendingUp className="h-3.5 w-3.5" />} footer="vs previous 7 days" />
+            <StatCard label="Tokens" value="48.2M" delta="+8.1%" tone="pink" data={[12, 15, 14, 19, 22, 20, 27]} footer="input + output" />
+            <StatCard label="Latency p95" value="412ms" delta="-6.3%" trend="down" tone="amber" data={[30, 26, 28, 22, 24, 19, 17]} footer="streaming excluded" />
+            <StatCard label="Error rate" value="0.42%" delta="flat" trend="flat" tone="success" data={[4, 4, 5, 4, 4, 3, 4]} footer="5xx across all models" />
+          </div>
+
+          <div className="mt-4 overflow-hidden rounded-lg border border-line bg-surface">
+            <TableToolbar
+              search=""
+              placeholder="Search eval runs…"
+              count={<span className="font-mono text-[10px] text-faint">128 runs</span>}
+              filters={
+                <>
+                  <Button size="xs" variant="secondary" iconLeft={<Filter className="h-3 w-3" />}>Model</Button>
+                  <Button size="xs" variant="secondary" iconLeft={<Filter className="h-3 w-3" />}>Status</Button>
+                </>
+              }
+              actions={<Button size="xs" variant="secondary" iconLeft={<Download className="h-3 w-3" />}>Export</Button>}
+            />
+            <Table>
+              <TableHead>
+                <tr>
+                  <Th>Run</Th>
+                  <Th>Model</Th>
+                  <Th sortable active direction="desc" align="right">Pass rate</Th>
+                  <Th align="right">Tokens</Th>
+                  <Th align="right">Duration</Th>
+                </tr>
+              </TableHead>
+              <tbody>
+                {[
+                  { id: 'run_8421', model: 'gpt-4o', pass: 94, tokens: '1.2M', duration: '4m 12s' },
+                  { id: 'run_8420', model: 'claude-3.5', pass: 88, tokens: '980K', duration: '3m 48s' },
+                  { id: 'run_8419', model: 'gpt-4o-mini', pass: 71, tokens: '640K', duration: '2m 02s' },
+                  { id: 'run_8418', model: 'gemini-1.5', pass: 63, tokens: '512K', duration: '1m 44s' },
+                ].map(row => (
+                  <Tr key={row.id}>
+                    <Td mono className="text-ink">{row.id}</Td>
+                    <Td>{row.model}</Td>
+                    <Td align="right">
+                      <span className="inline-flex items-center gap-2">
+                        <span className="font-mono text-[10.5px] text-ink">{row.pass}%</span>
+                        <DataBar value={row.pass} tone={row.pass > 85 ? 'success' : row.pass > 70 ? 'brand' : 'amber'} />
+                      </span>
+                    </Td>
+                    <Td align="right" mono>{row.tokens}</Td>
+                    <Td align="right" mono>{row.duration}</Td>
+                  </Tr>
+                ))}
+              </tbody>
+            </Table>
+            <Pagination page={page} pages={12} onChange={setPage} total="1–4 of 128 runs" />
+          </div>
+
+          <div className="mt-4 grid gap-4 lg:grid-cols-3">
+            <SurfacePanel label="Timeline">
+              <Timeline
+                items={[
+                  { id: '1', title: 'Deployed v2.4', description: 'Canary 10% → 100% in 18 minutes.', time: '12:04', tone: 'success' },
+                  { id: '2', title: 'Eval passed', description: '94% on golden set 12.', time: '11:41', tone: 'brand' },
+                  { id: '3', title: 'Guardrail flagged', description: '2 prompts blocked for injection.', time: '10:22', tone: 'warning' },
+                  { id: '4', title: 'Run failed', description: 'Upstream 529 after 3 retries.', time: '09:08', tone: 'danger' },
+                ]}
+              />
+            </SurfacePanel>
+            <SurfacePanel label="Key / value">
+              <KeyValue
+                columns={1}
+                items={[
+                  { label: 'Model', value: 'gpt-4o-prod', mono: true },
+                  { label: 'Region', value: 'us-east-1', mono: true },
+                  { label: 'Context', value: '128,000 tokens', mono: true },
+                  { label: 'Owner', value: 'Platform team' },
+                  { label: 'Updated', value: '2h ago', mono: true },
+                ]}
+              />
+            </SurfacePanel>
+            <SurfacePanel label="Tree">
+              <TreeView
+                items={[
+                  {
+                    id: 'root',
+                    label: 'prompts',
+                    kind: 'folder',
+                    meta: '6',
+                    children: [
+                      { id: 'a', label: 'support-copilot.md', kind: 'file', meta: 'v3' },
+                      { id: 'b', label: 'summarizer.md', kind: 'file', meta: 'v1' },
+                      {
+                        id: 'c',
+                        label: 'evals',
+                        kind: 'folder',
+                        children: [
+                          { id: 'd', label: 'adversarial.jsonl', kind: 'file', meta: '240' },
+                          { id: 'e', label: 'golden.jsonl', kind: 'file', meta: '1.2K' },
+                        ],
+                      },
+                    ],
+                  },
+                ]}
+              />
+            </SurfacePanel>
+          </div>
+
+          <div className="mt-4 grid gap-4 lg:grid-cols-2">
+            <SurfacePanel label="Accordion">
+              <Accordion
+                items={[
+                  { id: 'a', title: 'What counts as a token?', meta: '1 of 4', content: 'Text is split by the tokenizer; images are billed by tile and audio by second. Cached input reads cost 75% less.' },
+                  { id: 'b', title: 'How is pass rate computed?', content: 'A run passes when every rubric criterion scores at or above its threshold and no guardrail fires.' },
+                  { id: 'c', title: 'Can I pin a model version?', content: 'Yes — append the version tag to the model id, e.g. gpt-4o-prod@2.4.0.' },
+                ]}
+              />
+            </SurfacePanel>
+            <div className="space-y-3">
+              <DiffView
+                filename="prompt-v3.ts"
+                removed={['You are a helpful assistant.', 'Answer in under 120 words.']}
+                added={['You are a support assistant for Unseen.', 'Answer in under 80 words and cite the docs.', 'Never promise refunds above $200.']}
+              />
+              <JsonView
+                className="max-h-[168px]"
+                data={{ id: 'run_8421', model: 'gpt-4o', usage: { input: 842, output: 214 }, finish: 'stop' }}
+              />
+            </div>
+          </div>
+
+          <div className="mt-4">
+            <LogViewer
+              lines={[
+                { level: 'info', time: '12:04:11', message: 'POST /v1/chat/completions 200 · 412ms · 1,056 tokens' },
+                { level: 'debug', time: '12:04:11', message: 'router: fallback model not needed' },
+                { level: 'warn', time: '12:04:12', message: 'rate_limit: bucket at 82% · workspace ws_2f9' },
+                { level: 'error', time: '12:04:19', message: 'upstream 529 from provider=anthropic · retry 1/3' },
+                { level: 'info', time: '12:04:21', message: 'retry succeeded · provider=openai' },
+              ]}
+            />
+          </div>
+        </Section>
+      )}
+
+      {show('Navigation') && (
+        <Section id="wayfinding" index="13" title="Navigation & menus" description="Orientation, steps and contextual actions">
+          <div className="grid gap-5 lg:grid-cols-2">
+            <div className="space-y-5">
+              <div>
+                <div className="mb-2.5 text-[10px] font-bold uppercase tracking-[0.14em] text-faint">Breadcrumbs</div>
+                <Breadcrumbs items={[{ label: 'Workspace' }, { label: 'Models' }, { label: 'GPT-4o Production' }]} />
+              </div>
+              <div>
+                <div className="mb-2.5 text-[10px] font-bold uppercase tracking-[0.14em] text-faint">Stepper</div>
+                <Stepper
+                  current={step}
+                  onSelect={setStep}
+                  steps={[
+                    { label: 'Source', description: 'Connect a repo' },
+                    { label: 'Configure', description: 'Prompt + params' },
+                    { label: 'Evaluate', description: 'Golden set' },
+                    { label: 'Deploy', description: 'Canary route' },
+                  ]}
+                />
+              </div>
+              <div>
+                <div className="mb-2.5 text-[10px] font-bold uppercase tracking-[0.14em] text-faint">Segmented tabs</div>
+                <SegmentedTabs
+                  value={docsTab}
+                  onChange={setDocsTab}
+                  options={[
+                    { value: 'overview', label: 'Overview' },
+                    { value: 'api', label: 'API', count: 12 },
+                    { value: 'usage', label: 'Usage', count: 3 },
+                  ]}
+                />
+              </div>
+              <div>
+                <div className="mb-2.5 text-[10px] font-bold uppercase tracking-[0.14em] text-faint">Anchor nav</div>
+                <AnchorNav active="params" items={[{ id: 'intro', label: 'Introduction' }, { id: 'params', label: 'Parameters' }, { id: 'errors', label: 'Error codes' }]} />
+              </div>
+            </div>
+
+            <div className="space-y-5">
+              <div>
+                <div className="mb-2.5 text-[10px] font-bold uppercase tracking-[0.14em] text-faint">Section nav</div>
+                <div className="rounded-xl border border-line bg-surface-2 p-2">
+                  <NavList
+                    value={navValue}
+                    onChange={setNavValue}
+                    items={[
+                      { value: 'models', label: 'Models', count: 12, icon: <Grid2X2 className="h-3.5 w-3.5" /> },
+                      { value: 'keys', label: 'API keys', count: 4, icon: <Lock className="h-3.5 w-3.5" /> },
+                      { value: 'logs', label: 'Logs', icon: <Bell className="h-3.5 w-3.5" /> },
+                      { value: 'usage', label: 'Usage', icon: <BarChart3 className="h-3.5 w-3.5" /> },
+                    ]}
+                  />
+                </div>
+              </div>
+              <div className="flex flex-wrap items-center gap-2">
+                <DropdownMenu
+                  align="start"
+                  trigger={<Button size="sm" variant="secondary" iconRight={<ChevronDown className="h-3.5 w-3.5" />}>Row actions</Button>}
+                  items={[
+                    { label: 'Rename', icon: <Settings className="h-3.5 w-3.5" />, shortcut: '⌘R' },
+                    { label: 'Duplicate', icon: <Copy className="h-3.5 w-3.5" />, shortcut: '⌘D' },
+                    { label: 'Export JSON', icon: <Download className="h-3.5 w-3.5" />, shortcut: '⌘E' },
+                    { label: 'Delete', icon: <Trash2 className="h-3.5 w-3.5" />, danger: true },
+                  ]}
+                />
+                <Popover trigger={<Button size="sm" variant="outline" iconLeft={<Info className="h-3.5 w-3.5" />}>What is a token?</Button>}>
+                  <div className="text-[11.5px] font-semibold text-ink">Tokens</div>
+                  <p className="mt-1 text-[10.5px] leading-4 text-muted">
+                    Roughly 4 characters of English. Input, cached input and output are billed at different rates.
+                  </p>
+                  <Button size="xs" variant="secondary" className="mt-2 w-full">Read pricing</Button>
+                </Popover>
+                <IconButton label="Notifications" variant="secondary"><Bell className="h-4 w-4" /></IconButton>
+              </div>
+              <Banner
+                tone="pink"
+                title="Canary deploy ready"
+                description="v2.4 passed all evals. Route 10% of traffic to compare."
+                action={<Button size="xs">Start canary</Button>}
+              />
+            </div>
+          </div>
+        </Section>
+      )}
+
+      {show('Forms') && (
+        <Section id="advanced" index="14" title="Advanced inputs" description="The controls that need a little more thought">
+          <div className="grid gap-5 lg:grid-cols-3">
+            <div className="space-y-4">
+              <Combobox
+                label="Model"
+                placeholder="Search models…"
+                options={[
+                  { value: 'gpt-4o', label: 'GPT-4o', meta: 'openai · 128K' },
+                  { value: 'claude', label: 'Claude 3.5 Sonnet', meta: 'anthropic · 200K' },
+                  { value: 'gemini', label: 'Gemini 1.5 Pro', meta: 'google · 1M' },
+                ]}
+              />
+              <TagInput initial={['production', 'streaming']} />
+              <div>
+                <div className="mb-1.5 text-[11px] font-semibold text-ink">Max tokens</div>
+                <NumberStepper value={4096} min={256} max={8192} step={256} suffix="tok" />
+              </div>
+              <div>
+                <div className="mb-1.5 text-[11px] font-semibold text-ink">Answer quality</div>
+                <Rating value={4} showLabel />
+              </div>
+              <div>
+                <div className="mb-1.5 text-[11px] font-semibold text-ink">Workspace name</div>
+                <InlineEdit value="Unseen Labs" />
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <Calendar selected={21} />
+              <div>
+                <div className="mb-2 text-[11px] font-semibold text-ink">Deploy strategy</div>
+                <OptionCards
+                  columns={3}
+                  value={deployMode}
+                  onChange={setDeployMode}
+                  options={[
+                    { value: 'canary', label: 'Canary', description: '10% first' },
+                    { value: 'blue', label: 'Blue / green', description: 'Instant switch' },
+                    { value: 'shadow', label: 'Shadow', description: 'No live traffic' },
+                  ]}
+                />
+              </div>
+              <ColorSwatchRow label="brand" colors={['#0272C6', '#0E91F0', '#38AEFA', '#7DCBFC', '#C9E9FE']} />
+              <ColorSwatchRow label="accent" colors={['#C0106A', '#F72685', '#FF56A0', '#FF9A33', '#FF7A0D']} />
+            </div>
+
+            <div className="space-y-4">
+              <FileDrop />
+              <Alert tone="brand" title="Uploading 3 files">
+                Files are validated before ingestion. Invalid rows are reported, never silently dropped.
+              </Alert>
+              <div className="rounded-xl border border-line bg-surface p-3">
+                <div className="text-[10px] font-bold uppercase tracking-[0.12em] text-faint">Field states</div>
+                <div className="mt-2 space-y-2">
+                  <Field label="Validated">
+                    <Input valid defaultValue="dataset-golden-v3" />
+                  </Field>
+                  <Field label="Invalid" error="Must end in .jsonl">
+                    <Input invalid defaultValue="dataset.csv" />
+                  </Field>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Section>
+      )}
+
+      {show('Display') && (
+        <Section id="ai-surfaces" index="15" title="AI surfaces" description="Patterns unique to model products">
+          <div className="grid gap-4 lg:grid-cols-3">
+            <PromptCard
+              title="Support triage"
+              description="Classifies tickets, drafts a reply and escalates anything about billing."
+              model="gpt-4o"
+              uses="12.4K"
+              tags={['support', 'classify']}
+            />
+            <PromptCard
+              title="Release notes"
+              description="Turns merged PRs into customer-facing notes with a tone check."
+              model="claude-3.5"
+              uses="3.1K"
+              tags={['writing', 'release']}
+            />
+            <PromptCard
+              title="SQL explainer"
+              description="Explains a query plan and suggests an index, with cost estimates."
+              model="gpt-4o-mini"
+              uses="842"
+              tags={['data', 'internal']}
+            />
+          </div>
+
+          <div className="mt-4 grid gap-4 lg:grid-cols-[1.1fr_1fr]">
+            <div className="space-y-3">
+              <ChatMessage role="user" time="12:04">Summarise the latency regression.</ChatMessage>
+              <ChatMessage role="assistant" time="12:04" streaming>
+                p95 rose 38% after the router change on eu-central. The cause is cold connection pools on the new pod set — warm them before shifting traffic.
+              </ChatMessage>
+              <div className="grid gap-2 sm:grid-cols-2">
+                <ToolCallCard name="search_logs" args='{ "window": "1h" }' result="12 matching spans" />
+                <ToolCallCard name="fetch_metrics" args='{ "metric": "p95" }' status="pending" duration="—" />
+                <div className="sm:col-span-2">
+                  <ToolCallCard name="rollback" args='{ "target": "router@2.3" }' status="error" duration="timeout" />
+                </div>
+              </div>
+              <GuardrailBanner />
+            </div>
+
+            <div className="space-y-3">
+              <RunTrace
+                steps={[
+                  { id: '1', label: 'Plan the investigation', kind: 'llm', duration: '412ms', tokens: '842' },
+                  { id: '2', label: 'search_logs', kind: 'tool', duration: '212ms' },
+                  { id: '3', label: 'Policy check', kind: 'guard', duration: '12ms' },
+                  { id: '4', label: 'Human approval', kind: 'human', duration: '2m 04s' },
+                  { id: '5', label: 'Write summary', kind: 'llm', duration: '1.2s', tokens: '410', status: 'warn' },
+                ]}
+              />
+              <TokenCounter
+                tokens={18420}
+                limit={32768}
+                breakdown={[
+                  { label: 'input', value: 42, tone: 'brand' },
+                  { label: 'ctx', value: 21, tone: 'pink' },
+                  { label: 'output', value: 13, tone: 'amber' },
+                ]}
+              />
+              <ConfidenceMeter value={0.86} />
+              <VoiceWave active duration="0:12" />
+            </div>
+          </div>
+
+          <div className="mt-4 grid gap-4 lg:grid-cols-[1fr_1fr_240px]">
+            <SurfacePanel label="Citations">
+              <CitationList
+                items={[
+                  { index: 1, title: 'Routing changes in v2.4', source: 'docs', snippet: 'Canary deploys shift traffic in 10% increments.', score: 0.94 },
+                  { index: 2, title: 'Warm connection pools', source: 'runbook', snippet: 'Pre-warm pods before the shift.', score: 0.81 },
+                ]}
+              />
+            </SurfacePanel>
+            <SurfacePanel label="Eval rubric">
+              <EvalRubric
+                criteria={[
+                  { name: 'Groundedness', score: 9, max: 10, weight: '0.4', note: 'Every claim traces to a source.' },
+                  { name: 'Tone', score: 7, max: 10, weight: '0.2' },
+                  { name: 'Completeness', score: 8, max: 10, weight: '0.4' },
+                ]}
+              />
+            </SurfacePanel>
+            <ImageGenCard prompt="Editorial gradient poster, blue to pink, risograph grain" style="editorial" seed="4821" />
+          </div>
+
+          <div className="mt-4">
+            <ModelCompareTable
+              models={[
+                { name: 'GPT-4o', provider: 'openai', best: true },
+                { name: 'Claude 3.5', provider: 'anthropic' },
+                { name: 'Gemini 1.5', provider: 'google' },
+              ]}
+              criteria={[
+                { label: 'Context', values: ['128K', '200K', '1M'] },
+                { label: 'Input / 1M', values: ['$2.50', '$3.00', '$1.25'] },
+                { label: 'Output / 1M', values: ['$10.00', '$15.00', '$5.00'] },
+                { label: 'Median latency', values: ['412ms', '486ms', '338ms'] },
+                { label: 'Tool use', values: ['native', 'native', 'native'] },
+              ]}
+            />
           </div>
         </Section>
       )}

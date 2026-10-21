@@ -44,7 +44,8 @@ const naming = [
 ];
 
 const changelog = [
-  { version: 'v2.0', date: 'October 2026', tag: 'Current', changes: ['Semantic token layer with light + dark themes', '42 components across 10 sections', 'AI pattern library: chat, prompts, models, agents, usage', 'Three production screens: dashboard, copilot, settings', 'Command palette (⌘K) and theme shortcut (⌘J)'] },
+  { version: 'v2.1', date: 'October 2026', tag: 'Current', changes: ['69 new primitives: charts, navigation, data display, advanced inputs, AI surfaces', '111 components across 15 sections', 'Eleven new screens including docs, token export, playground and mobile', 'Token export pipeline for CSS, JSON, Tailwind and Figma', 'Full empty / error / loading state library'] },
+  { version: 'v2.0', date: 'October 2026', tag: '', changes: ['Semantic token layer with light + dark themes', 'AI pattern library: chat, prompts, models, agents, usage', 'Production screens: dashboard, copilot, settings', 'Command palette (⌘K) and theme shortcut (⌘J)'] },
   { version: 'v1.4', date: 'September 2026', tag: '', changes: ['Prompt builder with variable chips', 'Model selector cards', 'Streaming, reasoning and tool-call states', 'Data table with pagination'] },
   { version: 'v1.0', date: 'August 2026', tag: '', changes: ['Foundations: color, type, spacing, elevation', '14-section component sheet', 'Kigen palette + AlignUI precision baseline'] },
 ];

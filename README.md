@@ -2,7 +2,7 @@
 
 A token-driven design system and reference product for AI interfaces. It pairs **AlignUI's surgical component precision** with **Kigen's vivid, color-forward energy**, then extends both with the patterns AI products actually need: streaming, prompting, model choice, agent runs and token cost.
 
-> v2.0 · 42 components · 10 sections · 9 pages · light + dark · WCAG 2.2 AA
+> v2.1 · 111 components · 15 sections · 20 pages · light + dark · WCAG 2.2 AA
 
 ---
 
@@ -25,13 +25,24 @@ Navigate the app with the sidebar, or press <kbd>⌘K</kbd> / <kbd>Ctrl K</kbd> 
 | --- | --- | --- |
 | Overview | `#/overview` | System home: principles, quality bar, changelog |
 | Foundations | `#/foundations` | Color ramps, semantic mapping, type, spacing, radius, elevation, motion |
-| Components | `#/components` | 10 filterable sections of primitives |
+| Components | `#/components` | 15 filterable sections of primitives |
 | AI patterns | `#/ai-patterns` | Chat, prompt builder, model selector, streaming, agents, usage, dev surfaces |
+| Component docs | `#/docs` | Anatomy, props, do / don't and accessibility notes per component |
+| Token export | `#/tokens` | CSS, JSON, Tailwind and Figma variable output from one source |
 | Dashboard | `#/dashboard` | Shipped analytics screen with KPIs, charts, model table, activity |
+| Analytics | `#/analytics` | Traffic, spend and quality breakdowns with cohorts and funnels |
+| Models | `#/models` | Registry, routing rules and deployment state per model |
+| Playground | `#/playground` | Prompt A/B testing across two models with traces and cost |
 | Copilot | `#/copilot` | Chat playground with live parameter panel |
+| Datasets | `#/datasets` | Golden sets, eval runs, rubric scoring and human review queue |
+| Agents | `#/agents` | Run traces, tool calls, guardrail checks and human-in-loop steps |
+| Developers | `#/developers` | API reference, params, error codes, webhooks and log viewer |
+| Team | `#/team` | Members, RBAC matrix, audit log and invitations |
 | Settings | `#/settings` | Profile, workspace, API keys, billing, notifications |
 | Templates | `#/templates` | Sign in, 4-step onboarding, invite flow, first-run empty state |
+| Mobile | `#/mobile` | Phone-frame chat, dashboard and sheet patterns |
 | Guidelines | `#/guidelines` | Do / don't, accessibility, token naming, handoff, changelog |
+| States | `#/states` | Empty, error, loading and permission states, in full and inline |
 
 ---
 
@@ -53,8 +64,13 @@ src/
 │       ├── Tabs.tsx          # underline, pill, segment
 │       ├── Feedback.tsx      # Alert, Toast, Progress, ProgressRing, Skeleton, EmptyState
 │       ├── Overlay.tsx       # Tooltip, Modal, Drawer, ConfirmDialogCard
-│       └── AI.tsx            # Sparkline, AreaChart, BarChart, ChatMessage, CodeBlock, AgentStep…
-├── pages/                    # the nine surfaces above
+│       ├── AI.tsx            # Sparkline, AreaChart, BarChart, ChatMessage, CodeBlock, AgentStep…
+│       ├── DataDisplay.tsx   # Table, TableToolbar, DataBar, Pagination, StatCard, Timeline, TreeView, DiffView, JsonView, LogViewer
+│       ├── Charts.tsx        # Donut, Funnel, Gauge, Heatmap, StackedBar, Scatter, MiniBars, Legend, ChartCard
+│       ├── Navigation.tsx    # Breadcrumbs, Stepper, DropdownMenu, NavList, AnchorNav, MobileTabs, SegmentedTabs
+│       ├── Advanced.tsx      # Accordion, Combobox, TagInput, NumberStepper, FileDrop, Calendar, Rating, Banner, OptionCards
+│       └── AIExtra.tsx       # PromptCard, RunTrace, ToolCallCard, TokenCounter, EvalRubric, GuardrailBanner, Citations…
+├── pages/                    # the twenty surfaces above
 └── App.tsx                   # hash router, theme persistence, shortcuts
 ```
 
@@ -64,7 +80,7 @@ src/
 2. **Semantic tokens** — `--ds-surface`, `--ds-ink`, `--ds-muted`, `--ds-line`, `--ds-brand`, `--ds-danger`… defined for light and re-mapped under `.dark`.
 3. **Tailwind theme** — `@theme inline` exposes them as utilities: `bg-surface`, `text-ink`, `border-line`, `bg-brand-soft`, `shadow-card`.
 
-Product code should never use raw hex or arbitrary spacing. Change `--ds-brand` in one place and all 42 components follow, in both themes.
+Product code should never use raw hex or arbitrary spacing. Change `--ds-brand` in one place and all 111 components follow, in both themes.
 
 ### Type & shape
 
@@ -80,6 +96,8 @@ Product code should never use raw hex or arbitrary spacing. Change `--ds-brand` 
 - **Color is never the only signal.** Every status pairs color with a dot, icon or label.
 - **Motion is fast and optional.** 90–360ms, and everything collapses to 0.01ms under `prefers-reduced-motion`.
 - **AI surfaces show their work.** Streaming, reasoning steps, sources and token estimates are components, not copy.
+- **Charts are hand-rolled SVG.** Every mark reads its colour from a CSS variable, so charts theme with the rest of the page instead of shipping a second palette.
+- **Every state is designed.** Empty, loading, error, offline and permission states are first-class screens (`#/states`), not leftovers.
 
 ---
 
@@ -104,12 +122,15 @@ Theme is stored in `localStorage` (`unseen-ds-theme`) and applied as `.dark` on 
 3. Publish the library; document AI states (streaming, thinking, tool call, failure) as variants.
 4. Keep names identical to code: `brand/500`, `surface`, `line-strong`, `danger`.
 
+## Token export
+
+`#/tokens` renders the same token source as four artefacts — CSS custom properties, a W3C-shaped JSON file, a Tailwind `@theme` block, and a Figma variables collection. Copy from the page or import `src/design/tokens.ts` directly.
+
 ## Roadmap
 
 - Component test suite + visual regression with Playwright
-- Evaluation / dataset components (rubric scoring, diff views)
 - Density switch (comfortable / compact) driven by the same tokens
-- Token export pipeline (Tailwind config + Figma JSON + CSS)
+- Per-page code splitting (the demo bundle is intentionally single-chunk)
 
 ---
 

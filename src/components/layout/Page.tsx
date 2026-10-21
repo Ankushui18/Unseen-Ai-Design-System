@@ -64,7 +64,7 @@ export function Section({
     <section
       id={id}
       className={cn(
-        'scroll-mt-24 overflow-hidden rounded-[20px] border border-line bg-surface shadow-card',
+        'scroll-mt-24 overflow-hidden rounded-2xl border border-line bg-surface shadow-card',
         className,
       )}
     >

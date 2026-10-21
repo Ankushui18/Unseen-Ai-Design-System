@@ -1,15 +1,24 @@
 import {
   ArrowRight,
   ArrowUpRight,
+  BarChart3,
   Blocks,
   BookOpen,
+  Bot,
+  Boxes,
   Check,
+  Database,
+  FlaskConical,
   Gauge,
   Layers,
   MessageSquare,
   Palette,
   ShieldCheck,
+  Smartphone,
   Sparkles,
+  Terminal,
+  TriangleAlert,
+  Users,
   Wand2,
   Zap,
 } from 'lucide-react';
@@ -22,9 +31,9 @@ import { PageHeader } from '../components/layout/Page';
 import type { PageKey } from '../components/layout/nav';
 
 const stats = [
-  { value: '42', label: 'Components' },
-  { value: '10', label: 'Sections' },
-  { value: '9', label: 'Pages' },
+  { value: '111', label: 'Components' },
+  { value: '15', label: 'Sections' },
+  { value: '20', label: 'Pages' },
   { value: 'AA', label: 'Contrast' },
 ];
 
@@ -32,7 +41,7 @@ const principles = [
   {
     icon: Layers,
     title: 'Token-first, never hard-coded',
-    body: 'Every color, radius and shadow resolves to a semantic token. Change the brand once, and 42 components follow — in light and dark.',
+    body: 'Every color, radius and shadow resolves to a semantic token. Change the brand once, and 111 components follow — in light and dark.',
   },
   {
     icon: Zap,
@@ -53,16 +62,28 @@ const principles = [
 
 const inside: { key: PageKey; label: string; description: string; count: string; icon: typeof Blocks }[] = [
   { key: 'foundations', label: 'Foundations', description: 'Palette, type ramp, spacing, elevation, motion', count: '6 groups', icon: Palette },
-  { key: 'components', label: 'Components', description: 'Primitives from buttons to data tables', count: '10 sections', icon: Blocks },
+  { key: 'components', label: 'Components', description: 'Primitives from buttons to data tables', count: '15 sections', icon: Blocks },
   { key: 'ai-patterns', label: 'AI patterns', description: 'Chat, prompts, models, streaming, agents', count: '9 patterns', icon: Sparkles },
+  { key: 'docs', label: 'Component docs', description: 'Anatomy, props, do / don’t and a11y notes', count: 'Reference', icon: BookOpen },
+  { key: 'tokens', label: 'Token export', description: 'CSS, JSON, Tailwind and Figma variables', count: '248 tokens', icon: Palette },
   { key: 'dashboard', label: 'Dashboard', description: 'Usage, cost and model health analytics', count: 'Screen', icon: Gauge },
+  { key: 'analytics', label: 'Analytics', description: 'Traffic, spend and quality breakdowns', count: 'Screen', icon: BarChart3 },
+  { key: 'models', label: 'Models', description: 'Registry, routing and deployment', count: 'Screen', icon: Boxes },
+  { key: 'playground', label: 'Playground', description: 'Prompt A/B testing across two models', count: 'Screen', icon: FlaskConical },
   { key: 'copilot', label: 'Copilot', description: 'Chat playground with live parameters', count: 'Screen', icon: MessageSquare },
+  { key: 'datasets', label: 'Datasets', description: 'Golden sets, eval runs, human review', count: 'Screen', icon: Database },
+  { key: 'agents', label: 'Agents', description: 'Run traces, tools and guardrails', count: 'Screen', icon: Bot },
+  { key: 'developers', label: 'Developers', description: 'API reference, keys, logs, webhooks', count: 'Screen', icon: Terminal },
+  { key: 'team', label: 'Team', description: 'Members, roles and the audit log', count: 'Screen', icon: Users },
   { key: 'templates', label: 'Templates', description: 'Sign in, onboarding and empty states', count: 'Screen', icon: Wand2 },
+  { key: 'mobile', label: 'Mobile', description: 'Responsive patterns for small viewports', count: 'Screen', icon: Smartphone },
+  { key: 'states', label: 'States', description: 'Empty, error, loading and permission states', count: 'Reference', icon: TriangleAlert },
   { key: 'guidelines', label: 'Guidelines', description: 'Do / don’t, a11y, naming and changelog', count: 'Reference', icon: BookOpen },
 ];
 
 const changelog = [
-  { version: 'v2.0', tag: 'Latest', date: 'Oct 2026', items: ['Full dark theme across every screen', 'Semantic token layer + Tailwind v4 theme', 'Command palette, drawer and modal primitives'] },
+  { version: 'v2.1', tag: 'Latest', date: 'Oct 2026', items: ['69 new primitives: charts, data display, navigation, advanced inputs, AI surfaces', 'Eleven new screens — analytics, models, playground, datasets, agents, developers, team, docs, tokens, mobile, states', 'Token export pipeline and full component documentation'] },
+  { version: 'v2.0', tag: '', date: 'Oct 2026', items: ['Full dark theme across every screen', 'Semantic token layer + Tailwind v4 theme', 'Command palette, drawer and modal primitives'] },
   { version: 'v1.4', tag: '', date: 'Sep 2026', items: ['AI patterns: prompt builder and model selector', 'Data table with selection and pagination', 'Streaming and reasoning states'] },
   { version: 'v1.0', tag: '', date: 'Aug 2026', items: ['Initial foundations and 14-section component sheet'] },
 ];
@@ -145,7 +166,7 @@ export function Overview({ onNavigate }: { onNavigate: (page: PageKey) => void }
           {/* mini app preview */}
           <div className="relative">
             <div className="pointer-events-none absolute -inset-3 rounded-2xl bg-[linear-gradient(120deg,rgba(14,145,240,.18),rgba(247,38,133,.14),rgba(255,122,13,.16))] blur-xl" />
-            <div className="relative overflow-hidden rounded-[20px] border border-line bg-surface shadow-pop">
+            <div className="relative overflow-hidden rounded-2xl border border-line bg-surface shadow-pop">
               <div className="flex items-center justify-between border-b border-line bg-surface-2 px-3 py-2">
                 <div className="flex items-center gap-1.5">
                   <span className="h-2 w-2 rounded-full bg-danger/60" />
@@ -224,7 +245,7 @@ export function Overview({ onNavigate }: { onNavigate: (page: PageKey) => void }
         <div className="mb-4 flex items-end justify-between">
           <div>
             <h2 className="text-[15px] font-bold text-ink">Design principles</h2>
-            <p className="mt-0.5 text-[12px] text-muted">The rules that keep 42 components feeling like one product.</p>
+            <p className="mt-0.5 text-[12px] text-muted">The rules that keep 111 components feeling like one product.</p>
           </div>
           <Button variant="link" size="sm" onClick={() => onNavigate('guidelines')} iconRight={<ArrowUpRight className="h-3.5 w-3.5" />}>
             Full guidelines
@@ -253,7 +274,7 @@ export function Overview({ onNavigate }: { onNavigate: (page: PageKey) => void }
       <section>
         <div className="mb-4">
           <h2 className="text-[15px] font-bold text-ink">Inside the system</h2>
-          <p className="mt-0.5 text-[12px] text-muted">Four documentation surfaces and four shipped product screens.</p>
+          <p className="mt-0.5 text-[12px] text-muted">Six documentation surfaces and twelve shipped product screens.</p>
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {inside.map(item => {

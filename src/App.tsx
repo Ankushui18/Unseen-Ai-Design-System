@@ -11,6 +11,17 @@ import { CopilotPage } from './pages/CopilotPage';
 import { SettingsPage } from './pages/SettingsPage';
 import { TemplatesPage } from './pages/TemplatesPage';
 import { Guidelines } from './pages/Guidelines';
+import { AnalyticsPage } from './pages/AnalyticsPage';
+import { ModelsPage } from './pages/ModelsPage';
+import { PlaygroundPage } from './pages/PlaygroundPage';
+import { DatasetsPage } from './pages/DatasetsPage';
+import { AgentsPage } from './pages/AgentsPage';
+import { DevelopersPage } from './pages/DevelopersPage';
+import { TeamPage } from './pages/TeamPage';
+import { StatesPage } from './pages/StatesPage';
+import { TokensPage } from './pages/TokensPage';
+import { ComponentDocsPage } from './pages/ComponentDocsPage';
+import { MobilePage } from './pages/MobilePage';
 
 const pageKeys = allNavItems.map(item => item.key);
 const themeStorageKey = 'unseen-ds-theme';
@@ -88,6 +99,17 @@ export default function App() {
         {page === 'settings' && <SettingsPage />}
         {page === 'templates' && <TemplatesPage />}
         {page === 'guidelines' && <Guidelines />}
+        {page === 'analytics' && <AnalyticsPage />}
+        {page === 'models' && <ModelsPage />}
+        {page === 'playground' && <PlaygroundPage />}
+        {page === 'datasets' && <DatasetsPage />}
+        {page === 'agents' && <AgentsPage />}
+        {page === 'developers' && <DevelopersPage />}
+        {page === 'team' && <TeamPage />}
+        {page === 'states' && <StatesPage />}
+        {page === 'tokens' && <TokensPage />}
+        {page === 'docs' && <ComponentDocsPage />}
+        {page === 'mobile' && <MobilePage />}
       </Shell>
       <CommandPalette
         open={paletteOpen}
