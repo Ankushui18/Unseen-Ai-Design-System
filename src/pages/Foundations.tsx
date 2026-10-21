@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { ArrowUpRight, Check, Copy, Layers, MoveHorizontal, Palette, Type } from 'lucide-react';
-import { gradients, motion, radii, ramps, semanticColors, shadows, spacing, typeScale } from '../design/tokens';
+import { breakpoints, easings, gradients, motion, radii, ramps, semanticColors, shadows, spacing, typeScale, zIndexScale } from '../design/tokens';
+import { chartReport, contrastReport } from '../design/contrast-report';
+import { Segmented } from '../components/ui/Controls';
 import { PageHeader, Section } from '../components/layout/Page';
 import { Badge } from '../components/ui/Badge';
 import { Card } from '../components/ui/Card';
@@ -26,6 +28,9 @@ function Swatch({ step, hex, token, onCopy, copied }: { step: string; hex: strin
 
 export function Foundations() {
   const [copied, setCopied] = useState<string | null>(null);
+  const [contrastMode, setContrastMode] = useState<'light' | 'dark'>('light');
+  const contrastRows = contrastReport.find(r => r.mode === contrastMode)?.rows ?? [];
+  const chartStats = chartReport.find(r => r.mode === contrastMode);
 
   const copy = (label: string, value: string) => {
     navigator.clipboard?.writeText(value).catch(() => undefined);
@@ -36,7 +41,7 @@ export function Foundations() {
   return (
     <div className="space-y-6">
       <PageHeader
-        eyebrow="Foundations · 6 groups"
+        eyebrow="Foundations · 8 groups"
         title="The visual language."
         description="A calm neutral base, three vivid accents and a typographic scale tuned for data-dense AI surfaces. Every value below is a semantic token — switch themes to see the mapping flip."
         meta={
@@ -59,8 +64,8 @@ export function Foundations() {
         id="color"
         index="01"
         title="Color"
-        description="Click any swatch to copy its hex"
-        aside={<span className="hidden font-mono text-[10px] text-faint sm:inline">4 ramps · 40 steps</span>}
+        description="Three tiers per accent: text-safe, vivid, and fill + on-colour. Click any swatch to copy its hex"
+        aside={<span className="hidden font-mono text-[10px] text-faint sm:inline">7 ramps · 70 steps</span>}
       >
         <div className="space-y-7">
           {ramps.map(ramp => (
@@ -328,6 +333,163 @@ export function Foundations() {
             <p className="mt-3 text-[10px] leading-4 text-faint">
               All transitions collapse to 0.01ms under <span className="font-mono">prefers-reduced-motion</span>.
             </p>
+          </div>
+        </div>
+      </Section>
+
+      <Section
+        id="contrast"
+        index="07"
+        title="Contrast"
+        description="Measured, not estimated — regenerated from the token source on every build"
+        aside={
+          <Segmented
+            size="sm"
+            value={contrastMode}
+            onChange={setContrastMode}
+            options={[
+              { value: 'light', label: 'Light' },
+              { value: 'dark', label: 'Dark' },
+            ]}
+          />
+        }
+      >
+        <div className="grid gap-4 lg:grid-cols-[1.4fr_1fr]">
+          <div className="overflow-hidden rounded-xl border border-line">
+            <table className="w-full text-left">
+              <thead className="bg-surface-2 text-[9.5px] font-bold uppercase tracking-[0.12em] text-faint">
+                <tr>
+                  <th className="px-3 py-2">Pair</th>
+                  <th className="px-3 py-2 text-right">Ratio</th>
+                  <th className="px-3 py-2 text-center">AA</th>
+                  <th className="hidden px-3 py-2 text-center sm:table-cell">AAA</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-line">
+                {contrastRows.map(row => (
+                  <tr key={row.pair} className="text-[11px] transition hover:bg-surface-2">
+                    <td className="px-3 py-2 text-ink-soft">{row.pair}</td>
+                    <td className="px-3 py-2 text-right font-mono text-[10px] font-semibold text-ink tabular-nums">{row.ratio.toFixed(2)}</td>
+                    <td className="px-3 py-2 text-center">
+                      <span className={row.body ? 'text-success' : 'text-danger'}>{row.body ? '✓ 4.5' : '✗'}</span>
+                    </td>
+                    <td className="hidden px-3 py-2 text-center sm:table-cell">
+                      <span className={row.ratio >= 7 ? 'text-success' : 'text-faint'}>{row.ratio >= 7 ? '✓ 7.0' : '—'}</span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="space-y-3">
+            <div className="rounded-xl border border-line bg-surface-2 p-3.5">
+              <div className="mb-2 flex items-center justify-between">
+                <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-faint">Accent model</span>
+                <Badge tone="success" variant="soft">AA everywhere</Badge>
+              </div>
+              <div className="space-y-2">
+                {[
+                  { label: 'brand', note: 'text + icons', cls: 'bg-brand text-on-brand', value: '4.97' },
+                  { label: 'brand-vivid', note: 'gradients only', cls: 'bg-brand-vivid text-white', value: '—' },
+                  { label: 'brand-fill + on-brand', note: 'solid surfaces', cls: 'bg-brand-fill text-on-brand', value: '4.97' },
+                  { label: 'amber-fill + on-amber', note: 'dark text on amber', cls: 'bg-amber-fill text-on-amber', value: '7.26' },
+                ].map(row => (
+                  <div key={row.label} className="flex items-center gap-2">
+                    <span className={`grid h-6 w-14 place-items-center rounded-sm text-[9px] font-bold ${row.cls}`}>Aa</span>
+                    <span className="font-mono text-[9.5px] text-ink-soft">{row.label}</span>
+                    <span className="text-[9px] text-faint">{row.note}</span>
+                    <span className="ml-auto font-mono text-[9px] text-faint">{row.value}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-2 border-t border-line pt-2 text-[10px] leading-4 text-muted">
+                Decorative hues (<span className="font-mono">-vivid</span>, gradients, chart marks) never carry text, so they are exempt.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-line bg-surface-2 p-3.5">
+              <div className="mb-2 flex items-center justify-between">
+                <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-faint">Chart palette</span>
+                <Badge tone="brand" variant="soft">{chartStats?.series} series</Badge>
+              </div>
+              <div className="flex gap-1">
+                {Array.from({ length: chartStats?.series ?? 8 }, (_, i) => (
+                  <span key={i} className="h-5 flex-1 rounded-sm" style={{ background: `var(--ds-chart-${i + 1})` }} />
+                ))}
+              </div>
+              <dl className="mt-2 space-y-1 text-[10px]">
+                <div className="flex justify-between"><dt className="text-muted">Min contrast vs surface</dt><dd className="font-mono text-ink">{chartStats?.minContrast}:1</dd></div>
+                <div className="flex justify-between"><dt className="text-muted">Protanopia ΔE₇₆</dt><dd className="font-mono text-ink">{chartStats?.cvd.protan}</dd></div>
+                <div className="flex justify-between"><dt className="text-muted">Deuteranopia ΔE₇₆</dt><dd className="font-mono text-ink">{chartStats?.cvd.deutan}</dd></div>
+              </dl>
+              <p className="mt-1.5 text-[9.5px] leading-4 text-faint">
+                Floor is ΔE 10; series also always carry a legend label.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section id="grid" index="08" title="Grid, breakpoints & layering" description="Where the layout changes, and what sits on top of what">
+        <div className="grid gap-5 lg:grid-cols-3">
+          <div>
+            <div className="mb-2.5 text-[10px] font-bold uppercase tracking-[0.14em] text-faint">Breakpoints</div>
+            <div className="space-y-1.5">
+              {breakpoints.map(bp => (
+                <div key={bp.name} className="flex items-center gap-2 rounded-md border border-line bg-surface-2 px-2.5 py-1.5">
+                  <span className="w-8 font-mono text-[10px] font-semibold text-ink">{bp.name}</span>
+                  <span className="font-mono text-[9.5px] text-muted">{bp.value === 0 ? '0' : `${bp.value}px`}</span>
+                  <span className="ml-auto text-[9.5px] text-faint">{bp.note}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-3 rounded-md bg-surface-2 p-2.5 text-[10px] leading-4 text-muted">
+              Mobile-first. The sidebar appears at <span className="font-mono text-ink-soft">lg</span>; tables become cards below
+              <span className="font-mono text-ink-soft"> md</span>; the content container caps at 1240px.
+            </div>
+          </div>
+
+          <div>
+            <div className="mb-2.5 text-[10px] font-bold uppercase tracking-[0.14em] text-faint">Z-index scale</div>
+            <div className="relative h-[188px] overflow-hidden rounded-md border border-line bg-surface-2 p-2">
+              {zIndexScale.slice(1).map((z, i) => (
+                <div
+                  key={z.name}
+                  className="absolute rounded-sm border border-brand/25 bg-brand-soft px-2 py-1 font-mono text-[8.5px] text-brand"
+                  style={{ left: 8 + i * 10, top: 8 + i * 20, right: 8 + (6 - i) * 6 }}
+                  title={`z-${z.name} · ${z.value}`}
+                >
+                  z-{z.name} · {z.value}
+                </div>
+              ))}
+            </div>
+            <p className="mt-2 text-[10px] leading-4 text-faint">Popovers beat drawers; tooltips beat everything.</p>
+          </div>
+
+          <div>
+            <div className="mb-2.5 text-[10px] font-bold uppercase tracking-[0.14em] text-faint">Easing</div>
+            <div className="space-y-2">
+              {easings.map(ease => (
+                <button
+                  key={ease.name}
+                  onClick={() => copy(ease.name, ease.value)}
+                  className="group w-full rounded-md border border-line bg-surface-2 p-2 text-left transition hover:border-brand/35"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-[10px] font-semibold text-ink">{ease.name}</span>
+                    <span className="text-[9px] text-faint">{ease.use}</span>
+                  </div>
+                  <div className="relative mt-1.5 h-1 rounded-full bg-surface-3">
+                    <span
+                      className="absolute -top-[3px] h-[7px] w-[7px] rounded-full bg-brand transition-all duration-500 group-hover:left-[calc(100%-7px)]"
+                      style={{ left: 0, transitionTimingFunction: ease.value }}
+                    />
+                  </div>
+                  <div className="mt-1 truncate font-mono text-[8px] text-faint">{ease.value}</div>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </Section>

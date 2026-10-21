@@ -213,7 +213,7 @@ export function FileDrop({ hint = 'CSV, JSONL or Parquet — up to 512 MB' }: { 
         dragging ? 'border-brand bg-brand-soft' : 'border-line-strong bg-surface-2/60 hover:border-brand/40',
       )}
     >
-      <span className={cn('grid h-9 w-9 place-items-center rounded-full', dragging ? 'bg-brand text-white' : 'bg-surface text-brand shadow-xs')}>
+      <span className={cn('grid h-9 w-9 place-items-center rounded-full', dragging ? 'bg-brand-fill text-on-brand' : 'bg-surface text-brand shadow-xs')}>
         {dragging ? <FileUp className="h-4 w-4" /> : <UploadCloud className="h-4 w-4" />}
       </span>
       <p className="mt-2 text-[11.5px] font-medium text-ink">
@@ -258,7 +258,7 @@ export function Calendar({ selected = 21 }: { selected?: number }) {
             onClick={() => setDay(d)}
             className={cn(
               'grid h-6 place-items-center rounded-sm font-mono text-[10.5px] transition',
-              d === day ? 'bg-brand font-bold text-white shadow-xs' : 'text-ink-soft hover:bg-surface-2',
+              d === day ? 'bg-brand-fill font-bold text-on-brand shadow-xs' : 'text-ink-soft hover:bg-surface-2',
             )}
           >
             {d}

@@ -52,7 +52,7 @@ function SidebarContent({
         </button>
       </div>
 
-      <nav aria-label="Design system" className="mt-5 flex-1 space-y-6 overflow-y-auto px-3 pb-4">
+      <nav aria-label="Design system" className="mt-5 flex-1 space-y-6 overflow-y-auto overscroll-contain px-3 pb-4">
         {navGroups.map(group => (
           <div key={group.label}>
             <div className="mb-1.5 px-2 text-[9.5px] font-bold uppercase tracking-[0.16em] text-faint">{group.label}</div>
@@ -150,7 +150,7 @@ export function Shell({
       {mobileOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <button aria-label="Close menu" className="absolute inset-0 bg-[#08080F]/50 backdrop-blur-sm" onClick={() => setMobileOpen(false)} />
-          <aside className="relative h-full w-[264px] border-r border-line bg-surface shadow-float ds-rise">
+          <aside className="relative h-full w-[82vw] max-w-[300px] border-r border-line bg-surface shadow-float ds-rise sm:w-[264px]">
             <button
               onClick={() => setMobileOpen(false)}
               aria-label="Close navigation"
@@ -173,7 +173,7 @@ export function Shell({
 
       <div className="relative z-10 lg:pl-[248px]">
         <header className="sticky top-0 z-20 border-b border-line bg-canvas/80 backdrop-blur-xl">
-          <div className="flex h-14 items-center gap-3 px-4 sm:px-6 lg:px-8">
+          <div className="flex h-14 items-center gap-2 px-3 sm:gap-3 sm:px-6 lg:px-8">
             <button
               onClick={() => setMobileOpen(true)}
               aria-label="Open navigation"
@@ -225,7 +225,7 @@ export function Shell({
           </div>
         </header>
 
-        <main id="main" className="mx-auto w-full max-w-[1240px] px-4 py-6 sm:px-6 sm:py-8 lg:px-10 lg:py-10">{children}</main>
+        <main id="main" className="mx-auto w-full max-w-[1240px] px-4 py-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] sm:px-6 sm:py-8 lg:px-10 lg:py-10">{children}</main>
 
         <footer className="mx-auto flex w-full max-w-[1240px] flex-col items-center justify-between gap-2 border-t border-line px-4 py-6 text-[11px] text-faint sm:flex-row sm:px-6 lg:px-10">
           <span>Unseen Design System · v2.0 · Built for AI product teams</span>

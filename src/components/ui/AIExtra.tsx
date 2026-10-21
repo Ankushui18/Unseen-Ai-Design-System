@@ -33,7 +33,7 @@ export function VoiceWave({
   return (
     <div className="rounded-xl border border-line bg-surface p-3.5">
       <div className="flex items-center gap-2">
-        <span className={cn('relative grid h-7 w-7 place-items-center rounded-full', active ? 'bg-pink text-white' : 'bg-surface-3 text-muted')}>
+        <span className={cn('relative grid h-7 w-7 place-items-center rounded-full', active ? 'bg-pink-fill text-on-pink' : 'bg-surface-3 text-muted')}>
           <Mic className="h-3.5 w-3.5" />
           {active && <span className="absolute inset-0 rounded-full bg-pink/40 ds-pulse" />}
         </span>

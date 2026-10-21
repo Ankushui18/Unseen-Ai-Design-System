@@ -73,7 +73,7 @@ export function Guidelines() {
         <div className="grid gap-4 lg:grid-cols-2">
           <div className="rounded-xl border border-success/25 bg-success-soft/50 p-4">
             <div className="mb-3 flex items-center gap-2">
-              <span className="grid h-6 w-6 place-items-center rounded-full bg-success text-white"><Check className="h-3.5 w-3.5" strokeWidth={3} /></span>
+              <span className="grid h-6 w-6 place-items-center rounded-full bg-success-fill text-on-success"><Check className="h-3.5 w-3.5" strokeWidth={3} /></span>
               <span className="text-[12px] font-bold text-success">Do</span>
             </div>
             <ul className="space-y-2.5">
@@ -86,7 +86,7 @@ export function Guidelines() {
           </div>
           <div className="rounded-xl border border-danger/25 bg-danger-soft/50 p-4">
             <div className="mb-3 flex items-center gap-2">
-              <span className="grid h-6 w-6 place-items-center rounded-full bg-danger text-white"><X className="h-3.5 w-3.5" strokeWidth={3} /></span>
+              <span className="grid h-6 w-6 place-items-center rounded-full bg-danger-fill text-on-danger"><X className="h-3.5 w-3.5" strokeWidth={3} /></span>
               <span className="text-[12px] font-bold text-danger">Don’t</span>
             </div>
             <ul className="space-y-2.5">

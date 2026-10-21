@@ -346,7 +346,7 @@ export function ComponentDocsPage() {
           <div className="grid gap-4 lg:grid-cols-2">
             <div className="rounded-xl border border-success/25 bg-success-soft/40 p-4">
               <div className="mb-2.5 flex items-center gap-2">
-                <span className="grid h-5 w-5 place-items-center rounded-full bg-success text-white"><Check className="h-3 w-3" strokeWidth={3} /></span>
+                <span className="grid h-5 w-5 place-items-center rounded-full bg-success-fill text-on-success"><Check className="h-3 w-3" strokeWidth={3} /></span>
                 <span className="text-[11.5px] font-bold text-success">Do</span>
               </div>
               <ul className="space-y-1.5">
@@ -359,7 +359,7 @@ export function ComponentDocsPage() {
             </div>
             <div className="rounded-xl border border-danger/25 bg-danger-soft/40 p-4">
               <div className="mb-2.5 flex items-center gap-2">
-                <span className="grid h-5 w-5 place-items-center rounded-full bg-danger text-white"><X className="h-3 w-3" strokeWidth={3} /></span>
+                <span className="grid h-5 w-5 place-items-center rounded-full bg-danger-fill text-on-danger"><X className="h-3 w-3" strokeWidth={3} /></span>
                 <span className="text-[11.5px] font-bold text-danger">Don’t</span>
               </div>
               <ul className="space-y-1.5">

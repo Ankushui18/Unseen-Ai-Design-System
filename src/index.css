@@ -24,6 +24,13 @@
    Every UI surface consumes semantic tokens only.
 ------------------------------------------------------------------ */
 
+/* ------------------------------------------------------------------
+   SEMANTIC TIER — light
+   Three tiers per accent:
+     --ds-<accent>          text / icon colour, ≥ 4.5:1 on surface + canvas
+     --ds-<accent>-vivid    decorative hue: gradients, chart marks, dots
+     --ds-<accent>-fill     solid background, paired with --ds-on-<accent>
+------------------------------------------------------------------ */
 :root {
   color-scheme: light;
 
@@ -34,13 +41,13 @@
   --ds-surface-2: #fbfbfd;
   --ds-surface-3: #f2f2f7;
   --ds-inverse: #0f0f1e;
+  --ds-on-inverse: #ffffff;
 
-  /* text */
+  /* text — every value ≥ 4.5:1 on surface and canvas */
   --ds-ink: #0f0f1e;
   --ds-ink-soft: #3a3a55;
-  --ds-muted: #6f6f8c;
-  --ds-faint: #9c9cb3;
-  --ds-on-inverse: #ffffff;
+  --ds-muted: #5e5e78;
+  --ds-faint: #6c6c89;
 
   /* borders */
   --ds-line: #e8e8f0;
@@ -48,48 +55,109 @@
   --ds-line-strong: #d5d5e2;
 
   /* brand */
-  --ds-brand: #0e91f0;
-  --ds-brand-strong: #0272c6;
+  --ds-brand: #0272c6;
+  --ds-brand-strong: #035b9e;
   --ds-brand-bright: #38aefa;
+  --ds-brand-vivid: #0e91f0;
+  --ds-brand-fill: #0272c6;
+  --ds-brand-fill-hover: #035b9e;
+  --ds-on-brand: #ffffff;
   --ds-brand-soft: #eaf6ff;
-  --ds-brand-ring: rgba(14, 145, 240, 0.18);
+  --ds-brand-ring: rgba(2, 114, 198, 0.22);
 
-  /* accents */
-  --ds-pink: #f72685;
-  --ds-pink-strong: #c90f69;
+  /* pink */
+  --ds-pink: #c90f69;
+  --ds-pink-strong: #a00e57;
+  --ds-pink-vivid: #f72685;
+  --ds-pink-fill: #c90f69;
+  --ds-on-pink: #ffffff;
   --ds-pink-soft: #fff0f7;
 
-  --ds-amber: #ff7a0d;
-  --ds-amber-strong: #c45200;
+  /* amber — filled amber always carries dark text */
+  --ds-amber: #a9540a;
+  --ds-amber-strong: #83300e;
+  --ds-amber-vivid: #ff7a0d;
+  --ds-amber-fill: #ff7a0d;
+  --ds-on-amber: #0f0f1e;
   --ds-amber-soft: #fff3e6;
 
-  --ds-violet: #7c6cf6;
-  --ds-violet-soft: #f1efff;
-
-  --ds-success: #11a06a;
+  /* green (success) */
+  --ds-success: #0b7a51;
+  --ds-success-vivid: #16a971;
+  --ds-success-fill: #0c7d53;
+  --ds-on-success: #ffffff;
   --ds-success-soft: #e7f9f1;
 
-  --ds-danger: #e5484d;
+  /* red (danger) */
+  --ds-danger: #b92b30;
+  --ds-danger-vivid: #e5484d;
+  --ds-danger-fill: #c62f34;
+  --ds-on-danger: #ffffff;
   --ds-danger-soft: #fdeeee;
 
-  --ds-warning: #d98a00;
+  /* warning */
+  --ds-warning: #8a5600;
+  --ds-warning-fill: #d98a00;
+  --ds-on-warning: #0f0f1e;
   --ds-warning-soft: #fff6e0;
+
+  /* violet */
+  --ds-violet: #4e3ecc;
+  --ds-violet-vivid: #7c6cf6;
+  --ds-violet-fill: #5b4be0;
+  --ds-on-violet: #ffffff;
+  --ds-violet-soft: #f1efff;
 
   /* elevation */
   --ds-shadow-xs: 0 1px 2px rgba(15, 15, 30, 0.05);
   --ds-shadow-card: 0 1px 2px rgba(15, 15, 30, 0.04), 0 8px 24px -12px rgba(15, 15, 30, 0.12);
   --ds-shadow-pop: 0 2px 6px rgba(15, 15, 30, 0.06), 0 18px 44px -16px rgba(15, 15, 30, 0.22);
   --ds-shadow-float: 0 24px 70px -24px rgba(15, 15, 30, 0.35);
-  --ds-shadow-brand: 0 10px 28px -12px rgba(14, 145, 240, 0.6);
+  --ds-shadow-brand: 0 10px 28px -12px rgba(2, 114, 198, 0.6);
 
-  /* charts */
-  --ds-chart-1: #0e91f0;
-  --ds-chart-2: #f72685;
-  --ds-chart-3: #ff7a0d;
-  --ds-chart-4: #7c6cf6;
-  --ds-chart-5: #11a06a;
+  /* charts — CVD-checked, see tokens/CONTRAST.md */
+  --ds-chart-1: #0b6fb8;
+  --ds-chart-2: #c45200;
+  --ds-chart-3: #a8104f;
+  --ds-chart-4: #0c7d53;
+  --ds-chart-5: #5b4be0;
+  --ds-chart-6: #7a6a00;
+  --ds-chart-7: #0e7490;
+  --ds-chart-8: #6f6f8c;
+
+  /* motion */
+  --ds-duration-instant: 90ms;
+  --ds-duration-fast: 150ms;
+  --ds-duration-base: 220ms;
+  --ds-duration-slow: 360ms;
+  --ds-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ds-ease-enter: cubic-bezier(0.22, 1, 0.36, 1);
+  --ds-ease-exit: cubic-bezier(0.4, 0, 1, 1);
+
+  /* layering */
+  --ds-z-base: 0;
+  --ds-z-raised: 10;
+  --ds-z-sticky: 20;
+  --ds-z-sidebar: 30;
+  --ds-z-dropdown: 40;
+  --ds-z-overlay: 50;
+  --ds-z-modal: 60;
+  --ds-z-toast: 70;
+  --ds-z-tooltip: 80;
+
+  /* breakpoints (documentation tokens; Tailwind owns the media queries) */
+  --ds-breakpoint-sm: 640px;
+  --ds-breakpoint-md: 768px;
+  --ds-breakpoint-lg: 1024px;
+  --ds-breakpoint-xl: 1280px;
+  --ds-breakpoint-2xl: 1536px;
 }
 
+/* ------------------------------------------------------------------
+   SEMANTIC TIER — dark
+   Roles are re-mapped, names stay identical. `-fill` flips to the bright
+   hue so the solid still separates from a near-black page.
+------------------------------------------------------------------ */
 .dark {
   color-scheme: dark;
 
@@ -99,12 +167,12 @@
   --ds-surface-2: #15151f;
   --ds-surface-3: #1b1b27;
   --ds-inverse: #f5f6fa;
+  --ds-on-inverse: #0f0f1e;
 
   --ds-ink: #f4f5fa;
   --ds-ink-soft: #c9cad9;
-  --ds-muted: #8f90a6;
-  --ds-faint: #63647a;
-  --ds-on-inverse: #0f0f1e;
+  --ds-muted: #a7a8bc;
+  --ds-faint: #8a8ba1;
 
   --ds-line: #23232f;
   --ds-line-soft: #1b1b25;
@@ -113,28 +181,49 @@
   --ds-brand: #38aefa;
   --ds-brand-strong: #7dcbfc;
   --ds-brand-bright: #7dcbfc;
+  --ds-brand-vivid: #38aefa;
+  --ds-brand-fill: #38aefa;
+  --ds-brand-fill-hover: #56bcfb;
+  --ds-on-brand: #061320;
   --ds-brand-soft: rgba(56, 174, 250, 0.12);
   --ds-brand-ring: rgba(56, 174, 250, 0.26);
 
   --ds-pink: #ff56a0;
   --ds-pink-strong: #ff91c1;
+  --ds-pink-vivid: #ff56a0;
+  --ds-pink-fill: #ff56a0;
+  --ds-on-pink: #1a0510;
   --ds-pink-soft: rgba(247, 38, 133, 0.14);
 
   --ds-amber: #ff9a33;
   --ds-amber-strong: #ffc06d;
+  --ds-amber-vivid: #ff9a33;
+  --ds-amber-fill: #ff9a33;
+  --ds-on-amber: #1a1002;
   --ds-amber-soft: rgba(255, 122, 13, 0.14);
 
-  --ds-violet: #a394ff;
-  --ds-violet-soft: rgba(124, 108, 246, 0.16);
-
   --ds-success: #4ade9f;
+  --ds-success-vivid: #4ade9f;
+  --ds-success-fill: #4ade9f;
+  --ds-on-success: #04170f;
   --ds-success-soft: rgba(17, 160, 106, 0.16);
 
   --ds-danger: #ff7b7f;
+  --ds-danger-vivid: #ff7b7f;
+  --ds-danger-fill: #ff7b7f;
+  --ds-on-danger: #1c0507;
   --ds-danger-soft: rgba(229, 72, 77, 0.16);
 
   --ds-warning: #ffc940;
+  --ds-warning-fill: #ffc940;
+  --ds-on-warning: #1a1002;
   --ds-warning-soft: rgba(217, 138, 0, 0.16);
+
+  --ds-violet: #a394ff;
+  --ds-violet-vivid: #a394ff;
+  --ds-violet-fill: #a394ff;
+  --ds-on-violet: #0e0a24;
+  --ds-violet-soft: rgba(124, 108, 246, 0.16);
 
   --ds-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.5);
   --ds-shadow-card: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 18px 40px -24px rgba(0, 0, 0, 0.9);
@@ -142,11 +231,14 @@
   --ds-shadow-float: 0 40px 100px -30px rgba(0, 0, 0, 0.95);
   --ds-shadow-brand: 0 12px 32px -14px rgba(56, 174, 250, 0.55);
 
-  --ds-chart-1: #38aefa;
-  --ds-chart-2: #ff56a0;
-  --ds-chart-3: #ff9a33;
-  --ds-chart-4: #a394ff;
-  --ds-chart-5: #4ade9f;
+  --ds-chart-1: #7dcbfc;
+  --ds-chart-2: #ffa45c;
+  --ds-chart-3: #ff8db8;
+  --ds-chart-4: #6ee7b0;
+  --ds-chart-5: #b7aaff;
+  --ds-chart-6: #ffd166;
+  --ds-chart-7: #5eead4;
+  --ds-chart-8: #9c9db2;
 }
 
 @theme inline {
@@ -167,27 +259,51 @@
   --color-line-soft: var(--ds-line-soft);
   --color-line-strong: var(--ds-line-strong);
 
+  /* accent = text-safe · -vivid = decoration · -fill/-on-* = solid pair */
   --color-brand: var(--ds-brand);
   --color-brand-strong: var(--ds-brand-strong);
   --color-brand-bright: var(--ds-brand-bright);
+  --color-brand-vivid: var(--ds-brand-vivid);
+  --color-brand-fill: var(--ds-brand-fill);
+  --color-brand-fill-hover: var(--ds-brand-fill-hover);
+  --color-on-brand: var(--ds-on-brand);
   --color-brand-soft: var(--ds-brand-soft);
 
   --color-pink: var(--ds-pink);
   --color-pink-strong: var(--ds-pink-strong);
+  --color-pink-vivid: var(--ds-pink-vivid);
+  --color-pink-fill: var(--ds-pink-fill);
+  --color-on-pink: var(--ds-on-pink);
   --color-pink-soft: var(--ds-pink-soft);
 
   --color-amber: var(--ds-amber);
   --color-amber-strong: var(--ds-amber-strong);
+  --color-amber-vivid: var(--ds-amber-vivid);
+  --color-amber-fill: var(--ds-amber-fill);
+  --color-on-amber: var(--ds-on-amber);
   --color-amber-soft: var(--ds-amber-soft);
 
   --color-violet: var(--ds-violet);
+  --color-violet-vivid: var(--ds-violet-vivid);
+  --color-violet-fill: var(--ds-violet-fill);
+  --color-on-violet: var(--ds-on-violet);
   --color-violet-soft: var(--ds-violet-soft);
 
   --color-success: var(--ds-success);
+  --color-success-vivid: var(--ds-success-vivid);
+  --color-success-fill: var(--ds-success-fill);
+  --color-on-success: var(--ds-on-success);
   --color-success-soft: var(--ds-success-soft);
+
   --color-danger: var(--ds-danger);
+  --color-danger-vivid: var(--ds-danger-vivid);
+  --color-danger-fill: var(--ds-danger-fill);
+  --color-on-danger: var(--ds-on-danger);
   --color-danger-soft: var(--ds-danger-soft);
+
   --color-warning: var(--ds-warning);
+  --color-warning-fill: var(--ds-warning-fill);
+  --color-on-warning: var(--ds-on-warning);
   --color-warning-soft: var(--ds-warning-soft);
 
   --color-chart-1: var(--ds-chart-1);
@@ -195,6 +311,9 @@
   --color-chart-3: var(--ds-chart-3);
   --color-chart-4: var(--ds-chart-4);
   --color-chart-5: var(--ds-chart-5);
+  --color-chart-6: var(--ds-chart-6);
+  --color-chart-7: var(--ds-chart-7);
+  --color-chart-8: var(--ds-chart-8);
 
   --shadow-xs: var(--ds-shadow-xs);
   --shadow-card: var(--ds-shadow-card);
@@ -213,6 +332,13 @@
   --radius-xl: 16px;
   --radius-2xl: 24px;
   --radius-3xl: 32px;
+
+  /* breakpoints, documented for parity with tokens/figma-variables.json */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
 }
 
 @layer base {
@@ -264,6 +390,36 @@
 
   p {
     text-wrap: pretty;
+  }
+
+  /* Pointer-coarse devices: every icon-only control gets a 44px hit area
+     without changing its visual size. */
+  @media (pointer: coarse) {
+    [data-touch='icon'] {
+      position: relative;
+    }
+    [data-touch='icon']::after {
+      content: '';
+      position: absolute;
+      inset: 50% 50% 50% 50%;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  /* Never let a fixed-width child create horizontal page scroll. */
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  img,
+  svg,
+  video {
+    max-width: 100%;
   }
 
   /* scrollbars */

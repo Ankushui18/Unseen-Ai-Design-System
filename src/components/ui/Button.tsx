@@ -14,14 +14,14 @@ const sizes: Record<ButtonSize, string> = {
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    'bg-[linear-gradient(135deg,#38AEFA_0%,#0272C6_100%)] text-white shadow-[0_1px_0_rgba(255,255,255,.28)_inset,0_8px_20px_-10px_rgba(2,114,198,.65)] hover:brightness-[1.06] active:brightness-95',
+    'bg-brand-fill text-on-brand shadow-[0_1px_0_rgba(255,255,255,.22)_inset,0_8px_20px_-10px_rgba(2,114,198,.65)] hover:bg-brand-fill-hover active:bg-brand-fill-hover',
   secondary:
     'bg-surface text-ink border border-line-strong shadow-xs hover:bg-surface-2 hover:border-brand/40 dark:bg-surface-2',
   outline: 'bg-transparent text-ink-soft border border-line-strong hover:border-brand/50 hover:text-ink hover:bg-brand-soft/50',
   ghost: 'bg-transparent text-muted hover:bg-surface-3 hover:text-ink',
-  soft: 'bg-brand-soft text-brand-strong hover:bg-brand/15 dark:text-brand',
+  soft: 'bg-brand-soft text-brand hover:bg-brand/12',
   danger:
-    'bg-[linear-gradient(135deg,#F0656A_0%,#D63A40_100%)] text-white shadow-[0_1px_0_rgba(255,255,255,.24)_inset,0_8px_20px_-10px_rgba(214,58,64,.6)] hover:brightness-105',
+    'bg-danger-fill text-on-danger shadow-[0_1px_0_rgba(255,255,255,.22)_inset,0_8px_20px_-10px_rgba(198,47,52,.55)] hover:brightness-110',
   link: 'bg-transparent px-0 text-brand underline decoration-brand/30 decoration-2 underline-offset-4 hover:decoration-brand',
 };
 
@@ -89,6 +89,7 @@ export function IconButton({
     <button
       type="button"
       aria-label={label}
+      data-touch="icon"
       title={label}
       className={cn(
         'inline-grid place-items-center transition active:translate-y-px disabled:opacity-45',

@@ -2,18 +2,21 @@
 
 A token-driven design system and reference product for AI interfaces. It pairs **AlignUI's surgical component precision** with **Kigen's vivid, color-forward energy**, then extends both with the patterns AI products actually need: streaming, prompting, model choice, agent runs and token cost.
 
-> v2.1 · 111 components · 15 sections · 20 pages · light + dark · WCAG 2.2 AA
+> v2.2 · 111 components · 15 sections · 20 pages · light + dark · WCAG 2.2 AA · Figma token package
 
 ---
 
 ## Run it
 
 ```bash
-yarn install     # or npm install
-yarn dev         # http://localhost:5173
-yarn build       # tsc -b && vite build
-yarn lint
+npm install
+npm run dev       # http://localhost:5173
+npm run verify    # types + lint + token/contrast gate + production build
+npm run tokens    # regenerate the Figma/JSON/CSS token artefacts
 ```
+
+`npm run tokens` fails if any text pair drops below 4.5:1, so the docs, the app and the
+Figma library cannot drift apart.
 
 Navigate the app with the sidebar, or press <kbd>⌘K</kbd> / <kbd>Ctrl K</kbd> for the command palette. Toggle themes with <kbd>⌘J</kbd> or the sun/moon buttons.
 
@@ -88,6 +91,20 @@ Product code should never use raw hex or arbitrary spacing. Change `--ds-brand` 
 - Type scale: 60 / 40 / 28 / 20 / 16, body 16 / 14 / 13, caption 11, overline 10.
 - Radius ladder: **4 / 8 / 12 / 16 / 24 / full** — `sm` chips, `md` buttons + inputs, `lg` rows, `xl` cards, `2xl` modals and shells.
 
+### Colour roles
+
+Every accent is published as three tokens, because one hue cannot serve text and fills at once:
+
+| Role | Token | Use | Guarantee |
+| --- | --- | --- | --- |
+| base | `--ds-brand` | links, icons, focus rings | ≥ 4.5:1 on surface + canvas |
+| vivid | `--ds-brand-vivid` | gradients, chart marks | decorative, never carries text |
+| solid | `--ds-brand-fill` + `--ds-on-brand` | buttons, solid badges | the pair passes by construction |
+
+Amber and warning fills are light, so their on-colour is near-black — white on
+`amber/500` is 2.6:1 and never ships. The measured table (42 pairs, both modes) is on the
+Foundations screen and in `tokens/CONTRAST.md`.
+
 ### Rules of the system
 
 - **One primary action per view.** Everything else is secondary, outline or ghost.
@@ -122,12 +139,38 @@ Theme is stored in `localStorage` (`unseen-ds-theme`) and applied as `.dark` on 
 3. Publish the library; document AI states (streaming, thinking, tool call, failure) as variants.
 4. Keep names identical to code: `brand/500`, `surface`, `line-strong`, `danger`.
 
-## Token export
+## Token export & Figma
 
-`#/tokens` renders the same token source as four artefacts — CSS custom properties, a W3C-shaped JSON file, a Tailwind `@theme` block, and a Figma variables collection. Copy from the page or import `src/design/tokens.ts` directly.
+`npm run tokens` (source: `scripts/build-tokens.mjs`) emits:
+
+| File | Contents |
+| --- | --- |
+| `tokens/unseen.tokens.json` | Tokens Studio format, Light + Dark theme sets, W3C DTCG shape |
+| `tokens/figma-variables.json` | 212 Figma variables across 2 collections (`Unseen — Color`, `Unseen — Scale`) |
+| `tokens/unseen.tokens.css` | the same values as CSS custom properties |
+| `tokens/CONTRAST.md` | measured WCAG + colour-vision report |
+| `src/design/contrast-report.ts` | the same measurements, typed, rendered on Foundations |
+
+**The complete Figma rebuild spec — import steps, variable naming, text/effect styles,
+per-component anatomy with sizes and states, page structure and a verification checklist —
+is in [`docs/figma-handoff.md`](docs/figma-handoff.md).**
+
+### Chart palette
+
+Eight categorical series, checked pairwise under protanopia and deuteranopia with a
+Viénot/Brettel LMS simulation: min ΔE₇₆ **20.6** (light) and **19.1** (dark), against a
+floor of 10, and min 4.61:1 / 7.10:1 contrast against the surface.
+
+## Mobile
+
+Breakpoints are documented in `#/foundations` and the phone patterns live in `#/mobile`.
+The 390px pass fixed: toggle knob travel (was clipping 2px), 44px hit areas for icon
+buttons, modals becoming bottom sheets, the team table becoming cards, and the drawer
+sizing. `overflow-x: clip` on the root prevents accidental page-level horizontal scroll.
 
 ## Roadmap
 
+- A real 390px visual pass in a browser (this sandbox has no rendering engine)
 - Component test suite + visual regression with Playwright
 - Density switch (comfortable / compact) driven by the same tokens
 - Per-page code splitting (the demo bundle is intentionally single-chunk)

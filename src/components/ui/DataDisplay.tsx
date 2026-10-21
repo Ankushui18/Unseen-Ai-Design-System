@@ -145,14 +145,14 @@ export function TableToolbar({
   return (
     <div className="flex flex-wrap items-center gap-2 border-b border-line px-3 py-2.5">
       {onSearch && (
-        <div className="relative">
+        <div className="relative w-full sm:w-auto">
           <Search className="absolute left-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-faint" />
           <input
             value={search}
             onChange={e => onSearch(e.target.value)}
             placeholder={placeholder}
             aria-label={placeholder}
-            className="h-8 w-44 rounded-md border border-line bg-surface pl-8 pr-2 text-[11.5px] text-ink outline-none transition placeholder:text-faint focus:border-brand focus:ring-2 focus:ring-brand/15"
+            className="h-9 w-full rounded-md border border-line bg-surface pl-8 pr-2 text-[12px] text-ink outline-none transition placeholder:text-faint focus:border-brand focus:ring-2 focus:ring-brand/15 sm:h-8 sm:w-44 sm:text-[11.5px]"
           />
         </div>
       )}
@@ -210,7 +210,7 @@ export function Pagination({
                 aria-current={p === page ? 'page' : undefined}
                 className={cn(
                   'h-6 min-w-6 rounded-sm px-1.5 font-mono text-[10.5px] font-semibold transition',
-                  p === page ? 'bg-brand text-white shadow-xs' : 'border border-line bg-surface text-muted hover:text-ink',
+                  p === page ? 'bg-brand-fill text-on-brand shadow-xs' : 'border border-line bg-surface text-muted hover:text-ink',
                 )}
               >
                 {p}

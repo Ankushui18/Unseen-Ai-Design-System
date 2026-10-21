@@ -17,7 +17,7 @@ export function PageHeader({
   gradient?: boolean;
 }) {
   return (
-    <header className="relative mb-8 border-b border-line pb-8">
+    <header className="relative mb-6 border-b border-line pb-6 sm:mb-8 sm:pb-8">
       <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-2xl">
           <div className="mb-3 inline-flex items-center gap-2">
@@ -26,7 +26,7 @@ export function PageHeader({
           </div>
           <h1
             className={cn(
-              'text-[34px] font-extrabold leading-[1.05] tracking-[-0.04em] text-ink sm:text-[42px]',
+              'text-[28px] font-extrabold leading-[1.06] tracking-[-0.04em] text-ink sm:text-[42px]',
               gradient && 'ds-gradient-text',
             )}
           >
@@ -35,7 +35,7 @@ export function PageHeader({
           {description && <p className="mt-3 max-w-xl text-[14px] leading-6 text-muted">{description}</p>}
           {meta && <div className="mt-4 flex flex-wrap items-center gap-2">{meta}</div>}
         </div>
-        {actions && <div className="flex flex-wrap items-center gap-2">{actions}</div>}
+        {actions && <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto">{actions}</div>}
       </div>
     </header>
   );

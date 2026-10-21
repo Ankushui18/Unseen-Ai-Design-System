@@ -152,6 +152,47 @@ export function TeamPage() {
                 }
                 actions={<Button size="xs" variant="ghost" iconLeft={<UserPlus className="h-3 w-3" />} onClick={() => setInviteOpen(true)}>Invite</Button>}
               />
+              {/* Phone fallback: the same rows as cards, so nothing is cut off at 390px */}
+              <ul className="divide-y divide-line sm:hidden">
+                {visible.map(member => (
+                  <li key={member.id} className="flex items-start gap-2.5 px-3 py-3">
+                    <Avatar
+                      initials={member.initials}
+                      tone={member.tone}
+                      size="sm"
+                      status={member.status === 'active' ? 'online' : member.status === 'invited' ? 'away' : 'offline'}
+                    />
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-1.5">
+                        <span className="truncate text-[12px] font-semibold text-ink">{member.name}</span>
+                        {member.role === 'owner' && <Badge tone="pink" variant="soft">you</Badge>}
+                      </div>
+                      <div className="truncate font-mono text-[9px] text-faint">{member.email}</div>
+                      <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
+                        <Badge tone={roleTone[member.role]} variant="soft">{member.role}</Badge>
+                        <span className="inline-flex items-center gap-1 text-[9.5px] text-muted">
+                          <StatusDot tone={member.status === 'active' ? 'success' : member.status === 'invited' ? 'warning' : 'neutral'} />
+                          {member.status}
+                        </span>
+                        <span className="text-[9px] text-faint">· {member.lastSeen}</span>
+                        {!member.mfa && <span className="text-[9px] font-semibold text-warning">MFA off</span>}
+                      </div>
+                    </div>
+                    <DropdownMenu
+                      trigger={<IconButton label={`Actions for ${member.name}`} size="sm" variant="ghost"><MoreHorizontal className="h-3.5 w-3.5" /></IconButton>}
+                      align="end"
+                      items={[
+                        { label: 'Change role', icon: <Shield className="h-3 w-3" /> },
+                        { label: 'Resend invite', icon: <Mail className="h-3 w-3" /> },
+                        { label: 'Reset MFA', icon: <Shield className="h-3 w-3" /> },
+                        { label: 'Suspend access', icon: <X className="h-3 w-3" />, danger: true },
+                      ]}
+                    />
+                  </li>
+                ))}
+              </ul>
+
+              <div className="hidden sm:block">
               <Table>
                 <TableHead>
                   <tr>
@@ -203,6 +244,7 @@ export function TeamPage() {
                   ))}
                 </tbody>
               </Table>
+              </div>
             </>
           )}
 

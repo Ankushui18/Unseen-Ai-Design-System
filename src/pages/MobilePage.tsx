@@ -103,7 +103,7 @@ export function MobilePage() {
                     className="min-w-0 flex-1 bg-transparent py-1 text-[10px] text-ink outline-none placeholder:text-faint"
                   />
                   <IconButton label="Voice" size="xs" variant="ghost"><Mic className="h-3.5 w-3.5" /></IconButton>
-                  <span className="grid h-6 w-6 place-items-center rounded-full bg-brand text-white">
+                  <span className="grid h-6 w-6 place-items-center rounded-full bg-brand-fill text-on-brand">
                     <ArrowUp className="h-3 w-3" />
                   </span>
                 </div>
@@ -324,6 +324,61 @@ export function MobilePage() {
           );
         })}
       </div>
+
+      <Section
+        index="04"
+        title="390px audit"
+        description="What was fixed for phone-width browsers"
+        aside={<Badge tone="success" variant="soft">5 fixes applied</Badge>}
+      >
+        <div className="grid gap-4 lg:grid-cols-[1.2fr_1fr]">
+          <div className="overflow-hidden rounded-lg border border-line">
+            <table className="w-full text-left">
+              <thead className="bg-surface-2 text-[9px] font-bold uppercase tracking-[0.1em] text-faint">
+                <tr>
+                  <th className="px-3 py-2">Finding</th>
+                  <th className="px-3 py-2">Fix</th>
+                  <th className="hidden px-3 py-2 sm:table-cell">Where</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-line">
+                {[
+                  ['Toggle knobs clipped 2px at sm/md', 'Exact travel: 12 / 16 / 22px instead of fractional utilities', 'Controls.tsx'],
+                  ['Icon buttons were 28–32px tap targets', 'Invisible 44×44 hit area on coarse pointers, visual size unchanged', 'Button.tsx + index.css'],
+                  ['Modal was vertically centred in a 390 viewport', 'Bottom sheet under 640px, scrollable body, safe-area footer', 'Overlay.tsx'],
+                  ['Team table forced horizontal scroll', 'Card list replacing the table below 640px', 'TeamPage.tsx'],
+                  ['Drawer/search competed for width', 'Drawer 82vw (max 300), search full-width on phones', 'Shell + TableToolbar'],
+                ].map(([finding, fix, where]) => (
+                  <tr key={finding} className="text-[10.5px]">
+                    <td className="px-3 py-2 text-ink-soft">{finding}</td>
+                    <td className="px-3 py-2 text-muted">{fix}</td>
+                    <td className="hidden px-3 py-2 font-mono text-[9px] text-faint sm:table-cell">{where}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="space-y-2.5">
+            <div className="rounded-lg border border-line bg-surface-2 p-3">
+              <div className="text-[10px] font-bold uppercase tracking-[0.14em] text-faint">Checked structurally</div>
+              <ul className="mt-1.5 space-y-1 text-[10px] text-muted">
+                <li>· No fixed-width child wider than 390 without a scroll container</li>
+                <li>· `overflow-x: clip` on root stops accidental page-level scroll</li>
+                <li>· Every multi-column grid collapses before 640</li>
+                <li>· Sticky top bar stays 56px; content padding 16 → 24 → 40</li>
+              </ul>
+            </div>
+            <div className="rounded-lg border border-warning/30 bg-warning-soft p-3">
+              <div className="text-[10.5px] font-semibold text-warning">Not verified in this sandbox</div>
+              <p className="mt-0.5 text-[9.5px] leading-4 text-warning/90">
+                No browser engine is available here, so these are structural checks plus a device frame — the visual pass on
+                a real 390px viewport is still worth five minutes of your time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
 
       <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-line bg-surface-2 px-4 py-3">
         <div className="flex items-center gap-2">

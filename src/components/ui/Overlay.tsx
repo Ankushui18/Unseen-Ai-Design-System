@@ -71,7 +71,7 @@ export function Modal({
   const width = { sm: 'max-w-sm', md: 'max-w-lg', lg: 'max-w-2xl' }[size];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 flex items-end justify-center p-0 sm:items-center sm:p-4">
       <button
         aria-label="Close dialog"
         onClick={onClose}
@@ -82,11 +82,12 @@ export function Modal({
         aria-modal="true"
         aria-label={title}
         className={cn(
-          'relative w-full ds-rise overflow-hidden rounded-xl border border-line bg-surface shadow-float',
+          'relative flex max-h-[92dvh] w-full flex-col ds-rise overflow-hidden rounded-t-2xl border border-line bg-surface shadow-float sm:max-h-[85dvh] sm:rounded-xl',
+          'pb-[env(safe-area-inset-bottom)] sm:pb-0',
           width,
         )}
       >
-        <div className="flex items-start justify-between gap-4 px-6 pt-5">
+        <div className="flex items-start justify-between gap-4 px-4 pt-4 sm:px-6 sm:pt-5">
           <div>
             <h2 className="text-[17px] font-bold tracking-[-0.02em] text-ink">{title}</h2>
             {description && <p className="mt-1 text-[13px] leading-5 text-muted">{description}</p>}
@@ -99,9 +100,9 @@ export function Modal({
             <X className="h-4 w-4" />
           </button>
         </div>
-        {children && <div className="px-6 py-5">{children}</div>}
+        {children && <div className="flex-1 overflow-y-auto overscroll-contain px-4 py-4 sm:px-6 sm:py-5">{children}</div>}
         {footer && (
-          <div className="flex items-center justify-end gap-2 border-t border-line bg-surface-2 px-6 py-3.5">
+          <div className="flex flex-col-reverse gap-2 border-t border-line bg-surface-2 px-4 py-3.5 sm:flex-row sm:items-center sm:justify-end sm:px-6">
             {footer}
           </div>
         )}
@@ -142,7 +143,7 @@ export function Drawer({
         role="dialog"
         aria-modal="true"
         aria-label={title}
-        className="relative flex h-full w-full max-w-[400px] flex-col border-l border-line bg-surface shadow-float ds-rise"
+        className="relative flex h-full w-full max-w-none flex-col border-l border-line bg-surface shadow-float ds-rise sm:max-w-[400px]"
       >
         <header className="flex items-start justify-between gap-4 border-b border-line px-5 py-4">
           <div>
@@ -157,7 +158,7 @@ export function Drawer({
             <X className="h-4 w-4" />
           </button>
         </header>
-        <div className="flex-1 space-y-5 overflow-auto p-5">{children}</div>
+        <div className="flex-1 space-y-5 overflow-y-auto overscroll-contain p-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:p-5">{children}</div>
         {footer && <footer className="flex justify-end gap-2 border-t border-line p-4">{footer}</footer>}
       </aside>
     </div>

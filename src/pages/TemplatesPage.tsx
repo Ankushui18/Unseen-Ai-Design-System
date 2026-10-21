@@ -141,7 +141,7 @@ export function TemplatesPage() {
                         done
                           ? 'border-success/30 bg-success-soft text-success'
                           : active
-                            ? 'border-brand bg-brand text-white shadow-brand'
+                            ? 'border-brand-fill bg-brand-fill text-on-brand shadow-brand'
                             : 'border-line bg-surface-2 text-faint'
                       }`}
                     >

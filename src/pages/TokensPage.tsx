@@ -69,12 +69,12 @@ export function TokensPage() {
       <PageHeader
         eyebrow="Resources · tokens"
         title="Token export"
-        description="One source of truth, four export formats. Copy straight into CSS, a token pipeline, a Tailwind theme, or Figma variables."
+        description="One source of truth, four export formats, and a pipeline that fails the build if contrast regresses. Everything on this page is generated from scripts/build-tokens.mjs."
         meta={
           <>
-            <Badge tone="brand" variant="soft">248 tokens</Badge>
-            <Badge tone="neutral" variant="outline">light + dark</Badge>
-            <Badge tone="neutral" variant="outline">W3C design-tokens shape</Badge>
+            <Badge tone="brand" variant="soft">212 Figma variables</Badge>
+            <Badge tone="neutral" variant="outline">light + dark modes</Badge>
+            <Badge tone="neutral" variant="outline">W3C DTCG shape</Badge>
           </>
         }
         actions={
@@ -89,9 +89,9 @@ export function TokensPage() {
 
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         {[
-          { label: 'Color tokens', value: '96', icon: Palette },
-          { label: 'Shape tokens', value: '14', icon: Terminal },
-          { label: 'Type tokens', value: '10', icon: Terminal },
+          { label: 'Semantic colours', value: '49', icon: Palette },
+          { label: 'Ramp steps', value: '70', icon: Terminal },
+          { label: 'Scale tokens', value: '93', icon: Terminal },
           { label: 'Theme modes', value: '2', icon: FileJson },
         ].map(item => {
           const Icon = item.icon;
@@ -180,7 +180,7 @@ export function TokensPage() {
                 {copied ? 'Copied' : 'Copy'}
               </Button>
               <Button size="xs" variant="ghost" iconLeft={<Download className="h-3 w-3" />}>Download file</Button>
-              <span className="ml-auto font-mono text-[9.5px] text-faint">{format === 'json' || format === 'figma' ? 'JSON' : 'CSS'} · generated from src/design/tokens.ts</span>
+              <span className="ml-auto font-mono text-[9.5px] text-faint">{format === 'json' || format === 'figma' ? 'JSON' : 'CSS'} · npm run tokens</span>
             </div>
           </div>
 
@@ -198,7 +198,8 @@ export function TokensPage() {
                 {[
                   ['tokens.ts', 'typed source of truth'],
                   ['index.css', 'CSS variables + @theme'],
-                  ['Figma', 'variables via Tokens Studio'],
+                  ['tokens/figma-variables.json', 'variables import'],
+                  ['Figma', 'Tokens Studio themes'],
                   ['Product', 'utilities only'],
                 ].map(([step, note], i) => (
                   <li key={step} className="flex items-center gap-2">
@@ -292,12 +293,81 @@ export function TokensPage() {
         </Section>
       </div>
 
+      <Section index="05" title="Figma import" description="Two ways in, one naming law" aside={<Badge tone="success" variant="soft">checked in CI</Badge>}>
+        <div className="grid gap-4 lg:grid-cols-[1.1fr_1fr]">
+          <div className="space-y-3">
+            {[
+              {
+                step: '01',
+                title: 'Import the token file',
+                body: 'Tokens Studio → Tools → Import → tokens/unseen.tokens.json. It ships both the Light and Dark theme sets, so one import gives you both modes.',
+                file: 'tokens/unseen.tokens.json',
+              },
+              {
+                step: '02',
+                title: 'Push to Variables',
+                body: 'Export → Figma Variables, choosing the Unseen — Color and Unseen — Scale collections. Keep the variable names — code references them.',
+                file: 'tokens/figma-variables.json',
+              },
+              {
+                step: '03',
+                title: 'Bind, never type',
+                body: 'Every fill, stroke and radius uses a variable. Text uses the ten text styles. If the picker shows a hex, the layer is wrong.',
+                file: 'docs/figma-handoff.md',
+              },
+            ].map(item => (
+              <div key={item.step} className="flex gap-3 rounded-lg border border-line bg-surface-2 p-3">
+                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-soft font-mono text-[9px] font-bold text-brand">{item.step}</span>
+                <div className="min-w-0">
+                  <div className="text-[11.5px] font-semibold text-ink">{item.title}</div>
+                  <p className="mt-0.5 text-[10.5px] leading-4 text-muted">{item.body}</p>
+                  <code className="mt-1 block truncate font-mono text-[9px] text-brand">{item.file}</code>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="space-y-3">
+            <JsonView
+              className="max-h-[210px]"
+              data={{
+                variableCollections: [
+                  { name: 'Unseen — Color', modes: ['Light', 'Dark'], variables: 189 },
+                  { name: 'Unseen — Scale', modes: ['Default'], variables: 23 },
+                ],
+                sample: {
+                  name: 'color/brand',
+                  resolvedType: 'COLOR',
+                  valuesByMode: { light: '#0272C6', dark: '#38AEFA' },
+                },
+              }}
+            />
+            <div className="rounded-lg border border-line bg-surface p-3">
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-faint">Contrast gate</span>
+                <Badge tone="success" variant="soft">42 pairs pass</Badge>
+              </div>
+              <p className="mt-1.5 text-[10px] leading-4 text-muted">
+                <span className="font-mono">npm run tokens</span> regenerates every artefact and exits non-zero if any text pair
+                drops below 4.5:1. The report is in <span className="font-mono">tokens/CONTRAST.md</span>.
+              </p>
+              <div className="mt-2 flex items-center gap-2">
+                <Button size="xs" variant="secondary" iconLeft={<Copy className="h-3 w-3" />} onClick={() => copy(JSON.stringify({ note: 'see tokens/figma-variables.json' }))}>
+                  {copied ? 'Copied' : 'Copy manifest'}
+                </Button>
+                <Button size="xs" variant="ghost" iconRight={<ArrowUpRight className="h-3 w-3" />}>Read handoff</Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
       <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-line bg-surface-2 px-4 py-3">
         <div className="flex items-center gap-2">
           <GradientBadge>automation</GradientBadge>
-          <span className="text-[10.5px] text-muted">Tokens publish on every merge to main — no manual Figma sync.</span>
+          <span className="text-[10.5px] text-muted">Tokens regenerate on every merge — the Figma library and the app cannot drift.</span>
         </div>
-        <Button size="xs" variant="secondary" iconRight={<ArrowUpRight className="h-3 w-3" />}>View pipeline</Button>
+        <Button size="xs" variant="secondary" iconRight={<ArrowUpRight className="h-3 w-3" />}>npm run tokens</Button>
       </div>
     </div>
   );

@@ -36,8 +36,8 @@ export function Checkbox({
             'grid h-[18px] w-[18px] place-items-center rounded-sm border transition duration-150',
             active
               ? tone === 'pink'
-                ? 'border-pink bg-pink text-white'
-                : 'border-brand bg-brand text-white'
+                ? 'border-pink-fill bg-pink-fill text-on-pink'
+                : 'border-brand-fill bg-brand-fill text-on-brand'
               : 'border-line-strong bg-surface group-hover:border-brand/60',
             'peer-focus-visible:ring-2 peer-focus-visible:ring-brand/25 peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-surface',
           )}
@@ -126,7 +126,8 @@ export function Switch({
 }) {
   const track = { sm: 'h-4 w-7', md: 'h-5 w-9', lg: 'h-6 w-11' }[size];
   const knob = { sm: 'h-2.5 w-2.5', md: 'h-3.5 w-3.5', lg: 'h-4 w-4' }[size];
-  const travel = { sm: 'translate-x-3.5', md: 'translate-x-4.5', lg: 'translate-x-5.5' }[size];
+  // travel = track width − 2×padding(3px) − knob width; must be exact or the knob clips
+  const travel = { sm: 'translate-x-[12px]', md: 'translate-x-[16px]', lg: 'translate-x-[22px]' }[size];
   return (
     <label className={cn('flex items-start gap-3', disabled && 'cursor-not-allowed opacity-45')}>
       <button
@@ -139,7 +140,7 @@ export function Switch({
         className={cn(
           'relative mt-0.5 shrink-0 rounded-full p-[3px] transition duration-200',
           track,
-          checked ? (tone === 'pink' ? 'bg-pink' : 'bg-brand') : 'bg-line-strong',
+          checked ? (tone === 'pink' ? 'bg-pink-fill' : 'bg-brand-fill') : 'bg-line-strong',
           'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand',
         )}
       >

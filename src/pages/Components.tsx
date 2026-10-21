@@ -644,7 +644,7 @@ export function Components() {
                   onClick={() => setPage(n)}
                   className={cn(
                     'h-7 w-7 rounded-md font-mono text-[11px] font-semibold transition',
-                    page === n ? 'bg-brand text-white shadow-xs' : 'border border-line bg-surface text-muted hover:text-ink',
+                    page === n ? 'bg-brand-fill text-on-brand shadow-xs' : 'border border-line bg-surface text-muted hover:text-ink',
                   )}
                 >
                   {n}

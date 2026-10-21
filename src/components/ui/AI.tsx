@@ -393,7 +393,7 @@ export function ModelCard({
           <span
             className={cn(
               'grid h-8 w-8 place-items-center rounded-md text-[11px] font-black',
-              selected ? 'bg-brand text-white' : 'bg-surface-3 text-muted',
+              selected ? 'bg-brand-fill text-on-brand' : 'bg-surface-3 text-muted',
             )}
           >
             {provider.slice(0, 2).toUpperCase()}
