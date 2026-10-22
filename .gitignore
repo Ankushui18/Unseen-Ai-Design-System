@@ -1,0 +1,30 @@
+# dependencies
+node_modules
+.pnp
+.pnp.js
+yarn.lock.bak
+package-lock.json
+
+# build output
+dist
+dist-ssr
+*.local
+
+# tooling caches
+.vite
+.turbo
+.tsbuildinfo
+node_modules/.tmp
+
+# logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# editors / os
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea

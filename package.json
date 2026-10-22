@@ -1,7 +1,7 @@
 {
   "name": "component-forge",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.3.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,7 +9,10 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "tokens": "node scripts/build-tokens.mjs",
+    "verify": "tsc -b && eslint . && npm run tokens && npm run test:figma && vite build",
+    "test:figma": "node scripts/test-figma-plugin.mjs"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

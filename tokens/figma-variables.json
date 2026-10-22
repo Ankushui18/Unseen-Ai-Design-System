@@ -1,0 +1,4042 @@
+{
+  "$schema": "figma-variables/1",
+  "variableCollections": [
+    {
+      "name": "Unseen — Color",
+      "modes": [
+        {
+          "name": "Light",
+          "id": "mode:light"
+        },
+        {
+          "name": "Dark",
+          "id": "mode:dark"
+        }
+      ],
+      "defaultModeId": "mode:light"
+    },
+    {
+      "name": "Unseen — Scale",
+      "modes": [
+        {
+          "name": "Default",
+          "id": "mode:default"
+        }
+      ],
+      "defaultModeId": "mode:default"
+    }
+  ],
+  "variables": [
+    {
+      "name": "color/canvas",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.9647058823529412,
+          "g": 0.9647058823529412,
+          "b": 0.9803921568627451,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.027450980392156862,
+          "g": 0.027450980392156862,
+          "b": 0.050980392156862744,
+          "a": 1
+        }
+      },
+      "description": "Page background"
+    },
+    {
+      "name": "color/canvas-deep",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.9294117647058824,
+          "g": 0.9294117647058824,
+          "b": 0.9568627450980393,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.01568627450980392,
+          "g": 0.01568627450980392,
+          "b": 0.0392156862745098,
+          "a": 1
+        }
+      },
+      "description": "Recessed background"
+    },
+    {
+      "name": "color/surface",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.06274509803921569,
+          "g": 0.06274509803921569,
+          "b": 0.09803921568627451,
+          "a": 1
+        }
+      },
+      "description": "Cards, panels"
+    },
+    {
+      "name": "color/surface-2",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.984313725490196,
+          "g": 0.984313725490196,
+          "b": 0.9921568627450981,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.08235294117647059,
+          "g": 0.08235294117647059,
+          "b": 0.12156862745098039,
+          "a": 1
+        }
+      },
+      "description": "Nested panels"
+    },
+    {
+      "name": "color/surface-3",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.9490196078431372,
+          "g": 0.9490196078431372,
+          "b": 0.9686274509803922,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.10588235294117647,
+          "g": 0.10588235294117647,
+          "b": 0.15294117647058825,
+          "a": 1
+        }
+      },
+      "description": "Tracks, wells"
+    },
+    {
+      "name": "color/inverse",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.058823529411764705,
+          "g": 0.058823529411764705,
+          "b": 0.11764705882352941,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.9607843137254902,
+          "g": 0.9647058823529412,
+          "b": 0.9803921568627451,
+          "a": 1
+        }
+      },
+      "description": "Inverse surface"
+    },
+    {
+      "name": "color/on-inverse",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.058823529411764705,
+          "g": 0.058823529411764705,
+          "b": 0.11764705882352941,
+          "a": 1
+        }
+      },
+      "description": "Text on inverse"
+    },
+    {
+      "name": "color/ink",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.058823529411764705,
+          "g": 0.058823529411764705,
+          "b": 0.11764705882352941,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.9568627450980393,
+          "g": 0.9607843137254902,
+          "b": 0.9803921568627451,
+          "a": 1
+        }
+      },
+      "description": "Primary copy"
+    },
+    {
+      "name": "color/ink-soft",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.22745098039215686,
+          "g": 0.22745098039215686,
+          "b": 0.3333333333333333,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.788235294117647,
+          "g": 0.792156862745098,
+          "b": 0.8509803921568627,
+          "a": 1
+        }
+      },
+      "description": "Secondary headings"
+    },
+    {
+      "name": "color/muted",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.3686274509803922,
+          "g": 0.3686274509803922,
+          "b": 0.47058823529411764,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.6549019607843137,
+          "g": 0.6588235294117647,
+          "b": 0.7372549019607844,
+          "a": 1
+        }
+      },
+      "description": "Body / helper copy"
+    },
+    {
+      "name": "color/faint",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.4235294117647059,
+          "g": 0.4235294117647059,
+          "b": 0.5372549019607843,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.5411764705882353,
+          "g": 0.5450980392156862,
+          "b": 0.6313725490196078,
+          "a": 1
+        }
+      },
+      "description": "Metadata, captions"
+    },
+    {
+      "name": "color/line",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.9098039215686274,
+          "g": 0.9098039215686274,
+          "b": 0.9411764705882353,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.13725490196078433,
+          "g": 0.13725490196078433,
+          "b": 0.1843137254901961,
+          "a": 1
+        }
+      },
+      "description": "Borders, dividers"
+    },
+    {
+      "name": "color/line-soft",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.9411764705882353,
+          "g": 0.9411764705882353,
+          "b": 0.9647058823529412,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.10588235294117647,
+          "g": 0.10588235294117647,
+          "b": 0.1450980392156863,
+          "a": 1
+        }
+      },
+      "description": "Hairlines"
+    },
+    {
+      "name": "color/line-strong",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.8352941176470589,
+          "g": 0.8352941176470589,
+          "b": 0.8862745098039215,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.20784313725490197,
+          "g": 0.20784313725490197,
+          "b": 0.2901960784313726,
+          "a": 1
+        }
+      },
+      "description": "Input borders"
+    },
+    {
+      "name": "color/brand",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.00784313725490196,
+          "g": 0.4470588235294118,
+          "b": 0.7764705882352941,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.2196078431372549,
+          "g": 0.6823529411764706,
+          "b": 0.9803921568627451,
+          "a": 1
+        }
+      },
+      "description": "Links, active icons, focus"
+    },
+    {
+      "name": "color/brand-vivid",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.054901960784313725,
+          "g": 0.5686274509803921,
+          "b": 0.9411764705882353,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.2196078431372549,
+          "g": 0.6823529411764706,
+          "b": 0.9803921568627451,
+          "a": 1
+        }
+      },
+      "description": "Gradients, chart marks"
+    },
+    {
+      "name": "color/brand-fill",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.00784313725490196,
+          "g": 0.4470588235294118,
+          "b": 0.7764705882352941,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.2196078431372549,
+          "g": 0.6823529411764706,
+          "b": 0.9803921568627451,
+          "a": 1
+        }
+      },
+      "description": "Solid button background"
+    },
+    {
+      "name": "color/brand-fill-hover",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.011764705882352941,
+          "g": 0.3568627450980392,
+          "b": 0.6196078431372549,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.33725490196078434,
+          "g": 0.7372549019607844,
+          "b": 0.984313725490196,
+          "a": 1
+        }
+      },
+      "description": "Solid hover"
+    },
+    {
+      "name": "color/on-brand",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.023529411764705882,
+          "g": 0.07450980392156863,
+          "b": 0.12549019607843137,
+          "a": 1
+        }
+      },
+      "description": "Text on brand fill"
+    },
+    {
+      "name": "color/brand-soft",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.9176470588235294,
+          "g": 0.9647058823529412,
+          "b": 1,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.2196078431372549,
+          "g": 0.6823529411764706,
+          "b": 0.9803921568627451,
+          "a": 0.12
+        }
+      },
+      "description": "Tinted background"
+    },
+    {
+      "name": "color/pink",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.788235294117647,
+          "g": 0.058823529411764705,
+          "b": 0.4117647058823529,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.33725490196078434,
+          "b": 0.6274509803921569,
+          "a": 1
+        }
+      },
+      "description": "AI / upgrade accent"
+    },
+    {
+      "name": "color/pink-vivid",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.9686274509803922,
+          "g": 0.14901960784313725,
+          "b": 0.5215686274509804,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.33725490196078434,
+          "b": 0.6274509803921569,
+          "a": 1
+        }
+      },
+      "description": "Gradients"
+    },
+    {
+      "name": "color/pink-fill",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.788235294117647,
+          "g": 0.058823529411764705,
+          "b": 0.4117647058823529,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.33725490196078434,
+          "b": 0.6274509803921569,
+          "a": 1
+        }
+      },
+      "description": "Solid background"
+    },
+    {
+      "name": "color/on-pink",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.10196078431372549,
+          "g": 0.0196078431372549,
+          "b": 0.06274509803921569,
+          "a": 1
+        }
+      },
+      "description": "Text on pink fill"
+    },
+    {
+      "name": "color/pink-soft",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 0.9411764705882353,
+          "b": 0.9686274509803922,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.9686274509803922,
+          "g": 0.14901960784313725,
+          "b": 0.5215686274509804,
+          "a": 0.14
+        }
+      },
+      "description": "Tinted background"
+    },
+    {
+      "name": "color/amber",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.6627450980392157,
+          "g": 0.32941176470588235,
+          "b": 0.0392156862745098,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.6039215686274509,
+          "b": 0.2,
+          "a": 1
+        }
+      },
+      "description": "Attention text"
+    },
+    {
+      "name": "color/amber-vivid",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 0.47843137254901963,
+          "b": 0.050980392156862744,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.6039215686274509,
+          "b": 0.2,
+          "a": 1
+        }
+      },
+      "description": "Gradients, badges"
+    },
+    {
+      "name": "color/amber-fill",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 0.47843137254901963,
+          "b": 0.050980392156862744,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.6039215686274509,
+          "b": 0.2,
+          "a": 1
+        }
+      },
+      "description": "Solid background (dark text)"
+    },
+    {
+      "name": "color/on-amber",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.058823529411764705,
+          "g": 0.058823529411764705,
+          "b": 0.11764705882352941,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.10196078431372549,
+          "g": 0.06274509803921569,
+          "b": 0.00784313725490196,
+          "a": 1
+        }
+      },
+      "description": "Text on amber fill"
+    },
+    {
+      "name": "color/amber-soft",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 0.9529411764705882,
+          "b": 0.9019607843137255,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.47843137254901963,
+          "b": 0.050980392156862744,
+          "a": 0.14
+        }
+      },
+      "description": "Tinted background"
+    },
+    {
+      "name": "color/green",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.043137254901960784,
+          "g": 0.47843137254901963,
+          "b": 0.3176470588235294,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.2901960784313726,
+          "g": 0.8705882352941177,
+          "b": 0.6235294117647059,
+          "a": 1
+        }
+      },
+      "description": "Success text"
+    },
+    {
+      "name": "color/green-vivid",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.08627450980392157,
+          "g": 0.6627450980392157,
+          "b": 0.44313725490196076,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.2901960784313726,
+          "g": 0.8705882352941177,
+          "b": 0.6235294117647059,
+          "a": 1
+        }
+      },
+      "description": "Charts, dots"
+    },
+    {
+      "name": "color/green-fill",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.047058823529411764,
+          "g": 0.49019607843137253,
+          "b": 0.3254901960784314,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.2901960784313726,
+          "g": 0.8705882352941177,
+          "b": 0.6235294117647059,
+          "a": 1
+        }
+      },
+      "description": "Solid background"
+    },
+    {
+      "name": "color/on-green",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.01568627450980392,
+          "g": 0.09019607843137255,
+          "b": 0.058823529411764705,
+          "a": 1
+        }
+      },
+      "description": "Text on green fill"
+    },
+    {
+      "name": "color/green-soft",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.9058823529411765,
+          "g": 0.9764705882352941,
+          "b": 0.9450980392156862,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.06666666666666667,
+          "g": 0.6274509803921569,
+          "b": 0.41568627450980394,
+          "a": 0.16
+        }
+      },
+      "description": "Tinted background"
+    },
+    {
+      "name": "color/red",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.7254901960784313,
+          "g": 0.16862745098039217,
+          "b": 0.18823529411764706,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.4823529411764706,
+          "b": 0.4980392156862745,
+          "a": 1
+        }
+      },
+      "description": "Danger text"
+    },
+    {
+      "name": "color/red-vivid",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.8980392156862745,
+          "g": 0.2823529411764706,
+          "b": 0.30196078431372547,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.4823529411764706,
+          "b": 0.4980392156862745,
+          "a": 1
+        }
+      },
+      "description": "Charts, dots"
+    },
+    {
+      "name": "color/red-fill",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.7764705882352941,
+          "g": 0.1843137254901961,
+          "b": 0.20392156862745098,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.4823529411764706,
+          "b": 0.4980392156862745,
+          "a": 1
+        }
+      },
+      "description": "Destructive background"
+    },
+    {
+      "name": "color/on-red",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.10980392156862745,
+          "g": 0.0196078431372549,
+          "b": 0.027450980392156862,
+          "a": 1
+        }
+      },
+      "description": "Text on red fill"
+    },
+    {
+      "name": "color/red-soft",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.9921568627450981,
+          "g": 0.9333333333333333,
+          "b": 0.9333333333333333,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.8980392156862745,
+          "g": 0.2823529411764706,
+          "b": 0.30196078431372547,
+          "a": 0.16
+        }
+      },
+      "description": "Tinted background"
+    },
+    {
+      "name": "color/warning",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.5411764705882353,
+          "g": 0.33725490196078434,
+          "b": 0,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.788235294117647,
+          "b": 0.25098039215686274,
+          "a": 1
+        }
+      },
+      "description": "Caution text"
+    },
+    {
+      "name": "color/warning-fill",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.8509803921568627,
+          "g": 0.5411764705882353,
+          "b": 0,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.788235294117647,
+          "b": 0.25098039215686274,
+          "a": 1
+        }
+      },
+      "description": "Solid background (dark text)"
+    },
+    {
+      "name": "color/on-warning",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.058823529411764705,
+          "g": 0.058823529411764705,
+          "b": 0.11764705882352941,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.10196078431372549,
+          "g": 0.06274509803921569,
+          "b": 0.00784313725490196,
+          "a": 1
+        }
+      },
+      "description": "Text on warning fill"
+    },
+    {
+      "name": "color/warning-soft",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 0.9647058823529412,
+          "b": 0.8784313725490196,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.8509803921568627,
+          "g": 0.5411764705882353,
+          "b": 0,
+          "a": 0.16
+        }
+      },
+      "description": "Tinted background"
+    },
+    {
+      "name": "color/violet",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.3058823529411765,
+          "g": 0.24313725490196078,
+          "b": 0.8,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.6392156862745098,
+          "g": 0.5803921568627451,
+          "b": 1,
+          "a": 1
+        }
+      },
+      "description": "Tool / agent accent"
+    },
+    {
+      "name": "color/violet-vivid",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.48627450980392156,
+          "g": 0.4235294117647059,
+          "b": 0.9647058823529412,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.6392156862745098,
+          "g": 0.5803921568627451,
+          "b": 1,
+          "a": 1
+        }
+      },
+      "description": "Charts, dots"
+    },
+    {
+      "name": "color/violet-fill",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.3568627450980392,
+          "g": 0.29411764705882354,
+          "b": 0.8784313725490196,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.6392156862745098,
+          "g": 0.5803921568627451,
+          "b": 1,
+          "a": 1
+        }
+      },
+      "description": "Solid background"
+    },
+    {
+      "name": "color/on-violet",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.054901960784313725,
+          "g": 0.0392156862745098,
+          "b": 0.1411764705882353,
+          "a": 1
+        }
+      },
+      "description": "Text on violet fill"
+    },
+    {
+      "name": "color/violet-soft",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.9450980392156862,
+          "g": 0.9372549019607843,
+          "b": 1,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.48627450980392156,
+          "g": 0.4235294117647059,
+          "b": 0.9647058823529412,
+          "a": 0.16
+        }
+      },
+      "description": "Tinted background"
+    },
+    {
+      "name": "chart/1",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.043137254901960784,
+          "g": 0.43529411764705883,
+          "b": 0.7215686274509804,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.49019607843137253,
+          "g": 0.796078431372549,
+          "b": 0.9882352941176471,
+          "a": 1
+        }
+      },
+      "description": "Categorical series 1"
+    },
+    {
+      "name": "chart/2",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.7686274509803922,
+          "g": 0.3215686274509804,
+          "b": 0,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.6431372549019608,
+          "b": 0.3607843137254902,
+          "a": 1
+        }
+      },
+      "description": "Categorical series 2"
+    },
+    {
+      "name": "chart/3",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.6588235294117647,
+          "g": 0.06274509803921569,
+          "b": 0.30980392156862746,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.5529411764705883,
+          "b": 0.7215686274509804,
+          "a": 1
+        }
+      },
+      "description": "Categorical series 3"
+    },
+    {
+      "name": "chart/4",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.047058823529411764,
+          "g": 0.49019607843137253,
+          "b": 0.3254901960784314,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.43137254901960786,
+          "g": 0.9058823529411765,
+          "b": 0.6901960784313725,
+          "a": 1
+        }
+      },
+      "description": "Categorical series 4"
+    },
+    {
+      "name": "chart/5",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.3568627450980392,
+          "g": 0.29411764705882354,
+          "b": 0.8784313725490196,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.7176470588235294,
+          "g": 0.6666666666666666,
+          "b": 1,
+          "a": 1
+        }
+      },
+      "description": "Categorical series 5"
+    },
+    {
+      "name": "chart/6",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.47843137254901963,
+          "g": 0.41568627450980394,
+          "b": 0,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.8196078431372549,
+          "b": 0.4,
+          "a": 1
+        }
+      },
+      "description": "Categorical series 6"
+    },
+    {
+      "name": "chart/7",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.054901960784313725,
+          "g": 0.4549019607843137,
+          "b": 0.5647058823529412,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.3686274509803922,
+          "g": 0.9176470588235294,
+          "b": 0.8313725490196079,
+          "a": 1
+        }
+      },
+      "description": "Categorical series 7"
+    },
+    {
+      "name": "chart/8",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.43529411764705883,
+          "g": 0.43529411764705883,
+          "b": 0.5490196078431373,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.611764705882353,
+          "g": 0.615686274509804,
+          "b": 0.6980392156862745,
+          "a": 1
+        }
+      },
+      "description": "Categorical series 8"
+    },
+    {
+      "name": "palette/brand/50",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.9372549019607843,
+          "g": 0.9725490196078431,
+          "b": 1,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.9372549019607843,
+          "g": 0.9725490196078431,
+          "b": 1,
+          "a": 1
+        }
+      },
+      "description": "Blue 50"
+    },
+    {
+      "name": "palette/brand/100",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.8588235294117647,
+          "g": 0.9372549019607843,
+          "b": 0.996078431372549,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.8588235294117647,
+          "g": 0.9372549019607843,
+          "b": 0.996078431372549,
+          "a": 1
+        }
+      },
+      "description": "Blue 100"
+    },
+    {
+      "name": "palette/brand/200",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.7294117647058823,
+          "g": 0.8784313725490196,
+          "b": 0.9921568627450981,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.7294117647058823,
+          "g": 0.8784313725490196,
+          "b": 0.9921568627450981,
+          "a": 1
+        }
+      },
+      "description": "Blue 200"
+    },
+    {
+      "name": "palette/brand/300",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.49019607843137253,
+          "g": 0.796078431372549,
+          "b": 0.9882352941176471,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.49019607843137253,
+          "g": 0.796078431372549,
+          "b": 0.9882352941176471,
+          "a": 1
+        }
+      },
+      "description": "Blue 300"
+    },
+    {
+      "name": "palette/brand/400",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.2196078431372549,
+          "g": 0.6823529411764706,
+          "b": 0.9803921568627451,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.2196078431372549,
+          "g": 0.6823529411764706,
+          "b": 0.9803921568627451,
+          "a": 1
+        }
+      },
+      "description": "Blue 400"
+    },
+    {
+      "name": "palette/brand/500",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.054901960784313725,
+          "g": 0.5686274509803921,
+          "b": 0.9411764705882353,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.054901960784313725,
+          "g": 0.5686274509803921,
+          "b": 0.9411764705882353,
+          "a": 1
+        }
+      },
+      "description": "Blue 500"
+    },
+    {
+      "name": "palette/brand/600",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.00784313725490196,
+          "g": 0.4470588235294118,
+          "b": 0.7764705882352941,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.00784313725490196,
+          "g": 0.4470588235294118,
+          "b": 0.7764705882352941,
+          "a": 1
+        }
+      },
+      "description": "Blue 600"
+    },
+    {
+      "name": "palette/brand/700",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.011764705882352941,
+          "g": 0.3568627450980392,
+          "b": 0.6196078431372549,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.011764705882352941,
+          "g": 0.3568627450980392,
+          "b": 0.6196078431372549,
+          "a": 1
+        }
+      },
+      "description": "Blue 700"
+    },
+    {
+      "name": "palette/brand/800",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.027450980392156862,
+          "g": 0.3058823529411765,
+          "b": 0.5176470588235295,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.027450980392156862,
+          "g": 0.3058823529411765,
+          "b": 0.5176470588235295,
+          "a": 1
+        }
+      },
+      "description": "Blue 800"
+    },
+    {
+      "name": "palette/brand/900",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.047058823529411764,
+          "g": 0.24705882352941178,
+          "b": 0.4196078431372549,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.047058823529411764,
+          "g": 0.24705882352941178,
+          "b": 0.4196078431372549,
+          "a": 1
+        }
+      },
+      "description": "Blue 900"
+    },
+    {
+      "name": "palette/pink/50",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 0.9411764705882353,
+          "b": 0.9686274509803922,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.9411764705882353,
+          "b": 0.9686274509803922,
+          "a": 1
+        }
+      },
+      "description": "Pink 50"
+    },
+    {
+      "name": "palette/pink/100",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 0.8784313725490196,
+          "b": 0.9372549019607843,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.8784313725490196,
+          "b": 0.9372549019607843,
+          "a": 1
+        }
+      },
+      "description": "Pink 100"
+    },
+    {
+      "name": "palette/pink/200",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 0.7529411764705882,
+          "b": 0.8745098039215686,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.7529411764705882,
+          "b": 0.8745098039215686,
+          "a": 1
+        }
+      },
+      "description": "Pink 200"
+    },
+    {
+      "name": "palette/pink/300",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 0.5686274509803921,
+          "b": 0.7568627450980392,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.5686274509803921,
+          "b": 0.7568627450980392,
+          "a": 1
+        }
+      },
+      "description": "Pink 300"
+    },
+    {
+      "name": "palette/pink/400",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 0.33725490196078434,
+          "b": 0.6274509803921569,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.33725490196078434,
+          "b": 0.6274509803921569,
+          "a": 1
+        }
+      },
+      "description": "Pink 400"
+    },
+    {
+      "name": "palette/pink/500",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.9686274509803922,
+          "g": 0.14901960784313725,
+          "b": 0.5215686274509804,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.9686274509803922,
+          "g": 0.14901960784313725,
+          "b": 0.5215686274509804,
+          "a": 1
+        }
+      },
+      "description": "Pink 500"
+    },
+    {
+      "name": "palette/pink/600",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.8784313725490196,
+          "g": 0.08235294117647059,
+          "b": 0.43137254901960786,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.8784313725490196,
+          "g": 0.08235294117647059,
+          "b": 0.43137254901960786,
+          "a": 1
+        }
+      },
+      "description": "Pink 600"
+    },
+    {
+      "name": "palette/pink/700",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.7529411764705882,
+          "g": 0.06274509803921569,
+          "b": 0.4117647058823529,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.7529411764705882,
+          "g": 0.06274509803921569,
+          "b": 0.4117647058823529,
+          "a": 1
+        }
+      },
+      "description": "Pink 700"
+    },
+    {
+      "name": "palette/pink/800",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.6274509803921569,
+          "g": 0.054901960784313725,
+          "b": 0.3411764705882353,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.6274509803921569,
+          "g": 0.054901960784313725,
+          "b": 0.3411764705882353,
+          "a": 1
+        }
+      },
+      "description": "Pink 800"
+    },
+    {
+      "name": "palette/pink/900",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.5098039215686274,
+          "g": 0.058823529411764705,
+          "b": 0.2627450980392157,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.5098039215686274,
+          "g": 0.058823529411764705,
+          "b": 0.2627450980392157,
+          "a": 1
+        }
+      },
+      "description": "Pink 900"
+    },
+    {
+      "name": "palette/amber/50",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 0.9725490196078431,
+          "b": 0.9294117647058824,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.9725490196078431,
+          "b": 0.9294117647058824,
+          "a": 1
+        }
+      },
+      "description": "Amber 50"
+    },
+    {
+      "name": "palette/amber/100",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 0.9372549019607843,
+          "b": 0.8274509803921568,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.9372549019607843,
+          "b": 0.8274509803921568,
+          "a": 1
+        }
+      },
+      "description": "Amber 100"
+    },
+    {
+      "name": "palette/amber/200",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 0.8588235294117647,
+          "b": 0.6470588235294118,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.8588235294117647,
+          "b": 0.6470588235294118,
+          "a": 1
+        }
+      },
+      "description": "Amber 200"
+    },
+    {
+      "name": "palette/amber/300",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 0.7529411764705882,
+          "b": 0.42745098039215684,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.7529411764705882,
+          "b": 0.42745098039215684,
+          "a": 1
+        }
+      },
+      "description": "Amber 300"
+    },
+    {
+      "name": "palette/amber/400",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 0.6039215686274509,
+          "b": 0.2,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.6039215686274509,
+          "b": 0.2,
+          "a": 1
+        }
+      },
+      "description": "Amber 400"
+    },
+    {
+      "name": "palette/amber/500",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 1,
+          "g": 0.47843137254901963,
+          "b": 0.050980392156862744,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 1,
+          "g": 0.47843137254901963,
+          "b": 0.050980392156862744,
+          "a": 1
+        }
+      },
+      "description": "Amber 500"
+    },
+    {
+      "name": "palette/amber/600",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.9568627450980393,
+          "g": 0.37254901960784315,
+          "b": 0.011764705882352941,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.9568627450980393,
+          "g": 0.37254901960784315,
+          "b": 0.011764705882352941,
+          "a": 1
+        }
+      },
+      "description": "Amber 600"
+    },
+    {
+      "name": "palette/amber/700",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.7686274509803922,
+          "g": 0.3215686274509804,
+          "b": 0,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.7686274509803922,
+          "g": 0.3215686274509804,
+          "b": 0,
+          "a": 1
+        }
+      },
+      "description": "Amber 700"
+    },
+    {
+      "name": "palette/amber/800",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.6274509803921569,
+          "g": 0.2235294117647059,
+          "b": 0.047058823529411764,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.6274509803921569,
+          "g": 0.2235294117647059,
+          "b": 0.047058823529411764,
+          "a": 1
+        }
+      },
+      "description": "Amber 800"
+    },
+    {
+      "name": "palette/amber/900",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.5137254901960784,
+          "g": 0.18823529411764706,
+          "b": 0.054901960784313725,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.5137254901960784,
+          "g": 0.18823529411764706,
+          "b": 0.054901960784313725,
+          "a": 1
+        }
+      },
+      "description": "Amber 900"
+    },
+    {
+      "name": "palette/green/50",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.9137254901960784,
+          "g": 0.9764705882352941,
+          "b": 0.9450980392156862,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.9137254901960784,
+          "g": 0.9764705882352941,
+          "b": 0.9450980392156862,
+          "a": 1
+        }
+      },
+      "description": "Green 50"
+    },
+    {
+      "name": "palette/green/100",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.8117647058823529,
+          "g": 0.9529411764705882,
+          "b": 0.8823529411764706,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.8117647058823529,
+          "g": 0.9529411764705882,
+          "b": 0.8823529411764706,
+          "a": 1
+        }
+      },
+      "description": "Green 100"
+    },
+    {
+      "name": "palette/green/200",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.6274509803921569,
+          "g": 0.9058823529411765,
+          "b": 0.7764705882352941,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.6274509803921569,
+          "g": 0.9058823529411765,
+          "b": 0.7764705882352941,
+          "a": 1
+        }
+      },
+      "description": "Green 200"
+    },
+    {
+      "name": "palette/green/300",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.4196078431372549,
+          "g": 0.8509803921568627,
+          "b": 0.6588235294117647,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.4196078431372549,
+          "g": 0.8509803921568627,
+          "b": 0.6588235294117647,
+          "a": 1
+        }
+      },
+      "description": "Green 300"
+    },
+    {
+      "name": "palette/green/400",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.20784313725490197,
+          "g": 0.7686274509803922,
+          "b": 0.5372549019607843,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.20784313725490197,
+          "g": 0.7686274509803922,
+          "b": 0.5372549019607843,
+          "a": 1
+        }
+      },
+      "description": "Green 400"
+    },
+    {
+      "name": "palette/green/500",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.08627450980392157,
+          "g": 0.6627450980392157,
+          "b": 0.44313725490196076,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.08627450980392157,
+          "g": 0.6627450980392157,
+          "b": 0.44313725490196076,
+          "a": 1
+        }
+      },
+      "description": "Green 500"
+    },
+    {
+      "name": "palette/green/600",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.047058823529411764,
+          "g": 0.49019607843137253,
+          "b": 0.3254901960784314,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.047058823529411764,
+          "g": 0.49019607843137253,
+          "b": 0.3254901960784314,
+          "a": 1
+        }
+      },
+      "description": "Green 600"
+    },
+    {
+      "name": "palette/green/700",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.0392156862745098,
+          "g": 0.41568627450980394,
+          "b": 0.2784313725490196,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.0392156862745098,
+          "g": 0.41568627450980394,
+          "b": 0.2784313725490196,
+          "a": 1
+        }
+      },
+      "description": "Green 700"
+    },
+    {
+      "name": "palette/green/800",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.03137254901960784,
+          "g": 0.3333333333333333,
+          "b": 0.2235294117647059,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.03137254901960784,
+          "g": 0.3333333333333333,
+          "b": 0.2235294117647059,
+          "a": 1
+        }
+      },
+      "description": "Green 800"
+    },
+    {
+      "name": "palette/green/900",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.023529411764705882,
+          "g": 0.23921568627450981,
+          "b": 0.1607843137254902,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.023529411764705882,
+          "g": 0.23921568627450981,
+          "b": 0.1607843137254902,
+          "a": 1
+        }
+      },
+      "description": "Green 900"
+    },
+    {
+      "name": "palette/red/50",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.9921568627450981,
+          "g": 0.9333333333333333,
+          "b": 0.9333333333333333,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.9921568627450981,
+          "g": 0.9333333333333333,
+          "b": 0.9333333333333333,
+          "a": 1
+        }
+      },
+      "description": "Red 50"
+    },
+    {
+      "name": "palette/red/100",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.984313725490196,
+          "g": 0.8509803921568627,
+          "b": 0.8549019607843137,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.984313725490196,
+          "g": 0.8509803921568627,
+          "b": 0.8549019607843137,
+          "a": 1
+        }
+      },
+      "description": "Red 100"
+    },
+    {
+      "name": "palette/red/200",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.9647058823529412,
+          "g": 0.7058823529411765,
+          "b": 0.7137254901960784,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.9647058823529412,
+          "g": 0.7058823529411765,
+          "b": 0.7137254901960784,
+          "a": 1
+        }
+      },
+      "description": "Red 200"
+    },
+    {
+      "name": "palette/red/300",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.9372549019607843,
+          "g": 0.5411764705882353,
+          "b": 0.5529411764705883,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.9372549019607843,
+          "g": 0.5411764705882353,
+          "b": 0.5529411764705883,
+          "a": 1
+        }
+      },
+      "description": "Red 300"
+    },
+    {
+      "name": "palette/red/400",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.8941176470588236,
+          "g": 0.37254901960784315,
+          "b": 0.38823529411764707,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.8941176470588236,
+          "g": 0.37254901960784315,
+          "b": 0.38823529411764707,
+          "a": 1
+        }
+      },
+      "description": "Red 400"
+    },
+    {
+      "name": "palette/red/500",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.8392156862745098,
+          "g": 0.22745098039215686,
+          "b": 0.25098039215686274,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.8392156862745098,
+          "g": 0.22745098039215686,
+          "b": 0.25098039215686274,
+          "a": 1
+        }
+      },
+      "description": "Red 500"
+    },
+    {
+      "name": "palette/red/600",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.7764705882352941,
+          "g": 0.1843137254901961,
+          "b": 0.20392156862745098,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.7764705882352941,
+          "g": 0.1843137254901961,
+          "b": 0.20392156862745098,
+          "a": 1
+        }
+      },
+      "description": "Red 600"
+    },
+    {
+      "name": "palette/red/700",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.6392156862745098,
+          "g": 0.14901960784313725,
+          "b": 0.1607843137254902,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.6392156862745098,
+          "g": 0.14901960784313725,
+          "b": 0.1607843137254902,
+          "a": 1
+        }
+      },
+      "description": "Red 700"
+    },
+    {
+      "name": "palette/red/800",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.5137254901960784,
+          "g": 0.12549019607843137,
+          "b": 0.13725490196078433,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.5137254901960784,
+          "g": 0.12549019607843137,
+          "b": 0.13725490196078433,
+          "a": 1
+        }
+      },
+      "description": "Red 800"
+    },
+    {
+      "name": "palette/red/900",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.38823529411764707,
+          "g": 0.10196078431372549,
+          "b": 0.10980392156862745,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.38823529411764707,
+          "g": 0.10196078431372549,
+          "b": 0.10980392156862745,
+          "a": 1
+        }
+      },
+      "description": "Red 900"
+    },
+    {
+      "name": "palette/violet/50",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.9450980392156862,
+          "g": 0.9372549019607843,
+          "b": 1,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.9450980392156862,
+          "g": 0.9372549019607843,
+          "b": 1,
+          "a": 1
+        }
+      },
+      "description": "Violet 50"
+    },
+    {
+      "name": "palette/violet/100",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.8901960784313725,
+          "g": 0.8745098039215686,
+          "b": 1,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.8901960784313725,
+          "g": 0.8745098039215686,
+          "b": 1,
+          "a": 1
+        }
+      },
+      "description": "Violet 100"
+    },
+    {
+      "name": "palette/violet/200",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.7803921568627451,
+          "g": 0.7490196078431373,
+          "b": 1,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.7803921568627451,
+          "g": 0.7490196078431373,
+          "b": 1,
+          "a": 1
+        }
+      },
+      "description": "Violet 200"
+    },
+    {
+      "name": "palette/violet/300",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.6627450980392157,
+          "g": 0.611764705882353,
+          "b": 1,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.6627450980392157,
+          "g": 0.611764705882353,
+          "b": 1,
+          "a": 1
+        }
+      },
+      "description": "Violet 300"
+    },
+    {
+      "name": "palette/violet/400",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.5450980392156862,
+          "g": 0.47058823529411764,
+          "b": 0.9803921568627451,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.5450980392156862,
+          "g": 0.47058823529411764,
+          "b": 0.9803921568627451,
+          "a": 1
+        }
+      },
+      "description": "Violet 400"
+    },
+    {
+      "name": "palette/violet/500",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.43137254901960786,
+          "g": 0.35294117647058826,
+          "b": 0.9372549019607843,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.43137254901960786,
+          "g": 0.35294117647058826,
+          "b": 0.9372549019607843,
+          "a": 1
+        }
+      },
+      "description": "Violet 500"
+    },
+    {
+      "name": "palette/violet/600",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.3568627450980392,
+          "g": 0.29411764705882354,
+          "b": 0.8784313725490196,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.3568627450980392,
+          "g": 0.29411764705882354,
+          "b": 0.8784313725490196,
+          "a": 1
+        }
+      },
+      "description": "Violet 600"
+    },
+    {
+      "name": "palette/violet/700",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.3058823529411765,
+          "g": 0.24313725490196078,
+          "b": 0.8,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.3058823529411765,
+          "g": 0.24313725490196078,
+          "b": 0.8,
+          "a": 1
+        }
+      },
+      "description": "Violet 700"
+    },
+    {
+      "name": "palette/violet/800",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.24313725490196078,
+          "g": 0.19215686274509805,
+          "b": 0.6392156862745098,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.24313725490196078,
+          "g": 0.19215686274509805,
+          "b": 0.6392156862745098,
+          "a": 1
+        }
+      },
+      "description": "Violet 800"
+    },
+    {
+      "name": "palette/violet/900",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.18823529411764706,
+          "g": 0.14901960784313725,
+          "b": 0.47843137254901963,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.18823529411764706,
+          "g": 0.14901960784313725,
+          "b": 0.47843137254901963,
+          "a": 1
+        }
+      },
+      "description": "Violet 900"
+    },
+    {
+      "name": "palette/neutral/50",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.9725490196078431,
+          "g": 0.9725490196078431,
+          "b": 0.9803921568627451,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.9725490196078431,
+          "g": 0.9725490196078431,
+          "b": 0.9803921568627451,
+          "a": 1
+        }
+      },
+      "description": "Neutral 50"
+    },
+    {
+      "name": "palette/neutral/100",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.9411764705882353,
+          "g": 0.9411764705882353,
+          "b": 0.9568627450980393,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.9411764705882353,
+          "g": 0.9411764705882353,
+          "b": 0.9568627450980393,
+          "a": 1
+        }
+      },
+      "description": "Neutral 100"
+    },
+    {
+      "name": "palette/neutral/200",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.8941176470588236,
+          "g": 0.8941176470588236,
+          "b": 0.9254901960784314,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.8941176470588236,
+          "g": 0.8941176470588236,
+          "b": 0.9254901960784314,
+          "a": 1
+        }
+      },
+      "description": "Neutral 200"
+    },
+    {
+      "name": "palette/neutral/300",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.803921568627451,
+          "g": 0.803921568627451,
+          "b": 0.8509803921568627,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.803921568627451,
+          "g": 0.803921568627451,
+          "b": 0.8509803921568627,
+          "a": 1
+        }
+      },
+      "description": "Neutral 300"
+    },
+    {
+      "name": "palette/neutral/400",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.6274509803921569,
+          "g": 0.6274509803921569,
+          "b": 0.7215686274509804,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.6274509803921569,
+          "g": 0.6274509803921569,
+          "b": 0.7215686274509804,
+          "a": 1
+        }
+      },
+      "description": "Neutral 400"
+    },
+    {
+      "name": "palette/neutral/500",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.45098039215686275,
+          "g": 0.45098039215686275,
+          "b": 0.5647058823529412,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.45098039215686275,
+          "g": 0.45098039215686275,
+          "b": 0.5647058823529412,
+          "a": 1
+        }
+      },
+      "description": "Neutral 500"
+    },
+    {
+      "name": "palette/neutral/600",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.3411764705882353,
+          "g": 0.3411764705882353,
+          "b": 0.4470588235294118,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.3411764705882353,
+          "g": 0.3411764705882353,
+          "b": 0.4470588235294118,
+          "a": 1
+        }
+      },
+      "description": "Neutral 600"
+    },
+    {
+      "name": "palette/neutral/700",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.25882352941176473,
+          "g": 0.25882352941176473,
+          "b": 0.3764705882352941,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.25882352941176473,
+          "g": 0.25882352941176473,
+          "b": 0.3764705882352941,
+          "a": 1
+        }
+      },
+      "description": "Neutral 700"
+    },
+    {
+      "name": "palette/neutral/800",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.1803921568627451,
+          "g": 0.1803921568627451,
+          "b": 0.2901960784313726,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.1803921568627451,
+          "g": 0.1803921568627451,
+          "b": 0.2901960784313726,
+          "a": 1
+        }
+      },
+      "description": "Neutral 800"
+    },
+    {
+      "name": "palette/neutral/900",
+      "collection": "Unseen — Color",
+      "resolvedType": "COLOR",
+      "scopes": [
+        "ALL_FILLS",
+        "STROKE_COLOR"
+      ],
+      "valuesByMode": {
+        "mode:light": {
+          "r": 0.058823529411764705,
+          "g": 0.058823529411764705,
+          "b": 0.11764705882352941,
+          "a": 1
+        },
+        "mode:dark": {
+          "r": 0.058823529411764705,
+          "g": 0.058823529411764705,
+          "b": 0.11764705882352941,
+          "a": 1
+        }
+      },
+      "description": "Neutral 900"
+    },
+    {
+      "name": "radius/none",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 0
+      },
+      "description": "Corner radius"
+    },
+    {
+      "name": "radius/sm",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 4
+      },
+      "description": "Corner radius"
+    },
+    {
+      "name": "radius/md",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 8
+      },
+      "description": "Corner radius"
+    },
+    {
+      "name": "radius/lg",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 12
+      },
+      "description": "Corner radius"
+    },
+    {
+      "name": "radius/xl",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 16
+      },
+      "description": "Corner radius"
+    },
+    {
+      "name": "radius/2xl",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 24
+      },
+      "description": "Corner radius"
+    },
+    {
+      "name": "radius/3xl",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 32
+      },
+      "description": "Corner radius"
+    },
+    {
+      "name": "radius/full",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 9999
+      },
+      "description": "Corner radius"
+    },
+    {
+      "name": "space/0",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 0
+      },
+      "description": "Spacing step"
+    },
+    {
+      "name": "space/1",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 4
+      },
+      "description": "Spacing step"
+    },
+    {
+      "name": "space/2",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 8
+      },
+      "description": "Spacing step"
+    },
+    {
+      "name": "space/3",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 12
+      },
+      "description": "Spacing step"
+    },
+    {
+      "name": "space/4",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 16
+      },
+      "description": "Spacing step"
+    },
+    {
+      "name": "space/5",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 20
+      },
+      "description": "Spacing step"
+    },
+    {
+      "name": "space/6",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 24
+      },
+      "description": "Spacing step"
+    },
+    {
+      "name": "space/8",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 32
+      },
+      "description": "Spacing step"
+    },
+    {
+      "name": "space/10",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 40
+      },
+      "description": "Spacing step"
+    },
+    {
+      "name": "space/12",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 48
+      },
+      "description": "Spacing step"
+    },
+    {
+      "name": "space/16",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 64
+      },
+      "description": "Spacing step"
+    },
+    {
+      "name": "space/20",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 80
+      },
+      "description": "Spacing step"
+    },
+    {
+      "name": "space/24",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 96
+      },
+      "description": "Spacing step"
+    },
+    {
+      "name": "space/0.5",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 2
+      },
+      "description": "Spacing step"
+    },
+    {
+      "name": "space/1.5",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 6
+      },
+      "description": "Spacing step"
+    },
+    {
+      "name": "size/control-xs",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 28
+      },
+      "description": "Component dimension"
+    },
+    {
+      "name": "size/control-sm",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 32
+      },
+      "description": "Component dimension"
+    },
+    {
+      "name": "size/control-md",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 40
+      },
+      "description": "Component dimension"
+    },
+    {
+      "name": "size/control-lg",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 44
+      },
+      "description": "Component dimension"
+    },
+    {
+      "name": "size/touch-target",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 44
+      },
+      "description": "Component dimension"
+    },
+    {
+      "name": "size/icon-sm",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 16
+      },
+      "description": "Component dimension"
+    },
+    {
+      "name": "size/icon-md",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 20
+      },
+      "description": "Component dimension"
+    },
+    {
+      "name": "size/icon-lg",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 24
+      },
+      "description": "Component dimension"
+    },
+    {
+      "name": "size/container-max",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 1240
+      },
+      "description": "Component dimension"
+    },
+    {
+      "name": "size/sidebar",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 248
+      },
+      "description": "Component dimension"
+    },
+    {
+      "name": "size/drawer",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 400
+      },
+      "description": "Component dimension"
+    },
+    {
+      "name": "size/sheet",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 80
+      },
+      "description": "Component dimension"
+    },
+    {
+      "name": "breakpoint/xs",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 0
+      },
+      "description": "Responsive breakpoint"
+    },
+    {
+      "name": "breakpoint/sm",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 640
+      },
+      "description": "Responsive breakpoint"
+    },
+    {
+      "name": "breakpoint/md",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 768
+      },
+      "description": "Responsive breakpoint"
+    },
+    {
+      "name": "breakpoint/lg",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 1024
+      },
+      "description": "Responsive breakpoint"
+    },
+    {
+      "name": "breakpoint/xl",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 1280
+      },
+      "description": "Responsive breakpoint"
+    },
+    {
+      "name": "breakpoint/2xl",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 1536
+      },
+      "description": "Responsive breakpoint"
+    },
+    {
+      "name": "z/base",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 0
+      },
+      "description": "Stacking order"
+    },
+    {
+      "name": "z/raised",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 10
+      },
+      "description": "Stacking order"
+    },
+    {
+      "name": "z/sticky",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 20
+      },
+      "description": "Stacking order"
+    },
+    {
+      "name": "z/sidebar",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 30
+      },
+      "description": "Stacking order"
+    },
+    {
+      "name": "z/dropdown",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 40
+      },
+      "description": "Stacking order"
+    },
+    {
+      "name": "z/overlay",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 50
+      },
+      "description": "Stacking order"
+    },
+    {
+      "name": "z/modal",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 60
+      },
+      "description": "Stacking order"
+    },
+    {
+      "name": "z/toast",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 70
+      },
+      "description": "Stacking order"
+    },
+    {
+      "name": "z/tooltip",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 80
+      },
+      "description": "Stacking order"
+    },
+    {
+      "name": "motion/duration/instant",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 90
+      },
+      "description": "Duration (ms)"
+    },
+    {
+      "name": "motion/duration/fast",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 150
+      },
+      "description": "Duration (ms)"
+    },
+    {
+      "name": "motion/duration/base",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 220
+      },
+      "description": "Duration (ms)"
+    },
+    {
+      "name": "motion/duration/slow",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 360
+      },
+      "description": "Duration (ms)"
+    },
+    {
+      "name": "motion/duration/stream",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 900
+      },
+      "description": "Duration (ms)"
+    },
+    {
+      "name": "type/display/size",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 60
+      },
+      "description": "Font size"
+    },
+    {
+      "name": "type/display/weight",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 800
+      },
+      "description": "Font weight"
+    },
+    {
+      "name": "type/display/line-height",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 1.02
+      },
+      "description": "Line height multiplier"
+    },
+    {
+      "name": "type/h1/size",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 40
+      },
+      "description": "Font size"
+    },
+    {
+      "name": "type/h1/weight",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 700
+      },
+      "description": "Font weight"
+    },
+    {
+      "name": "type/h1/line-height",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 1.08
+      },
+      "description": "Line height multiplier"
+    },
+    {
+      "name": "type/h2/size",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 28
+      },
+      "description": "Font size"
+    },
+    {
+      "name": "type/h2/weight",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 700
+      },
+      "description": "Font weight"
+    },
+    {
+      "name": "type/h2/line-height",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 1.15
+      },
+      "description": "Line height multiplier"
+    },
+    {
+      "name": "type/h3/size",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 20
+      },
+      "description": "Font size"
+    },
+    {
+      "name": "type/h3/weight",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 600
+      },
+      "description": "Font weight"
+    },
+    {
+      "name": "type/h3/line-height",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 1.3
+      },
+      "description": "Line height multiplier"
+    },
+    {
+      "name": "type/h4/size",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 16
+      },
+      "description": "Font size"
+    },
+    {
+      "name": "type/h4/weight",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 600
+      },
+      "description": "Font weight"
+    },
+    {
+      "name": "type/h4/line-height",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 1.4
+      },
+      "description": "Line height multiplier"
+    },
+    {
+      "name": "type/body-l/size",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 16
+      },
+      "description": "Font size"
+    },
+    {
+      "name": "type/body-l/weight",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 400
+      },
+      "description": "Font weight"
+    },
+    {
+      "name": "type/body-l/line-height",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 1.65
+      },
+      "description": "Line height multiplier"
+    },
+    {
+      "name": "type/body-m/size",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 14
+      },
+      "description": "Font size"
+    },
+    {
+      "name": "type/body-m/weight",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 400
+      },
+      "description": "Font weight"
+    },
+    {
+      "name": "type/body-m/line-height",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 1.6
+      },
+      "description": "Line height multiplier"
+    },
+    {
+      "name": "type/body-s/size",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 13
+      },
+      "description": "Font size"
+    },
+    {
+      "name": "type/body-s/weight",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 400
+      },
+      "description": "Font weight"
+    },
+    {
+      "name": "type/body-s/line-height",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 1.55
+      },
+      "description": "Line height multiplier"
+    },
+    {
+      "name": "type/caption/size",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 11
+      },
+      "description": "Font size"
+    },
+    {
+      "name": "type/caption/weight",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 500
+      },
+      "description": "Font weight"
+    },
+    {
+      "name": "type/caption/line-height",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 1.45
+      },
+      "description": "Line height multiplier"
+    },
+    {
+      "name": "type/overline/size",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 10
+      },
+      "description": "Font size"
+    },
+    {
+      "name": "type/overline/weight",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 700
+      },
+      "description": "Font weight"
+    },
+    {
+      "name": "type/overline/line-height",
+      "collection": "Unseen — Scale",
+      "resolvedType": "FLOAT",
+      "scopes": [
+        "ALL_SCOPES"
+      ],
+      "valuesByMode": {
+        "mode:default": 1.4
+      },
+      "description": "Line height multiplier"
+    }
+  ]
+}
