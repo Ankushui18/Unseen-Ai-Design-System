@@ -22,6 +22,10 @@ import { StatesPage } from './pages/StatesPage';
 import { TokensPage } from './pages/TokensPage';
 import { ComponentDocsPage } from './pages/ComponentDocsPage';
 import { MobilePage } from './pages/MobilePage';
+import { AuthPage } from './pages/AuthPage';
+import { OnboardingPage } from './pages/OnboardingPage';
+import { ComparePage } from './pages/ComparePage';
+import { MotionPage } from './pages/MotionPage';
 
 const pageKeys = allNavItems.map(item => item.key);
 const themeStorageKey = 'unseen-ds-theme';
@@ -109,6 +113,10 @@ export default function App() {
         {page === 'states' && <StatesPage />}
         {page === 'tokens' && <TokensPage />}
         {page === 'docs' && <ComponentDocsPage />}
+        {page === 'auth' && <AuthPage />}
+        {page === 'onboarding' && <OnboardingPage />}
+        {page === 'compare' && <ComparePage />}
+        {page === 'motion' && <MotionPage />}
         {page === 'mobile' && <MobilePage />}
       </Shell>
       <CommandPalette

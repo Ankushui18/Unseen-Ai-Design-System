@@ -95,7 +95,7 @@ function SidebarContent({
         <div className="rounded-xl border border-line bg-surface-2 p-3">
           <div className="flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-success" />
-            <span className="text-[10.5px] font-semibold text-ink-soft">v2.1 · 111 components</span>
+            <span className="text-[10.5px] font-semibold text-ink-soft">v2.3 · 111 components</span>
           </div>
           <p className="mt-1 text-[10.5px] leading-4 text-faint">Light &amp; dark, WCAG AA checked, token-driven.</p>
         </div>

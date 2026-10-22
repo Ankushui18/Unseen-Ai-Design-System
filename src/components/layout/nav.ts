@@ -4,16 +4,20 @@ import {
   Bot,
   Boxes,
   ChartNoAxesColumn,
+  Contrast,
   Database,
   FileCode2,
   FlaskConical,
   Gauge,
+  KeyRound,
   LayoutGrid,
   MessageSquare,
+  MoveRight,
   Palette,
   Settings2,
   Smartphone,
   Sparkles,
+  Spline,
   SwatchBook,
   Terminal,
   TriangleAlert,
@@ -40,6 +44,10 @@ export type PageKey =
   | 'team'
   | 'settings'
   | 'templates'
+  | 'auth'
+  | 'onboarding'
+  | 'compare'
+  | 'motion'
   | 'mobile'
   | 'guidelines'
   | 'states';
@@ -59,6 +67,8 @@ export const navGroups: { label: string; items: NavItem[] }[] = [
       { key: 'foundations', label: 'Foundations', description: 'Color, type, spacing, elevation, motion', icon: Palette },
       { key: 'components', label: 'Components', description: '111 production-ready UI primitives', icon: Blocks },
       { key: 'ai-patterns', label: 'AI patterns', description: 'Chat, prompts, streaming, agents, keys', icon: Sparkles },
+      { key: 'compare', label: 'Light & dark', description: 'Side-by-side theme comparison with token diffs', icon: Contrast },
+      { key: 'motion', label: 'Motion', description: 'Duration and easing tokens with live examples', icon: Spline },
       { key: 'docs', label: 'Component docs', description: 'Anatomy, props and accessibility per component', icon: FileCode2 },
       { key: 'tokens', label: 'Token export', description: 'CSS, JSON, Tailwind and Figma variable output', icon: SwatchBook },
     ],
@@ -75,6 +85,8 @@ export const navGroups: { label: string; items: NavItem[] }[] = [
       { key: 'agents', label: 'Agents', description: 'Run traces, tools and guardrails', icon: Bot },
       { key: 'developers', label: 'Developers', description: 'API reference, keys, logs and webhooks', icon: Terminal },
       { key: 'team', label: 'Team', description: 'Members, roles and audit log', icon: Users },
+      { key: 'auth', label: 'Sign in', description: 'Sign in, sign up, reset and one-time code', icon: KeyRound },
+      { key: 'onboarding', label: 'Onboarding', description: 'Five-step wizard with plan picker', icon: MoveRight },
       { key: 'settings', label: 'Settings', description: 'Profile, workspace, keys and billing', icon: Settings2 },
       { key: 'templates', label: 'Templates', description: 'Sign in, onboarding and empty states', icon: Wand2 },
       { key: 'mobile', label: 'Mobile', description: 'Responsive patterns for small viewports', icon: Smartphone },

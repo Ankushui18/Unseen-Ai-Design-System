@@ -2,7 +2,7 @@
 
 A token-driven design system and reference product for AI interfaces. It pairs **AlignUI's surgical component precision** with **Kigen's vivid, color-forward energy**, then extends both with the patterns AI products actually need: streaming, prompting, model choice, agent runs and token cost.
 
-> v2.2 · 111 components · 15 sections · 20 pages · light + dark · WCAG 2.2 AA · Figma token package
+> v2.3 · 111 components · 15 sections · 24 pages · light + dark · WCAG 2.2 AA · one-command Figma build
 
 ---
 
@@ -44,6 +44,10 @@ Navigate the app with the sidebar, or press <kbd>⌘K</kbd> / <kbd>Ctrl K</kbd> 
 | Settings | `#/settings` | Profile, workspace, API keys, billing, notifications |
 | Templates | `#/templates` | Sign in, 4-step onboarding, invite flow, first-run empty state |
 | Mobile | `#/mobile` | Phone-frame chat, dashboard and sheet patterns |
+| Sign in | `#/auth` | Sign in, create account, password reset, one-time code |
+| Onboarding | `#/onboarding` | Five-step wizard with plan picker and invites |
+| Light & dark | `#/compare` | Both themes side by side, with token diffs and parity checks |
+| Motion | `#/motion` | Duration and easing tokens, live playground, reduced-motion behaviour |
 | Guidelines | `#/guidelines` | Do / don't, accessibility, token naming, handoff, changelog |
 | States | `#/states` | Empty, error, loading and permission states, in full and inline |
 
@@ -150,6 +154,27 @@ Theme is stored in `localStorage` (`unseen-ds-theme`) and applied as `.dark` on 
 | `tokens/unseen.tokens.css` | the same values as CSS custom properties |
 | `tokens/CONTRAST.md` | measured WCAG + colour-vision report |
 | `src/design/contrast-report.ts` | the same measurements, typed, rendered on Foundations |
+
+### One-command Figma build
+
+`figma-plugin/` is a development plugin that builds the library inside Figma:
+
+1. Plugins → Development → Import plugin from manifest → `figma-plugin/manifest.json`
+2. Run **Unseen — Build library**
+
+It creates (idempotently — re-running updates instead of duplicating):
+
+| Output | Count |
+| --- | --- |
+| `Unseen — Color` collection, modes Light / Dark | 127 variables |
+| `Unseen — Scale` collection | 55 number variables |
+| Text styles `Unseen/*` | 10 |
+| Effect styles `Unseen/shadow/*` | 5 |
+| Pages `00 · Cover` … `07 · Handoff` | 8 |
+
+It falls back from Geist to Inter if the font isn't installed, and
+`npm run test:figma` exercises the whole plugin against a mock Figma API — which is how a
+malformed-RGBA bug in both token files was caught before anyone imported them.
 
 **The complete Figma rebuild spec — import steps, variable naming, text/effect styles,
 per-component anatomy with sizes and states, page structure and a verification checklist —

@@ -10,8 +10,10 @@ import {
   Database,
   FlaskConical,
   Gauge,
+  KeyRound,
   Layers,
   MessageSquare,
+  MoveRight,
   Palette,
   ShieldCheck,
   Smartphone,
@@ -33,7 +35,7 @@ import type { PageKey } from '../components/layout/nav';
 const stats = [
   { value: '111', label: 'Components' },
   { value: '15', label: 'Sections' },
-  { value: '20', label: 'Pages' },
+  { value: '24', label: 'Pages' },
   { value: 'AA', label: 'Contrast' },
 ];
 
@@ -65,6 +67,8 @@ const inside: { key: PageKey; label: string; description: string; count: string;
   { key: 'components', label: 'Components', description: 'Primitives from buttons to data tables', count: '15 sections', icon: Blocks },
   { key: 'ai-patterns', label: 'AI patterns', description: 'Chat, prompts, models, streaming, agents', count: '9 patterns', icon: Sparkles },
   { key: 'docs', label: 'Component docs', description: 'Anatomy, props, do / don’t and a11y notes', count: 'Reference', icon: BookOpen },
+  { key: 'compare', label: 'Light & dark', description: 'Both themes side by side, with token diffs', count: 'Reference', icon: Palette },
+  { key: 'motion', label: 'Motion', description: 'Durations, curves and live examples', count: 'Reference', icon: Zap },
   { key: 'tokens', label: 'Token export', description: 'CSS, JSON, Tailwind and Figma variables', count: '248 tokens', icon: Palette },
   { key: 'dashboard', label: 'Dashboard', description: 'Usage, cost and model health analytics', count: 'Screen', icon: Gauge },
   { key: 'analytics', label: 'Analytics', description: 'Traffic, spend and quality breakdowns', count: 'Screen', icon: BarChart3 },
@@ -75,14 +79,18 @@ const inside: { key: PageKey; label: string; description: string; count: string;
   { key: 'agents', label: 'Agents', description: 'Run traces, tools and guardrails', count: 'Screen', icon: Bot },
   { key: 'developers', label: 'Developers', description: 'API reference, keys, logs, webhooks', count: 'Screen', icon: Terminal },
   { key: 'team', label: 'Team', description: 'Members, roles and the audit log', count: 'Screen', icon: Users },
-  { key: 'templates', label: 'Templates', description: 'Sign in, onboarding and empty states', count: 'Screen', icon: Wand2 },
+  { key: 'auth', label: 'Sign in', description: 'Sign in, sign up, reset, one-time code', count: 'Screen', icon: KeyRound },
+  { key: 'onboarding', label: 'Onboarding', description: 'Five-step wizard with a plan picker', count: 'Screen', icon: MoveRight },
+  { key: 'templates', label: 'Templates', description: 'Invites, empty states and first-run', count: 'Screen', icon: Wand2 },
   { key: 'mobile', label: 'Mobile', description: 'Responsive patterns for small viewports', count: 'Screen', icon: Smartphone },
   { key: 'states', label: 'States', description: 'Empty, error, loading and permission states', count: 'Reference', icon: TriangleAlert },
   { key: 'guidelines', label: 'Guidelines', description: 'Do / don’t, a11y, naming and changelog', count: 'Reference', icon: BookOpen },
 ];
 
 const changelog = [
-  { version: 'v2.1', tag: 'Latest', date: 'Oct 2026', items: ['69 new primitives: charts, data display, navigation, advanced inputs, AI surfaces', 'Eleven new screens — analytics, models, playground, datasets, agents, developers, team, docs, tokens, mobile, states', 'Token export pipeline and full component documentation'] },
+  { version: 'v2.3', tag: 'Latest', date: 'Oct 2026', items: ['Figma plugin that builds variables, text styles and pages in one run', 'Four new screens: sign in, onboarding, light & dark, motion', 'Corrupted RGBA values in both token files found and fixed by the plugin harness'] },
+  { version: 'v2.2', tag: '', date: 'Oct 2026', items: ['Contrast-safe three-tier colour roles across 42 measured pairs', 'Token pipeline: Tokens Studio, Figma Variables, CSS and a report', '390px pass: hit areas, bottom sheets, table fallbacks'] },
+  { version: 'v2.1', tag: '', date: 'Oct 2026', items: ['69 new primitives: charts, data display, navigation, advanced inputs, AI surfaces', 'Eleven new screens — analytics, models, playground, datasets, agents, developers, team, docs, tokens, mobile, states', 'Token export pipeline and full component documentation'] },
   { version: 'v2.0', tag: '', date: 'Oct 2026', items: ['Full dark theme across every screen', 'Semantic token layer + Tailwind v4 theme', 'Command palette, drawer and modal primitives'] },
   { version: 'v1.4', tag: '', date: 'Sep 2026', items: ['AI patterns: prompt builder and model selector', 'Data table with selection and pagination', 'Streaming and reasoning states'] },
   { version: 'v1.0', tag: '', date: 'Aug 2026', items: ['Initial foundations and 14-section component sheet'] },
